@@ -1,6 +1,7 @@
 import os
 import io
 import cv2
+import re
 import numpy as np
 import matplotlib.pyplot as plt
 from flask_cors import CORS
@@ -33,11 +34,14 @@ def detect_text(path):
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
+    # 정규식
     print('Texts:')
-
+    
     for text in texts:
-        print('\n"{}"'.format(text.description))
-
+        temp = re.sub(r'[^\w\s]', '', text.description)
+        # print('\n"{}"'.format(text.description))
+        print(temp)
+        print('\n"{}"'.format(temp))
         vertices = (['({},{})'.format(vertex.x, vertex.y)
                     for vertex in text.bounding_poly.vertices])
 
