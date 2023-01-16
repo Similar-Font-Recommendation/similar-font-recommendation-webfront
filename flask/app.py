@@ -7,23 +7,29 @@ import matplotlib.pyplot as plt
 from flask_cors import CORS
 # from flask_cors import CORS
 from flask import Flask, jsonify,request, render_template, url_for
-
 # Google OCR
 import platform
 from PIL import ImageFont, ImageDraw, Image
 from google.cloud import vision
+from enum import Enum
 
 app = Flask(__name__)
 CORS(app)
 app.config['DEBUG'] = True
 #img file path config
 app.config['IMG_FOLDER'] = os.path.join('static','images') 
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+
+class FeatureType(Enum):
+    PAGE = 1
+    BLOCK = 2
+    PARA = 3
+    WORD = 4
+    SYMBOL = 5
 
 # [START vision_text_detection]
 def detect_text(path):
     """Detects text in the file."""
-    from google.cloud import vision
-    import io
     client = vision.ImageAnnotatorClient()
 
     # [START vision_python_migration_text_detection]
@@ -33,14 +39,43 @@ def detect_text(path):
     image = vision.Image(content=content)
 
     response = client.text_detection(image=image)
+    print(response)
+
+    document = response.full_text_annotation
+    bounds = []
+    #Collect specified feature bounds by enumerating all document features
+    for page in document.pages:
+        for block in page.blocks:
+            for paragraph in block.paragraphs:
+                # for word in paragraph.words:
+                    # for symbol in word.symbols:
+                    #     if feature == FeatureType.SYMBOL:
+                    #         print("symbol")
+                            # bounds.append(symbol.bounding_box)
+
+                    # if feature == FeatureType.WORD:
+                    #     print("word")
+                        # bounds.append(word.bounding_box)        
+                bounds.append(paragraph.bounding_box)
+    print("for문은 돌았다")
+    type(bounds)
+    num = 1
+    for i in bounds:
+        print(num)
+        num +=1
+        print(i)
+
     texts = response.text_annotations
+    with open(path[0:-5]+'.txt',"w") as f:
+        f.write(texts[0].description)
     # 정규식
     print('Texts:')
     
     for text in texts:
         temp = re.sub(r'[^\w\s]', '', text.description)
         # print('\n"{}"'.format(text.description))
-        print(temp)
+        if temp =='':
+            continue
         print('\n"{}"'.format(temp))
         vertices = (['({},{})'.format(vertex.x, vertex.y)
                     for vertex in text.bounding_poly.vertices])

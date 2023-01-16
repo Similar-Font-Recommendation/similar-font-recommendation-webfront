@@ -1,0 +1,1560 @@
+{
+    "cropHintsAnnotation": {
+      "cropHints": [
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 288
+              },
+              {
+                "x": 629
+              },
+              {
+                "x": 629,
+                "y": 426
+              },
+              {
+                "x": 288,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.3450505
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 216
+              },
+              {
+                "x": 643
+              },
+              {
+                "x": 643,
+                "y": 426
+              },
+              {
+                "x": 216,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.43131313
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 144
+              },
+              {
+                "x": 656
+              },
+              {
+                "x": 656,
+                "y": 426
+              },
+              {
+                "x": 144,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.5175758
+        }
+      ]
+    },
+    "fullTextAnnotation": {
+      "pages": [
+        {
+          "blocks": [
+            {
+              "blockType": "TEXT",
+              "boundingBox": {
+                "vertices": [
+                  {
+                    "x": 24,
+                    "y": 40
+                  },
+                  {
+                    "x": 1391,
+                    "y": 40
+                  },
+                  {
+                    "x": 1391,
+                    "y": 388
+                  },
+                  {
+                    "x": 24,
+                    "y": 388
+                  }
+                ]
+              },
+              "confidence": 0.95139855,
+              "paragraphs": [
+                {
+                  "boundingBox": {
+                    "vertices": [
+                      {
+                        "x": 24,
+                        "y": 40
+                      },
+                      {
+                        "x": 1391,
+                        "y": 40
+                      },
+                      {
+                        "x": 1391,
+                        "y": 388
+                      },
+                      {
+                        "x": 24,
+                        "y": 388
+                      }
+                    ]
+                  },
+                  "confidence": 0.95139855,
+                  "words": [
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 24,
+                            "y": 40
+                          },
+                          {
+                            "x": 472,
+                            "y": 40
+                          },
+                          {
+                            "x": 472,
+                            "y": 199
+                          },
+                          {
+                            "x": 24,
+                            "y": 199
+                          }
+                        ]
+                      },
+                      "confidence": 0.9821132,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 24,
+                                "y": 40
+                              },
+                              {
+                                "x": 186,
+                                "y": 40
+                              },
+                              {
+                                "x": 186,
+                                "y": 199
+                              },
+                              {
+                                "x": 24,
+                                "y": 199
+                              }
+                            ]
+                          },
+                          "confidence": 0.9660539,
+                          "text": "탕"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 194,
+                                "y": 40
+                              },
+                              {
+                                "x": 328,
+                                "y": 40
+                              },
+                              {
+                                "x": 328,
+                                "y": 199
+                              },
+                              {
+                                "x": 194,
+                                "y": 199
+                              }
+                            ]
+                          },
+                          "confidence": 0.98981375,
+                          "text": "수"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 337,
+                                "y": 40
+                              },
+                              {
+                                "x": 472,
+                                "y": 40
+                              },
+                              {
+                                "x": 472,
+                                "y": 199
+                              },
+                              {
+                                "x": 337,
+                                "y": 199
+                              }
+                            ]
+                          },
+                          "confidence": 0.9904719,
+                          "text": "육"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 483,
+                            "y": 40
+                          },
+                          {
+                            "x": 766,
+                            "y": 40
+                          },
+                          {
+                            "x": 766,
+                            "y": 199
+                          },
+                          {
+                            "x": 483,
+                            "y": 199
+                          }
+                        ]
+                      },
+                      "confidence": 0.9842096,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 483,
+                                "y": 40
+                              },
+                              {
+                                "x": 617,
+                                "y": 40
+                              },
+                              {
+                                "x": 617,
+                                "y": 199
+                              },
+                              {
+                                "x": 483,
+                                "y": 199
+                              }
+                            ]
+                          },
+                          "confidence": 0.9930176,
+                          "text": "세"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 638,
+                                "y": 40
+                              },
+                              {
+                                "x": 766,
+                                "y": 40
+                              },
+                              {
+                                "x": 766,
+                                "y": 199
+                              },
+                              {
+                                "x": 638,
+                                "y": 199
+                              }
+                            ]
+                          },
+                          "confidence": 0.9754016,
+                          "property": {
+                            "detectedBreak": {
+                              "type": "EOL_SURE_SPACE"
+                            }
+                          },
+                          "text": "트"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 41,
+                            "y": 257
+                          },
+                          {
+                            "x": 88,
+                            "y": 257
+                          },
+                          {
+                            "x": 88,
+                            "y": 388
+                          },
+                          {
+                            "x": 41,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.68893754,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 41,
+                                "y": 257
+                              },
+                              {
+                                "x": 88,
+                                "y": 257
+                              },
+                              {
+                                "x": 88,
+                                "y": 388
+                              },
+                              {
+                                "x": 41,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.68893754,
+                          "text": "("
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 92,
+                            "y": 257
+                          },
+                          {
+                            "x": 434,
+                            "y": 257
+                          },
+                          {
+                            "x": 434,
+                            "y": 388
+                          },
+                          {
+                            "x": 92,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.8833103,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 92,
+                                "y": 257
+                              },
+                              {
+                                "x": 214,
+                                "y": 257
+                              },
+                              {
+                                "x": 214,
+                                "y": 388
+                              },
+                              {
+                                "x": 92,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.75812954,
+                          "text": "탕"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 215,
+                                "y": 257
+                              },
+                              {
+                                "x": 325,
+                                "y": 257
+                              },
+                              {
+                                "x": 325,
+                                "y": 388
+                              },
+                              {
+                                "x": 215,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.96440095,
+                          "text": "수"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 324,
+                                "y": 257
+                              },
+                              {
+                                "x": 434,
+                                "y": 257
+                              },
+                              {
+                                "x": 434,
+                                "y": 388
+                              },
+                              {
+                                "x": 324,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9274005,
+                          "text": "육"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 442,
+                            "y": 257
+                          },
+                          {
+                            "x": 473,
+                            "y": 257
+                          },
+                          {
+                            "x": 473,
+                            "y": 388
+                          },
+                          {
+                            "x": 442,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.97161424,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 442,
+                                "y": 257
+                              },
+                              {
+                                "x": 473,
+                                "y": 257
+                              },
+                              {
+                                "x": 473,
+                                "y": 388
+                              },
+                              {
+                                "x": 442,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.97161424,
+                          "text": ","
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 479,
+                            "y": 257
+                          },
+                          {
+                            "x": 701,
+                            "y": 257
+                          },
+                          {
+                            "x": 701,
+                            "y": 388
+                          },
+                          {
+                            "x": 479,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.9637547,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 479,
+                                "y": 257
+                              },
+                              {
+                                "x": 583,
+                                "y": 257
+                              },
+                              {
+                                "x": 583,
+                                "y": 388
+                              },
+                              {
+                                "x": 479,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9448352,
+                          "text": "순"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 597,
+                                "y": 257
+                              },
+                              {
+                                "x": 701,
+                                "y": 257
+                              },
+                              {
+                                "x": 701,
+                                "y": 388
+                              },
+                              {
+                                "x": 597,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.98267424,
+                          "text": "대"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 710,
+                            "y": 257
+                          },
+                          {
+                            "x": 743,
+                            "y": 257
+                          },
+                          {
+                            "x": 743,
+                            "y": 388
+                          },
+                          {
+                            "x": 710,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.9910903,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 710,
+                                "y": 257
+                              },
+                              {
+                                "x": 743,
+                                "y": 257
+                              },
+                              {
+                                "x": 743,
+                                "y": 388
+                              },
+                              {
+                                "x": 710,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9910903,
+                          "text": ","
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 734,
+                            "y": 257
+                          },
+                          {
+                            "x": 1071,
+                            "y": 257
+                          },
+                          {
+                            "x": 1071,
+                            "y": 388
+                          },
+                          {
+                            "x": 734,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.98774356,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 734,
+                                "y": 257
+                              },
+                              {
+                                "x": 843,
+                                "y": 257
+                              },
+                              {
+                                "x": 843,
+                                "y": 388
+                              },
+                              {
+                                "x": 734,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.98916435,
+                          "text": "떡"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 852,
+                                "y": 257
+                              },
+                              {
+                                "x": 968,
+                                "y": 257
+                              },
+                              {
+                                "x": 968,
+                                "y": 388
+                              },
+                              {
+                                "x": 852,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9869394,
+                          "text": "볶"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 967,
+                                "y": 257
+                              },
+                              {
+                                "x": 1071,
+                                "y": 257
+                              },
+                              {
+                                "x": 1071,
+                                "y": 388
+                              },
+                              {
+                                "x": 967,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.98712695,
+                          "text": "이"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 1087,
+                            "y": 257
+                          },
+                          {
+                            "x": 1122,
+                            "y": 257
+                          },
+                          {
+                            "x": 1122,
+                            "y": 388
+                          },
+                          {
+                            "x": 1087,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.9899483,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 1087,
+                                "y": 257
+                              },
+                              {
+                                "x": 1122,
+                                "y": 257
+                              },
+                              {
+                                "x": 1122,
+                                "y": 388
+                              },
+                              {
+                                "x": 1087,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9899483,
+                          "text": ","
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 1119,
+                            "y": 257
+                          },
+                          {
+                            "x": 1336,
+                            "y": 257
+                          },
+                          {
+                            "x": 1336,
+                            "y": 388
+                          },
+                          {
+                            "x": 1119,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.9836212,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 1119,
+                                "y": 257
+                              },
+                              {
+                                "x": 1220,
+                                "y": 257
+                              },
+                              {
+                                "x": 1220,
+                                "y": 388
+                              },
+                              {
+                                "x": 1119,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.98679006,
+                          "text": "튀"
+                        },
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 1240,
+                                "y": 257
+                              },
+                              {
+                                "x": 1336,
+                                "y": 257
+                              },
+                              {
+                                "x": 1336,
+                                "y": 388
+                              },
+                              {
+                                "x": 1240,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9804523,
+                          "text": "김"
+                        }
+                      ]
+                    },
+                    {
+                      "boundingBox": {
+                        "vertices": [
+                          {
+                            "x": 1353,
+                            "y": 257
+                          },
+                          {
+                            "x": 1391,
+                            "y": 257
+                          },
+                          {
+                            "x": 1391,
+                            "y": 388
+                          },
+                          {
+                            "x": 1353,
+                            "y": 388
+                          }
+                        ]
+                      },
+                      "confidence": 0.9637079,
+                      "property": {
+                        "detectedLanguages": [
+                          {
+                            "confidence": 1,
+                            "languageCode": "ko"
+                          }
+                        ]
+                      },
+                      "symbols": [
+                        {
+                          "boundingBox": {
+                            "vertices": [
+                              {
+                                "x": 1353,
+                                "y": 257
+                              },
+                              {
+                                "x": 1391,
+                                "y": 257
+                              },
+                              {
+                                "x": 1391,
+                                "y": 388
+                              },
+                              {
+                                "x": 1353,
+                                "y": 388
+                              }
+                            ]
+                          },
+                          "confidence": 0.9637079,
+                          "property": {
+                            "detectedBreak": {
+                              "type": "LINE_BREAK"
+                            }
+                          },
+                          "text": ")"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "confidence": 0.95139855,
+          "height": 427,
+          "property": {
+            "detectedLanguages": [
+              {
+                "confidence": 1,
+                "languageCode": "ko"
+              }
+            ]
+          },
+          "width": 1440
+        }
+      ],
+      "text": "탕수육세트\n(탕수육,순대,떡볶이,튀김)"
+    },
+    "imagePropertiesAnnotation": {
+      "cropHints": [
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 288
+              },
+              {
+                "x": 629
+              },
+              {
+                "x": 629,
+                "y": 426
+              },
+              {
+                "x": 288,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.3450505
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 216
+              },
+              {
+                "x": 643
+              },
+              {
+                "x": 643,
+                "y": 426
+              },
+              {
+                "x": 216,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.43131313
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {
+                "x": 144
+              },
+              {
+                "x": 656
+              },
+              {
+                "x": 656,
+                "y": 426
+              },
+              {
+                "x": 144,
+                "y": 426
+              }
+            ]
+          },
+          "confidence": 0.78125,
+          "importanceFraction": 0.5175758
+        }
+      ],
+      "dominantColors": {
+        "colors": [
+          {
+            "color": {
+              "blue": 1,
+              "green": 195,
+              "red": 242
+            },
+            "hex": "F2C301",
+            "percent": 23.373488186239435,
+            "percentRounded": 23,
+            "pixelFraction": 0.041212123,
+            "rgb": "242, 195,\n 1",
+            "score": 0.22774142
+          },
+          {
+            "color": {
+              "blue": 5,
+              "green": 118,
+              "red": 225
+            },
+            "hex": "E17605",
+            "percent": 16.353320073735578,
+            "percentRounded": 16,
+            "pixelFraction": 0.026363635,
+            "rgb": "225, 118,\n 5",
+            "score": 0.15933986
+          },
+          {
+            "color": {
+              "green": 241,
+              "red": 254
+            },
+            "percent": 8.326088707306917,
+            "percentRounded": 8,
+            "pixelFraction": 0.056818184,
+            "score": 0.0811259
+          },
+          {
+            "color": {
+              "blue": 8,
+              "green": 62,
+              "red": 212
+            },
+            "hex": "D43E08",
+            "percent": 5.535242445105613,
+            "percentRounded": 6,
+            "pixelFraction": 0.023787878,
+            "rgb": "212, 62,\n 8",
+            "score": 0.05393307
+          },
+          {
+            "color": {
+              "blue": 4,
+              "green": 152,
+              "red": 232
+            },
+            "hex": "E89804",
+            "percent": 15.341026708582122,
+            "percentRounded": 15,
+            "pixelFraction": 0.015454546,
+            "rgb": "232, 152,\n 4",
+            "score": 0.1494765
+          },
+          {
+            "color": {
+              "blue": 2,
+              "green": 174,
+              "red": 237
+            },
+            "hex": "EDAE02",
+            "percent": 10.412153362999032,
+            "percentRounded": 10,
+            "pixelFraction": 0.007727273,
+            "rgb": "237, 174,\n 2",
+            "score": 0.101451635
+          },
+          {
+            "color": {
+              "blue": 2,
+              "green": 164,
+              "red": 235
+            },
+            "hex": "EBA402",
+            "percent": 7.285815889187318,
+            "percentRounded": 7,
+            "pixelFraction": 0.007575758,
+            "rgb": "235, 164,\n 2",
+            "score": 0.07098992
+          },
+          {
+            "color": {
+              "green": 255,
+              "red": 255
+            },
+            "percent": 6.084324379286095,
+            "percentRounded": 6,
+            "pixelFraction": 0.03469697,
+            "score": 0.059283093
+          },
+          {
+            "color": {
+              "blue": 9,
+              "green": 33,
+              "red": 205
+            },
+            "hex": "CD2109",
+            "percent": 3.97275389976506,
+            "percentRounded": 4,
+            "pixelFraction": 0.02969697,
+            "rgb": "205, 33,\n 9",
+            "score": 0.03870884
+          },
+          {
+            "color": {
+              "blue": 7,
+              "green": 84,
+              "red": 217
+            },
+            "hex": "D95407",
+            "percent": 3.3157863477928338,
+            "percentRounded": 3,
+            "pixelFraction": 0.018636364,
+            "rgb": "217, 84,\n 7",
+            "score": 0.032307625
+          }
+        ]
+      }
+    },
+    "labelAnnotations": [
+      {
+        "description": "Font",
+        "mid": "/m/03gq5hm",
+        "score": 0.82440335,
+        "topicality": 0.82440335
+      },
+      {
+        "description": "Signage",
+        "mid": "/m/0bkqqh",
+        "score": 0.7368895,
+        "topicality": 0.7368895
+      },
+      {
+        "description": "Rectangle",
+        "mid": "/m/0j62f",
+        "score": 0.7085819,
+        "topicality": 0.7085819
+      },
+      {
+        "description": "Magenta",
+        "mid": "/m/0ckc5",
+        "score": 0.7033254,
+        "topicality": 0.7033254
+      },
+      {
+        "description": "Brand",
+        "mid": "/m/01cd9",
+        "score": 0.679162,
+        "topicality": 0.679162
+      },
+      {
+        "description": "Graphics",
+        "mid": "/m/021sdg",
+        "score": 0.6544027,
+        "topicality": 0.6544027
+      },
+      {
+        "description": "Electric blue",
+        "mid": "/m/02vwbzz",
+        "score": 0.6497101,
+        "topicality": 0.6497101
+      },
+      {
+        "description": "Logo",
+        "mid": "/m/0dwx7",
+        "score": 0.6070373,
+        "topicality": 0.6070373
+      },
+      {
+        "description": "Art",
+        "mid": "/m/0jjw",
+        "score": 0.59598935,
+        "topicality": 0.59598935
+      },
+      {
+        "description": "Electronic signage",
+        "mid": "/m/0522cz4",
+        "score": 0.5933016,
+        "topicality": 0.5933016
+      },
+      {
+        "description": "Event",
+        "mid": "/m/081pkj",
+        "score": 0.58685064,
+        "topicality": 0.58685064
+      },
+      {
+        "description": "Banner",
+        "mid": "/m/0m9cj",
+        "score": 0.5696325,
+        "topicality": 0.5696325
+      },
+      {
+        "description": "Graphic design",
+        "mid": "/m/03c31",
+        "score": 0.51881504,
+        "topicality": 0.51881504
+      }
+    ],
+    "safeSearchAnnotation": {
+      "adult": "UNLIKELY",
+      "medical": "UNLIKELY",
+      "racy": "VERY_UNLIKELY",
+      "spoof": "VERY_UNLIKELY",
+      "violence": "UNLIKELY"
+    },
+    "textAnnotations": [
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 24,
+              "y": 40
+            },
+            {
+              "x": 1391,
+              "y": 40
+            },
+            {
+              "x": 1391,
+              "y": 388
+            },
+            {
+              "x": 24,
+              "y": 388
+            }
+          ]
+        },
+        "description": "탕수육세트\n(탕수육,순대,떡볶이,튀김)",
+        "locale": "ko"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 24,
+              "y": 40
+            },
+            {
+              "x": 472,
+              "y": 40
+            },
+            {
+              "x": 472,
+              "y": 199
+            },
+            {
+              "x": 24,
+              "y": 199
+            }
+          ]
+        },
+        "description": "탕수육"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 483,
+              "y": 40
+            },
+            {
+              "x": 766,
+              "y": 40
+            },
+            {
+              "x": 766,
+              "y": 199
+            },
+            {
+              "x": 483,
+              "y": 199
+            }
+          ]
+        },
+        "description": "세트"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 41,
+              "y": 257
+            },
+            {
+              "x": 88,
+              "y": 257
+            },
+            {
+              "x": 88,
+              "y": 388
+            },
+            {
+              "x": 41,
+              "y": 388
+            }
+          ]
+        },
+        "description": "("
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 92,
+              "y": 257
+            },
+            {
+              "x": 434,
+              "y": 257
+            },
+            {
+              "x": 434,
+              "y": 388
+            },
+            {
+              "x": 92,
+              "y": 388
+            }
+          ]
+        },
+        "description": "탕수육"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 442,
+              "y": 257
+            },
+            {
+              "x": 473,
+              "y": 257
+            },
+            {
+              "x": 473,
+              "y": 388
+            },
+            {
+              "x": 442,
+              "y": 388
+            }
+          ]
+        },
+        "description": ","
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 479,
+              "y": 257
+            },
+            {
+              "x": 701,
+              "y": 257
+            },
+            {
+              "x": 701,
+              "y": 388
+            },
+            {
+              "x": 479,
+              "y": 388
+            }
+          ]
+        },
+        "description": "순대"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 710,
+              "y": 257
+            },
+            {
+              "x": 743,
+              "y": 257
+            },
+            {
+              "x": 743,
+              "y": 388
+            },
+            {
+              "x": 710,
+              "y": 388
+            }
+          ]
+        },
+        "description": ","
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 734,
+              "y": 257
+            },
+            {
+              "x": 1071,
+              "y": 257
+            },
+            {
+              "x": 1071,
+              "y": 388
+            },
+            {
+              "x": 734,
+              "y": 388
+            }
+          ]
+        },
+        "description": "떡볶이"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 1087,
+              "y": 257
+            },
+            {
+              "x": 1122,
+              "y": 257
+            },
+            {
+              "x": 1122,
+              "y": 388
+            },
+            {
+              "x": 1087,
+              "y": 388
+            }
+          ]
+        },
+        "description": ","
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 1119,
+              "y": 257
+            },
+            {
+              "x": 1336,
+              "y": 257
+            },
+            {
+              "x": 1336,
+              "y": 388
+            },
+            {
+              "x": 1119,
+              "y": 388
+            }
+          ]
+        },
+        "description": "튀김"
+      },
+      {
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 1353,
+              "y": 257
+            },
+            {
+              "x": 1391,
+              "y": 257
+            },
+            {
+              "x": 1391,
+              "y": 388
+            },
+            {
+              "x": 1353,
+              "y": 388
+            }
+          ]
+        },
+        "description": ")"
+      }
+    ]
+  }

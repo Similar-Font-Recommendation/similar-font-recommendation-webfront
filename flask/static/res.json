@@ -1,0 +1,1025 @@
+text_annotations {
+    locale: "ko"
+    description: "탕수육세트\n(탕수육,순대,떡볶이,튀김)"
+    bounding_poly {
+      vertices {
+        x: 24
+        y: 40
+      }
+      vertices {
+        x: 1391
+        y: 40
+      }
+      vertices {
+        x: 1391
+        y: 388
+      }
+      vertices {
+        x: 24
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: "탕수육"
+    bounding_poly {
+      vertices {
+        x: 24
+        y: 40
+      }
+      vertices {
+        x: 472
+        y: 40
+      }
+      vertices {
+        x: 472
+        y: 199
+      }
+      vertices {
+        x: 24
+        y: 199
+      }
+    }
+  }
+  text_annotations {
+    description: "세트"
+    bounding_poly {
+      vertices {
+        x: 483
+        y: 40
+      }
+      vertices {
+        x: 766
+        y: 40
+      }
+      vertices {
+        x: 766
+        y: 199
+      }
+      vertices {
+        x: 483
+        y: 199
+      }
+    }
+  }
+  text_annotations {
+    description: "("
+    bounding_poly {
+      vertices {
+        x: 41
+        y: 257
+      }
+      vertices {
+        x: 88
+        y: 257
+      }
+      vertices {
+        x: 88
+        y: 388
+      }
+      vertices {
+        x: 41
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: "탕수육"
+    bounding_poly {
+      vertices {
+        x: 92
+        y: 257
+      }
+      vertices {
+        x: 434
+        y: 257
+      }
+      vertices {
+        x: 434
+        y: 388
+      }
+      vertices {
+        x: 92
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: ","
+    bounding_poly {
+      vertices {
+        x: 442
+        y: 257
+      }
+      vertices {
+        x: 473
+        y: 257
+      }
+      vertices {
+        x: 473
+        y: 388
+      }
+      vertices {
+        x: 442
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: "순대"
+    bounding_poly {
+      vertices {
+        x: 479
+        y: 257
+      }
+      vertices {
+        x: 701
+        y: 257
+      }
+      vertices {
+        x: 701
+        y: 388
+      }
+      vertices {
+        x: 479
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: ","
+    bounding_poly {
+      vertices {
+        x: 710
+        y: 257
+      }
+      vertices {
+        x: 743
+        y: 257
+      }
+      vertices {
+        x: 743
+        y: 388
+      }
+      vertices {
+        x: 710
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: "떡볶이"
+    bounding_poly {
+      vertices {
+        x: 734
+        y: 257
+      }
+      vertices {
+        x: 1071
+        y: 257
+      }
+      vertices {
+        x: 1071
+        y: 388
+      }
+      vertices {
+        x: 734
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: ","
+    bounding_poly {
+      vertices {
+        x: 1087
+        y: 257
+      }
+      vertices {
+        x: 1122
+        y: 257
+      }
+      vertices {
+        x: 1122
+        y: 388
+      }
+      vertices {
+        x: 1087
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: "튀김"
+    bounding_poly {
+      vertices {
+        x: 1119
+        y: 257
+      }
+      vertices {
+        x: 1336
+        y: 257
+      }
+      vertices {
+        x: 1336
+        y: 388
+      }
+      vertices {
+        x: 1119
+        y: 388
+      }
+    }
+  }
+  text_annotations {
+    description: ")"
+    bounding_poly {
+      vertices {
+        x: 1353
+        y: 257
+      }
+      vertices {
+        x: 1391
+        y: 257
+      }
+      vertices {
+        x: 1391
+        y: 388
+      }
+      vertices {
+        x: 1353
+        y: 388
+      }
+    }
+  }
+  ###### 
+  full_text_annotation {
+    pages {
+      property {
+        detected_languages {
+          language_code: "ko"
+          confidence: 1
+        }
+      }
+      width: 1440
+      height: 427
+      blocks {
+        bounding_box {
+          vertices {
+            x: 24
+            y: 40
+          }
+          vertices {
+            x: 1391
+            y: 40
+          }
+          vertices {
+            x: 1391
+            y: 388
+          }
+          vertices {
+            x: 24
+            y: 388
+          }
+        }
+        ########
+        paragraphs {
+          bounding_box {
+            vertices {
+              x: 24
+              y: 40
+            }
+            vertices {
+              x: 1391
+              y: 40
+            }
+            vertices {
+              x: 1391
+              y: 388
+            }
+            vertices {
+              x: 24
+              y: 388
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 24
+                y: 40
+              }
+              vertices {
+                x: 472
+                y: 40
+              }
+              vertices {
+                x: 472
+                y: 199
+              }
+              vertices {
+                x: 24
+                y: 199
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 24
+                  y: 40
+                }
+                vertices {
+                  x: 186
+                  y: 40
+                }
+                vertices {
+                  x: 186
+                  y: 199
+                }
+                vertices {
+                  x: 24
+                  y: 199
+                }
+              }
+              text: "탕"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 194
+                  y: 40
+                }
+                vertices {
+                  x: 328
+                  y: 40
+                }
+                vertices {
+                  x: 328
+                  y: 199
+                }
+                vertices {
+                  x: 194
+                  y: 199
+                }
+              }
+              text: "수"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 337
+                  y: 40
+                }
+                vertices {
+                  x: 472
+                  y: 40
+                }
+                vertices {
+                  x: 472
+                  y: 199
+                }
+                vertices {
+                  x: 337
+                  y: 199
+                }
+              }
+              text: "육"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 483
+                y: 40
+              }
+              vertices {
+                x: 766
+                y: 40
+              }
+              vertices {
+                x: 766
+                y: 199
+              }
+              vertices {
+                x: 483
+                y: 199
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 483
+                  y: 40
+                }
+                vertices {
+                  x: 617
+                  y: 40
+                }
+                vertices {
+                  x: 617
+                  y: 199
+                }
+                vertices {
+                  x: 483
+                  y: 199
+                }
+              }
+              text: "세"
+            }
+            symbols {
+              property {
+                detected_break {
+                  type_: EOL_SURE_SPACE
+                }
+              }
+              bounding_box {
+                vertices {
+                  x: 638
+                  y: 40
+                }
+                vertices {
+                  x: 766
+                  y: 40
+                }
+                vertices {
+                  x: 766
+                  y: 199
+                }
+                vertices {
+                  x: 638
+                  y: 199
+                }
+              }
+              text: "트"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 41
+                y: 257
+              }
+              vertices {
+                x: 88
+                y: 257
+              }
+              vertices {
+                x: 88
+                y: 388
+              }
+              vertices {
+                x: 41
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 41
+                  y: 257
+                }
+                vertices {
+                  x: 88
+                  y: 257
+                }
+                vertices {
+                  x: 88
+                  y: 388
+                }
+                vertices {
+                  x: 41
+                  y: 388
+                }
+              }
+              text: "("
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 92
+                y: 257
+              }
+              vertices {
+                x: 434
+                y: 257
+              }
+              vertices {
+                x: 434
+                y: 388
+              }
+              vertices {
+                x: 92
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 92
+                  y: 257
+                }
+                vertices {
+                  x: 214
+                  y: 257
+                }
+                vertices {
+                  x: 214
+                  y: 388
+                }
+                vertices {
+                  x: 92
+                  y: 388
+                }
+              }
+              text: "탕"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 215
+                  y: 257
+                }
+                vertices {
+                  x: 325
+                  y: 257
+                }
+                vertices {
+                  x: 325
+                  y: 388
+                }
+                vertices {
+                  x: 215
+                  y: 388
+                }
+              }
+              text: "수"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 324
+                  y: 257
+                }
+                vertices {
+                  x: 434
+                  y: 257
+                }
+                vertices {
+                  x: 434
+                  y: 388
+                }
+                vertices {
+                  x: 324
+                  y: 388
+                }
+              }
+              text: "육"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 442
+                y: 257
+              }
+              vertices {
+                x: 473
+                y: 257
+              }
+              vertices {
+                x: 473
+                y: 388
+              }
+              vertices {
+                x: 442
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 442
+                  y: 257
+                }
+                vertices {
+                  x: 473
+                  y: 257
+                }
+                vertices {
+                  x: 473
+                  y: 388
+                }
+                vertices {
+                  x: 442
+                  y: 388
+                }
+              }
+              text: ","
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 479
+                y: 257
+              }
+              vertices {
+                x: 701
+                y: 257
+              }
+              vertices {
+                x: 701
+                y: 388
+              }
+              vertices {
+                x: 479
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 479
+                  y: 257
+                }
+                vertices {
+                  x: 583
+                  y: 257
+                }
+                vertices {
+                  x: 583
+                  y: 388
+                }
+                vertices {
+                  x: 479
+                  y: 388
+                }
+              }
+              text: "순"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 597
+                  y: 257
+                }
+                vertices {
+                  x: 701
+                  y: 257
+                }
+                vertices {
+                  x: 701
+                  y: 388
+                }
+                vertices {
+                  x: 597
+                  y: 388
+                }
+              }
+              text: "대"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 710
+                y: 257
+              }
+              vertices {
+                x: 743
+                y: 257
+              }
+              vertices {
+                x: 743
+                y: 388
+              }
+              vertices {
+                x: 710
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 710
+                  y: 257
+                }
+                vertices {
+                  x: 743
+                  y: 257
+                }
+                vertices {
+                  x: 743
+                  y: 388
+                }
+                vertices {
+                  x: 710
+                  y: 388
+                }
+              }
+              text: ","
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 734
+                y: 257
+              }
+              vertices {
+                x: 1071
+                y: 257
+              }
+              vertices {
+                x: 1071
+                y: 388
+              }
+              vertices {
+                x: 734
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 734
+                  y: 257
+                }
+                vertices {
+                  x: 843
+                  y: 257
+                }
+                vertices {
+                  x: 843
+                  y: 388
+                }
+                vertices {
+                  x: 734
+                  y: 388
+                }
+              }
+              text: "떡"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 852
+                  y: 257
+                }
+                vertices {
+                  x: 968
+                  y: 257
+                }
+                vertices {
+                  x: 968
+                  y: 388
+                }
+                vertices {
+                  x: 852
+                  y: 388
+                }
+              }
+              text: "볶"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 967
+                  y: 257
+                }
+                vertices {
+                  x: 1071
+                  y: 257
+                }
+                vertices {
+                  x: 1071
+                  y: 388
+                }
+                vertices {
+                  x: 967
+                  y: 388
+                }
+              }
+              text: "이"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 1087
+                y: 257
+              }
+              vertices {
+                x: 1122
+                y: 257
+              }
+              vertices {
+                x: 1122
+                y: 388
+              }
+              vertices {
+                x: 1087
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 1087
+                  y: 257
+                }
+                vertices {
+                  x: 1122
+                  y: 257
+                }
+                vertices {
+                  x: 1122
+                  y: 388
+                }
+                vertices {
+                  x: 1087
+                  y: 388
+                }
+              }
+              text: ","
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 1119
+                y: 257
+              }
+              vertices {
+                x: 1336
+                y: 257
+              }
+              vertices {
+                x: 1336
+                y: 388
+              }
+              vertices {
+                x: 1119
+                y: 388
+              }
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 1119
+                  y: 257
+                }
+                vertices {
+                  x: 1220
+                  y: 257
+                }
+                vertices {
+                  x: 1220
+                  y: 388
+                }
+                vertices {
+                  x: 1119
+                  y: 388
+                }
+              }
+              text: "튀"
+            }
+            symbols {
+              bounding_box {
+                vertices {
+                  x: 1240
+                  y: 257
+                }
+                vertices {
+                  x: 1336
+                  y: 257
+                }
+                vertices {
+                  x: 1336
+                  y: 388
+                }
+                vertices {
+                  x: 1240
+                  y: 388
+                }
+              }
+              text: "김"
+            }
+          }
+          words {
+            property {
+              detected_languages {
+                language_code: "ko"
+                confidence: 1
+              }
+            }
+            bounding_box {
+              vertices {
+                x: 1353
+                y: 257
+              }
+              vertices {
+                x: 1391
+                y: 257
+              }
+              vertices {
+                x: 1391
+                y: 388
+              }
+              vertices {
+                x: 1353
+                y: 388
+              }
+            }
+            symbols {
+              property {
+                detected_break {
+                  type_: LINE_BREAK
+                }
+              }
+              bounding_box {
+                vertices {
+                  x: 1353
+                  y: 257
+                }
+                vertices {
+                  x: 1391
+                  y: 257
+                }
+                vertices {
+                  x: 1391
+                  y: 388
+                }
+                vertices {
+                  x: 1353
+                  y: 388
+                }
+              }
+              text: ")"
+            }
+          }
+        }
+        block_type: TEXT
+      }
+    }
+    text: "탕수육세트\n(탕수육,순대,떡볶이,튀김)"
+  }
