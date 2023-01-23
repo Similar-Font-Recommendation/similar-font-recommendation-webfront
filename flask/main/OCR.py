@@ -24,53 +24,48 @@ class FeatureType(Enum):
     WORD = 4
     SYMBOL = 5
 
-# [START vision_text_detection]
 def detect_text(path):
     """Detects text in the file."""
     client = vision.ImageAnnotatorClient()
-
-    # [START vision_python_migration_text_detection]
     with io.open(path, 'rb') as image_file:
         content = image_file.read()
     image = vision.Image(content=content)
     response = client.text_detection(image=image)
     texts = response.text_annotations
-    # with open(path[0:-5]+'.txt',"w") as f:
-    #     f.write(texts[0].description)
 
     # 정규식
     idx = 0
-    json_string = '{"texts":['
+    res_json = dict() # texts
+    l = [] # word 와 vertices 모임 , list
     for text in texts:
         if idx == 0:
             idx = idx +1
             continue
         idx = idx + 1
-        temp = re.sub(r'[^\w\s]', '', text.description)
-        # print('\n"{}"'.format(text.description))
-        if temp =='':
+        res_text_desc = re.sub(r'[^\w\s]', '', text.description)
+        if res_text_desc =='':
             continue
-        text_string = '{{"word": "{}",'.format(temp)
-        bound_string = '"vertices": ['
-        vertices = (['{{"x": {}, "y": {}}}'.format(vertex.x, vertex.y)
-                    for vertex in text.bounding_poly.vertices])
-        bound_string = bound_string + '{}'.format(','.join(vertices)) +']'
-        text_string = text_string + bound_string +'},'
-        json_string = json_string + text_string
-    json_string =  json_string+']}'
+        # JSON 형태로 만들기
+        vertices = [] # verticles : vertex 모임 , list
+        vertex = dict() # vertex : x, y , dict
+        for j in text.bounding_poly.vertices:
+            vertex['x'] = j.x
+            vertex['y'] = j.y
+            vertices.append(vertex)
+        w = dict()
+        w['word'] = res_text_desc
+        w['vertices'] = vertices
+        l.append(w)
+
+    res_json['texts'] = l
     if response.error.message:
         raise Exception(
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
-    print(json_string)
-    print("형태 만들기 위로 확인")
-    # print(dump(json_string))
-    # data = json.dumps(json_string)
-    # return jsonify(data)
-    return(json.dumps(json_string))
-    # [END vision_python_migration_text_detection]
-# [END vision_text_detection]
+    print(res_json)
+    return(jsonify(res_json))
+
 
 
 @OCR.route('/home')

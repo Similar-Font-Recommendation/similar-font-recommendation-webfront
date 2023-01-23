@@ -1,4 +1,4 @@
-from flask import request, Flask, json, current_app as app
+from flask import request, Flask,jsonify, json, current_app as app
 from flask_restx import Resource, Api,Namespace
 import io
 import cv2
@@ -7,7 +7,7 @@ import os
 import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 import matplotlib.pyplot as plt
-from skimage.util import invert
+# from skimage.util import invert
 
 Test = Namespace('Test')
 
@@ -75,6 +75,34 @@ class TestUsers(Resource):
             data = json.load(test_file)
         return (data)
     
+@Test.route('/json')
+class Testjson(Resource):
+    def get(self):
+        v = []
+        temp = {"x":24, "y":40}
+        v.append(temp)
+        temp = {"x" : 4 , "y": 33}
+        v.append(temp)
+        # verticle 따로 모으기
+
+
+        l = []
+
+        t1={"id":1, "name":"test"}
+        t1["verticles"]= v
+        l.append(t1)
+        t2 ={"id":2, "name":"eunji"}
+        t2["verticles"] =v
+        l.append(t2)
+        # ... 이렇게 쭉 dict를 모으고
+
+        b = dict()
+        b['texts'] = l
+        #마지막에 최종 dict 추가
+
+        res = json.dumps(b)
+        return jsonify(b)
+
 
 @Test.route('/image')
 class TestImg(Resource):
