@@ -69,9 +69,9 @@ class TestHome(Resource):
 @Test.route('/users')
 class TestUsers(Resource):
     def get(self):
-        filename = os.path.join(app.static_folder, 'send.json')
+        filename = os.path.join(app.static_folder, 'test.json')
 
-        with open(filename) as test_file:
+        with open(filename,'r',encoding='UTF8') as test_file:
             data = json.load(test_file)
         return (data)
     

@@ -47,11 +47,13 @@ def detect_text(path):
             continue
         # JSON 형태로 만들기
         vertices = [] # verticles : vertex 모임 , list
-        vertex = dict() # vertex : x, y , dict
+        
         for j in text.bounding_poly.vertices:
+            vertex = dict() # vertex : x, y , dict
             vertex['x'] = j.x
             vertex['y'] = j.y
             vertices.append(vertex)
+            
         w = dict()
         w['word'] = res_text_desc
         w['vertices'] = vertices
