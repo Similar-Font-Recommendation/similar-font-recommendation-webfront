@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@createjs/easeljs": "^2.0.0-beta.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
@@ -13,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.3",
+    "easeljs-react": "^0.2.0",
     "http-proxy-middleware": "^2.0.6",
     "opencv-react": "^0.0.5",
     "react": "^18.2.0",

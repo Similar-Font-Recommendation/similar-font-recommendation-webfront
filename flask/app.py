@@ -15,7 +15,7 @@ app.config['IMG_FOLDER'] = os.path.join('static','images')
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 #API
-api = Api(app, version='1.0', title='Flask API', description='Flask API', doc=False)
+api = Api(app, version='1.0', title='Flask API', description='Flask API', doc="/api-docs")
 api.add_namespace(OCR,'/api/OCR')
 api.add_namespace(Test,'/api/Test')
 
