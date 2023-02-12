@@ -30,42 +30,64 @@ def detect_text(path):
     with io.open(path, 'rb') as image_file:
         content = image_file.read()
     image = vision.Image(content=content)
-    response = client.text_detection(image=image)
-    texts = response.text_annotations
+    response = client.document_text_detection(image=image)
+    document = response.full_text_annotation
+    arr_word =[]
+    arr_symbol =[]
+    
+    # for word in document.pages.blocks.paragraphs.words:
+    #     for symbol in word.symbols:
+    #         arr_symbol.append(symbol.bounding_box)
+    #     arr_word.append(word.bounding_box)
 
-    # 정규식
-    idx = 0
-    res_json = dict() # texts
-    l = [] # word 와 vertices 모임 , list
-    for text in texts:
-        if idx == 0:
-            idx = idx +1
-            continue
-        idx = idx + 1
-        res_text_desc = re.sub(r'[^\w\s]', '', text.description)
-        if res_text_desc =='':
-            continue
-        # JSON 형태로 만들기
-        vertices = [] # verticles : vertex 모임 , list
-        
-        for j in text.bounding_poly.vertices:
-            vertex = dict() # vertex : x, y , dict
-            vertex['x'] = j.x
-            vertex['y'] = j.y
-            vertices.append(vertex)
-            
-        w = dict()
-        w['word'] = res_text_desc
-        w['vertices'] = vertices
-        l.append(w)
+    bp = 1 # bp가 0이면 특수기호이므로 패스하기
+    res_json = dict() # l의 json화
+    l = [] # word와 symbol의 모임, list
+    for page in document.pages:
+        for block in page.blocks:
+            for paragraph in block.paragraphs:
+                for word in paragraph.words:
+                    # symjson = dict() # 심볼 모음을 json화
+                    symlist =[] # 심볼 모음
+                    for symbol in word.symbols:
+                            res_text = re.sub(r'[^\w\s]','',symbol.text)
+                            vertices =[] #(한글자!)vertex 모임, list
+                            if res_text =='': # 특수기호라면
+                                bp = 0
+                                continue
+                            else:
+                                for j in symbol.bounding_box.vertices:
+                                    vertex = dict() # vertex : x, y ,dict
+                                    vertex['x'] = j.x
+                                    vertex['y'] = j.y
+                                    vertices.append(vertex)
+                                s = dict() # 심볼 하나 {}로 묶어서 symlist에 추가해주기
+                                s['text'] = res_text
+                                s['vertices'] = vertices
+                                symlist.append(s) # [{}]
 
+                    if bp == 0: # 특수기호라면
+                        bp =1
+                    else:
+                        # symjson['symbol'] = symlist
+                        wertices =[]
+                        for j in word.bounding_box.vertices:
+                            wertex = dict()
+                            wertex['x'] = j.x
+                            wertex['y'] = j.y
+                            wertices.append(wertex)
+                        w = dict() # 단어vertices[{x,y},{x,y}, ...], 심볼[{한글자, vertices[{x,y}{x,y}{x,y}{x,y}]}, ...]
+                        w['wertex'] = wertices
+                        w['symbol'] = symlist
+                        l.append(w)
     res_json['texts'] = l
+    print(res_json)
+    
     if response.error.message:
         raise Exception(
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
-    print(res_json)
     return(jsonify(res_json))
 
 
