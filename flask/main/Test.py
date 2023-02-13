@@ -57,16 +57,16 @@ def ImgPreprocessing(pic_data):
     
     return(image_binarized)
 
-def Imagecrop(img):
+def Imagecrop(img,x_1,y_1,w_1,h_1):
     input_stream = io.BytesIO()
     img.save(input_stream)
     data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
     real_img = cv2.imdecode(data,0) # 컬러 사진
     # 이미지 크롭해서 반환하기
-    x = 1109
-    y = 247
-    w = 237
-    h = 151
+    x = int(x_1)
+    y = int(y_1)
+    w = int(w_1)
+    h = int(h_1)
     
     crop_img = real_img[y:y+h,x:x+w]
 
@@ -96,12 +96,21 @@ class TestHome(Resource):
 @Test.route('/users')
 class TestUsers(Resource):
     def get(self):
-        filename = os.path.join(app.static_folder, 'res_json.json')
+        filename = os.path.join(app.static_folder, 'test.json')
 
         with open(filename,'r',encoding='UTF8') as test_file:
             data = json.load(test_file)
         return (data)
-    
+
+
+@Test.route('/fontresult')
+class SendResult(Resource):
+    def get(self):
+        filename = os.path.join(app.static_folder, 'font_res.json')
+
+        with open(filename,'r',encoding='UTF8') as test_file:
+            data = json.load(test_file)
+        return (data)
 
 @Test.route('/image')
 class TestImg(Resource):
@@ -170,7 +179,7 @@ class TestCrop(Resource):
         w = request.form['w']
         h = request.form['h']
         # print("x is", x,"y is",y,"w is",w,"h is",h)
-        preCrop = Imagecrop(tes)
+        preCrop = Imagecrop(tes,x,y,w,h)
         plt.imshow(preCrop, cmap='gray')
         plt.show()
         print(x)

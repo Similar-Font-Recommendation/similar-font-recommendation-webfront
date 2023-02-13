@@ -1,19 +1,34 @@
-// import './App.css';
+import './App.css';
 import axios, { all } from 'axios';
 import React, {useEffect,useState} from 'react';
 import {Card, Button} from 'react-bootstrap';
 import Dropzone from 'react-dropzone';
-import Img from './img.jpeg';
+import WebFont from 'webfontloader';
 import { Stage, Shape,drawImage, Bitmap, uid } from "@createjs/easeljs";
+
 //rfce
 function App() {
 
   const [ocrdata,setOcrdata]=useState();
   const [fileImage,setFileImage] = useState();
-  const [selectocr,setSelectocr] = useState({});
+  const [selectocr,setSelectocr] = useState([]);
+  const [fontResult,setFontResult] = useState();
+  const [useList, setUseList] = useState([]);
+
+  let DisplayData;
+
   let takethem =[];
   let allJson =[];
   
+  useEffect(()=>{
+    WebFont.load({
+      google:{
+        families:['Droid Sans', 'Chilanka']
+      }
+    })
+  })
+
+
   function findRect(event){
     let x = event.stageX;
     let y = event.stageY;
@@ -32,7 +47,8 @@ function App() {
     setSelectocr(allJson[res]);
     const json2 = JSON.stringify(selectocr);
     console.log(json2);
-    console.log(allJson);
+    console.log(allJson[res].vertices);
+    console.log(selectocr);
     return (res+1);
     
   }
@@ -51,9 +67,10 @@ function App() {
     stage.addChild(background);
     let object = {};
     for (var i = 0; i <ocr_texts.length; i++){
-      const ocr_bounds =await ocr_texts[i].wertex;
-      const ocr_one_word = await ocr_texts[i];
-      allJson.push(ocr_one_word);
+      const ocr_bounds =await ocr_texts[i].vertices;
+      const ocr_word = await ocr_texts[i];
+      allJson.push(ocr_word);
+
       var x = ocr_bounds[0].x-10;
       var y = ocr_bounds[0].y-10;
       var w = ocr_bounds[1].x - x + 10;
@@ -67,12 +84,7 @@ function App() {
       stage.addChild(border);
 
       let tmparr=[x,y,w,h];
-      // alert(tmparr);
-      // setAllrect(...allrect,{'x': x, 'y': y, 'w': w, 'h': h});
-      // alert(allrect);
       takethem.push([x,y,w,h]);
-      console.log(takethem);
-
 
       object[`rect${i}`] = new Shape();
       object[`rect${i}`].graphics.beginFill("White").drawRect(x,y,w,h);
@@ -82,20 +94,6 @@ function App() {
       object[`rect${i}`].snapToPixel= true;
       object[`rect${i}`].addEventListener("click", function(event) {alert(findRect(event)) });
       stage.addChild(object[`rect${i}`]);
-      // eval(alert(typeof("rect"+i)))
-      // eval("rect"+i+".graphics.beginFill('White').drawRect(x,y,w,h);");
-      // eval("rect"+i+".alpha = .01;");
-      // eval("rect"+i+".graphics.beginStroke('#000');rect"+i+".graphics.setStrokeStyle(2);rect"+i+".snapToPixel= true;rect"+i+".uid = i;rect"+i+".addEventListener('click', function(event) { alert(rect"+i+".uid) });stage.addChild(rect"+i+");");
-      
-      // 
-      // rect.graphics.beginFill("White").drawRect(x,y,w,h);
-      // rect.alpha = .01;
-      // rect.graphics.beginStroke("#000");
-      // rect.graphics.setStrokeStyle(2);
-      // rect.snapToPixel= true;
-      // rect.uid = i;
-      // rect.addEventListener("click", function(event) { alert(rect.uid) });
-      // stage.addChild(rect);
     }
     stage.update();
 
@@ -142,10 +140,11 @@ function App() {
   }
 
   async function CropGo(){
-    var x = selectocr.x
-    var y = selectocr.y
-    var w = selectocr.w
-    var h = selectocr.h
+
+    var x = selectocr.vertices[0].x-10;
+    var y = selectocr.vertices[0].y-10;
+    var w = selectocr.vertices[1].x - x + 10;
+    var h = selectocr.vertices[2].y - y + 10;
 
     if(fileImage){
       const imgData = new FormData();
@@ -168,6 +167,23 @@ function App() {
     
   }
 
+
+
+  //폰트 검색 결과 출력
+  const ClickResult= ()=>{
+    fetch("/api/Test/fontresult")
+      .then((response)=>response.json())
+      .then((actualData)=>{
+        setUseList(actualData.result);
+        console.log(useList);
+      })
+      .catch((err) =>{
+        console.log(err.message);
+      });
+  };
+
+
+
   //Post 예시
   async function onClick(){
     try{
@@ -183,33 +199,6 @@ function App() {
   }
   return (
   <div className="App">
-    
-
-    {/* <Card style={{marginBottom:'1em'}}>
-        <Card.Header  as="h4" style={{padding:'0.6em'}}>이미지 가져오기</Card.Header>
-        <Card.Body>
-            <Card.Text>
-              <div className="DZ">
-                <Dropzone className="DZ"   multiple={false} onDrop={onDrop}>
-            {({getRootProps, getInputProps}) => (
-            <section>
-                <div {...getRootProps()}>
-                <input className="dropzone" {...getInputProps({type:'file', accept:'image/*'})} />
-                
-                <p style={{fontSize:'15pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
-                
-                
-                        </div>
-                    </section>
-                )}
-                </Dropzone>
-              </div>
-            
-            </Card.Text>
-               {/* <Card.Img src={Input} />  
-          </Card.Body>
-
-        </Card>  */}
     <div>
     <div className="DZ">
                 <Dropzone className="DZ"   multiple={false} onDrop={onDrop}>
@@ -229,6 +218,7 @@ function App() {
     <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
     {/* <Button onClick={onClick}>POST 테스트</Button> */}
     <Button onClick={CropGo}> 크롭 보내주기</Button>
+    <Button onClick={ClickResult}>결과 리스트화</Button>
     </div>
      
     <div>
@@ -238,7 +228,33 @@ function App() {
     </div>
 
 
-
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>폰트</th>
+          <th>글자</th>
+        </tr>
+      </thead>
+      <tbody>
+      {useList.map((res, index) =>{
+      const Test = "Gugi";
+      return(
+        <tr key={index}>
+          <td> {index +1}</td>
+          <td>
+            {res}
+          </td>
+          <td style={{color : 'blue', fontFamily : Test}}>
+            탕수육
+          </td>
+        </tr>
+      );  
+      })}
+      </tbody>
+    </table>
+  </div>
   </div>
 );
 }
