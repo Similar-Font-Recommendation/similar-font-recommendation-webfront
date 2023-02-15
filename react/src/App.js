@@ -1,117 +1,118 @@
 import './App.css';
 import './Fonts.css';
+// import './test.css'
 import axios, { all } from 'axios';
-import React, {useEffect,useState} from 'react';
+import React, {createRef, useEffect,useState} from 'react';
 import { Container, Divider,Button, Grid, Image, Header, Menu, Message, Segment, Table, Card } from 'semantic-ui-react'
 import Dropzone from 'react-dropzone';
-import WebFont from 'webfontloader';
-import { Stage, Shape,drawImage, Bitmap, uid } from "@createjs/easeljs";
 import imageCompression from 'browser-image-compression';
 //rfce
 function App() {
 
   const [ocrdata,setOcrdata]=useState();
-  const [fileImage,setFileImage] = useState();
   const [selectocr,setSelectocr] = useState([]);
   const [word,setWord] =useState('가나다라마바사');
-  const [fontResult,setFontResult] = useState();
   const [useList, setUseList] = useState([]);
   const [imgPath,setImgPath] = useState('');
   const [imgSrc,setImgSrc] = useState('');
-  
 
   //resize
   const [file,setFile] = useState();
   const [fileUrl, setFileUrl] = useState()
 
-  let DisplayData;
 
   let takethem =[];
   let allJson =[];
-  
-  function findRect(event){
-    let x = event.stageX;
-    let y = event.stageY;
-    var res = 0;
+  let isSelected = false;
 
+  function findRect(x,y,ctx2,canvas2){
+    //canvas 버전으로 바꾸기
+    var res = 0;
     for(var i = 0; i< takethem.length;i++){
       let r_x = takethem[i][0];
       let r_y = takethem[i][1];
       let r_w = takethem[i][2];
       let r_h = takethem[i][3];
-      if(x <= r_x+r_w && x>=r_x &&y <= r_y+r_h && y>=r_y){
+      if(x <= r_x+r_w && x>=r_x &&y <= r_y+r_h && y>=r_y &&isSelected==false){
         res = i;
+        isSelected = true;
+        
+        
+        ctx2.lineWidth = 4;
+        ctx2.setStrokeStyle ='green';
+        ctx2.globalAlpha = 0.4;
+        ctx2.fillRect(r_x,r_y,r_w,r_h);
+        ctx2.globalAlpha = 1.0;
         break;
+      }else if(isSelected){
+        ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+        isSelected = false;
       }
     }
     setSelectocr(allJson[res]);
-    const json2 = JSON.stringify(selectocr);
+    console.log("allJson[res] is " + selectocr + "res is "+ res);
     return (res+1);
     
   }
 
-
   async function CtxTest(data){
     var canvas = document.getElementById("imageCanvas");
+    const ocr_texts = await data.texts;
+    const ocr_width = await data.width;
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,canvas.width,canvas.height);
     var img = document.getElementById("preview");
     canvas.width = img.width;
     canvas.height = img.height;
+
+    var canvas2 = document.getElementById("layer2");
+    var ctx2 = canvas2.getContext("2d");
+    canvas2.width = canvas.width;
+    canvas2.height = canvas.height;
+
+    console.log("canvas size is : "+canvas.width + canvas.height);
     ctx.drawImage(img,0,0,img.width,img.height);
     ctx.stroke();
+    var ratio = canvas.width / ocr_width;
+    console.log("ratio is "+ ratio);
 
+    for (var i = 0; i <ocr_texts.length; i++){
+      const ocr_bounds =await ocr_texts[i].vertices;
+      const ocr_word = await ocr_texts[i];
+      allJson.push(ocr_word);
+
+      var x = ocr_bounds[0].x-3;
+      var y = ocr_bounds[0].y-3;
+      var w = ocr_bounds[1].x - x + 3;
+      var h = ocr_bounds[2].y - y + 3;
+
+      x = x * ratio;
+      y = y * ratio;
+      w = w * ratio;
+      h = h * ratio;
+
+      ctx.setStrokeStyle ='black';
+      ctx.strokeRect(x,y,w,h);
+      let tmparr=[x,y,w,h];
+      takethem.push([x,y,w,h]);
+    }
+      
+
+    canvas2.addEventListener("click", function(event) {
+      console.log("클릭은 됨")
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left;
+      var y = event.clientY - rect.top;
+      
+      findRect(x,y,ctx2,canvas2);
+      console.log("(" + x + ", " + y + ") is clicked.");
+      });    
   }
 
-  async function EventTest(data){
-    var canvas = document.getElementById("imageCanvas");
-    var img = document.getElementById("preview");
-    // canvas.width  = img.width;
-    // canvas.height = img.height;
 
-    canvas.width  = 500;
-    canvas.height = 400;
-    const ocr_texts = await data.texts;
-    var stage = new Stage("imageCanvas")
-    var background = new Shape();
-    background.graphics.beginBitmapFill(img);
-    stage.addChild(background);
-    // let object = {};
-    // for (var i = 0; i <ocr_texts.length; i++){
-    //   const ocr_bounds =await ocr_texts[i].vertices;
-    //   const ocr_word = await ocr_texts[i];
-    //   allJson.push(ocr_word);
-
-    //   var x = ocr_bounds[0].x-10;
-    //   var y = ocr_bounds[0].y-10;
-    //   var w = ocr_bounds[1].x - x + 10;
-    //   var h = ocr_bounds[2].y - y + 10;
-
-    //   var border = new Shape();
-    //   border.graphics.beginStroke("#000");
-    //   border.graphics.setStrokeStyle(7);
-    //   border.snapToPixel = true;
-    //   border.graphics.drawRect(x, y, w, h);
-    //   stage.addChild(border);
-
-    //   let tmparr=[x,y,w,h];
-    //   takethem.push([x,y,w,h]);
-
-    //   object[`rect${i}`] = new Shape();
-    //   object[`rect${i}`].graphics.beginFill("White").drawRect(x,y,w,h);
-    //   object[`rect${i}`].alpha = .01;
-    //   object[`rect${i}`].graphics.beginStroke("#000");
-    //   object[`rect${i}`].graphics.setStrokeStyle(2);
-    //   object[`rect${i}`].snapToPixel= true;
-    //   object[`rect${i}`].addEventListener("click", function(event) {findRect(event) });
-    //   stage.addChild(object[`rect${i}`]);
-    // }
-    stage.update();
-
-  }
 
   async function fetchData(){
-    const response = await fetch("/api/Test/users",{
+    const response = await fetch("/api/OCR/test",{
       headers:{
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -127,10 +128,9 @@ function App() {
   async function handleFile(file){
     const options ={
       maxSizeMB : 5,
-      maxWidthOrHeight : 130
+      maxWidthOrHeight : 550
     }
     let ree ;
-    
     
     try{
       const compressedFile = await imageCompression(file, options);
@@ -147,19 +147,12 @@ function App() {
     return (ree);
   }
 
-  
-
 
   async function onDrop(pic){    
     var pictureFiles = pic;
-  
-    
-    
-    
 
     //resize해서 파일 처리하기
     let newFile = await handleFile(pictureFiles[0]);
-    // let newFileURL = await handleUrlOnChange(newFile);
   
     var reader = new FileReader();
     reader.onload = r=>{
@@ -167,16 +160,12 @@ function App() {
       setImgSrc(reader.result);
       output.src = reader.result;
     };
-    // reader.readAsDataURL(pictureFiles[0]);
     reader.readAsDataURL(newFile);
 
     if(pictureFiles.length >0){
       setImgPath(pictureFiles[0].path);
       const imgData = new FormData();
-      // imgData.append("file",pictureFiles[0]);
       imgData.append("file",newFile);
-      // console.log(pictureFiles[0]);
-      // console.log(typeof(pictureFiles[0]));
       await axios
         .post("./api/Test/image",imgData)
         .then(console.log("onDrop 성공"))
@@ -190,36 +179,32 @@ function App() {
   }
 
   async function CropGo(){
+    console.log("Cp1");
+    var word = selectocr.word;
+    var x = selectocr.vertices[0].x-2;
+    var y = selectocr.vertices[0].y-2;
+    var w = selectocr.vertices[1].x - x + 2;
+    var h = selectocr.vertices[2].y - y + 2;
 
-    
-    var x = selectocr.vertices[0].x-10;
-    var y = selectocr.vertices[0].y-10;
-    var w = selectocr.vertices[1].x - x + 10;
-    var h = selectocr.vertices[2].y - y + 10;
-
-    setWord(selectocr.word);
-    if(fileImage){
-      setImgPath(fileImage[0].path);
-      const imgData = new FormData();
-      imgData.append("file",fileImage[0]);
-      // imgData.append("jj",JSON.stringify(ocrdata));
-      imgData.append("x",x);
-      imgData.append("y",y);
-      imgData.append("w",w);
-      imgData.append("h",h);
-      //여기서 글자값 보내주기
-      await axios
-        .post("./api/Test/crop",imgData)
-        .then((response)=>response.data)
-        .then((actualData)=>{
-          setUseList(actualData.result);
-          console.log(useList);
-        })
-        .catch((err) =>{
-          console.log(err.message);
-        }); 
-    }
-    
+    setWord(word);
+    const imgData = new FormData();
+    imgData.append("word",word);
+    imgData.append("x",x);
+    imgData.append("y",y);
+    imgData.append("w",w);
+    imgData.append("h",h);
+    console.log("checkpoint2");
+    //여기서 글자값 보내주기
+    await axios
+      .post("./api/Test/crop",imgData)
+      .then((response)=>response.data)
+      .then((actualData)=>{
+        setUseList(actualData.result);
+        console.log(useList);
+      })
+      .catch((err) =>{
+        console.log(err.message);
+      }); 
   }
 
   function OneClassGet(){
@@ -248,9 +233,6 @@ function App() {
       });
   };
 
-
-
-
   //Post 예시
   async function onClick(){
     try{
@@ -267,7 +249,7 @@ function App() {
   return (
   <div className="App">
     <div>
-      <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
+      {/* <Button onClick ={fetchData}>OCR 후 그림그리기 </Button> */}
       {/* <Button onClick={onClick}>POST 테스트</Button> */}
       <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
       <Button onClick={ClickResult}>결과 리스트화</Button>
@@ -277,7 +259,6 @@ function App() {
     
         {/* <canvas className="imageCanvas" id="imageCanvas">이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas> */}
     </div>
-
 
 
 {/* semantic Grid test */}
@@ -301,14 +282,13 @@ function App() {
         <img className="preview" id="preview"/>
         <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
       
+        <div id="myDiv">
+          <canvas className="imageCanvas" id="imageCanvas" >이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
+          <canvas className="imageCanvas" id="layer2"></canvas>
+        </div>
         
+      <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
       </Grid.Column>
-     
-      <Grid.Column>
-      <canvas className="imageCanvas" id="imageCanvas">이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
-    
-      </Grid.Column>
-
       <Grid.Column>
         <p>3</p>
         <Table celled>
@@ -328,7 +308,8 @@ function App() {
             const TdStyle = {
               fontFamily: font,
               margin : 3,
-              color : 'blue'
+              color : 'blue',
+              fontSize : 24
             };
             return(
               <tr key={index}>
@@ -353,5 +334,4 @@ function App() {
   </div>
 );
 }
-
 export default App;

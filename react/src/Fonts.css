@@ -10,7 +10,8 @@
 
 @font-face {
   font-family: '텐바이텐';
-  src: url('./fonts/10X10.ttf') format('truetype');
+  src: url('./fonts/10X10.ttf') format('truetype'),
+  url('./fonts/10X10.woff') format('woff');
 }
 
 @font-face {
@@ -30,17 +31,20 @@
 
 @font-face {
   font-family: '롯데마트드림Bold';
-  src: url('./fonts/12롯데마트드림Bold.ttf') format('truetype');
+  src: url('./fonts/12롯데마트드림Bold.ttf') format('truetype'),
+      url('./fonts/12롯데마트드림Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: '롯데마트드림Light';
-  src: url('./fonts/12롯데마트드림Light.ttf') format('truetype');
+  src: url('./fonts/12롯데마트드림Light.ttf') format('truetype'),
+  url('./fonts/12롯데마트드림Light.woff') format('woff');
 }
 
 @font-face {
   font-family: '롯데마트드림Medium';
-  src: url('./fonts/12롯데마트드림Medium.ttf') format('truetype');
+  src: url('./fonts/12롯데마트드림Medium.ttf') format('truetype'),
+    url('./fonts/12롯데마트드림Medium.woff') format('woff');
 }
 
 @font-face {
@@ -50,7 +54,8 @@
 
 @font-face {
   font-family: '롯데마트행복Light';
-  src: url('./fonts/12롯데마트행복Light.ttf') format('truetype');
+  src: url('./fonts/12롯데마트행복Light.ttf') format('truetype'),
+  url('./fonts/12롯데마트행복Light.woff') format('woff');
 }
 
 @font-face {
@@ -130,17 +135,20 @@
 
 @font-face {
   font-family: '전주완판본 순체 B';
-  src: url('./fonts/20957733_전주완판본 순B_TTF.ttf') format('truetype');
+  src: url('./fonts/20957733_전주완판본 순B_TTF.ttf') format('truetype'),
+      url('./fonts/20957733_전주완판본-순B_TTF.woff') format('woff');
 }
 
 @font-face {
   font-family: '전주완판본 순체 L';
-  src: url('./fonts/20957736_전주완판본 순L_TTF.ttf') format('truetype');
+  src: url('./fonts/20957736_전주완판본 순L_TTF.ttf') format('truetype'),
+      url('./fonts/20957736_전주완판본-순L_TTF.woff') format('woff');
 }
 
 @font-face {
   font-family: '전주완판본 순체 R';
-  src: url('./fonts/20957738_전주완판본 순R_TTF.ttf') format('truetype');
+  src: url('./fonts/20957738_전주완판본 순R_TTF.ttf') format('truetype'),
+  url('./fonts/20957738_전주완판본-순R_TTF.woff') format('woff');
 }
 
 @font-face {
@@ -160,7 +168,9 @@
 
 @font-face {
   font-family: '유토이미지 고딕 R';
-  src: url('./fonts/20958935_UTOIMAGE_유토이미지고딕_R_TTF.ttf') format('truetype');
+  src: url('./fonts/20958935_UTOIMAGE_유토이미지고딕_R_TTF.ttf') format('truetype'),
+  url('./fonts/MiConv.com__20958935_UTOIMAGE_유토이미지고딕_R_TTF.woff') format('woff');;
+      
 }
 
 @font-face {
@@ -185,12 +195,14 @@
 
 @font-face {
   font-family: '유토이미지 고딕 B';
-  src: url('./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.ttf') format('truetype');
+  src: url('./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.ttf') format('truetype'),
+  url('./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.woff') format('woff');
 }
 
 @font-face {
   font-family: '유토이미지 고딕 L';
-  src: url('./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.ttf') format('truetype');
+  src: url('./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.ttf') format('truetype'),
+  url('./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.woff') format('woff');
 }
 
 @font-face {
@@ -345,7 +357,8 @@
 
 @font-face {
   font-family: '부산체';
-  src: url('./fonts/BusanFont_Provisional.ttf') format('truetype');
+  src: url('./fonts/BusanFont_Provisional.ttf') format('truetype'),
+  url('./fonts/AnyConv.com__BusanFont_Provisional.woff') format('woff');
 }
 
 @font-face {
@@ -520,37 +533,44 @@
 
 @font-face {
   font-family: 'DX설레임2 Medium';
-  src: url('./fonts/DXHfl2M-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXHfl2M-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/DXHfl2M-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX설레임 Medium';
-  src: url('./fonts/DXHflM-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXHflM-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXHflM-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX우등생 Bold';
-  src: url('./fonts/DXHSB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXHSB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXHSB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX한울 Bold';
-  src: url('./fonts/DXHWrB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXHWrB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXHWrB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX경필명조 Bold';
-  src: url('./fonts/DXKPMB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXKPMB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXKPMB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX모던고딕 Bold';
-  src: url('./fonts/DXMgoB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXMgoB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXMgoB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX모던고딕 RoundBold';
-  src: url('./fonts/DXMgoRB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXMgoRB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXMgoRB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
@@ -560,12 +580,14 @@
 
 @font-face {
   font-family: 'DX새신문명조 Bold';
-  src: url('./fonts/DXNShnmB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXNShnmB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXNShnmB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DX프로방스 Bold';
-  src: url('./fonts/DXPRVB-KSCpc-EUC-H.ttf') format('truetype');
+  src: url('./fonts/DXPRVB-KSCpc-EUC-H.ttf') format('truetype'),
+  url('./fonts/MiConv.com__DXPRVB-KSCpc-EUC-H.woff') format('woff');
 }
 
 @font-face {
@@ -595,17 +617,20 @@
 
 @font-face {
   font-family: 'EBS주시경B';
-  src: url('./fonts/EBS주시경B.ttf') format('truetype');
+  src: url('./fonts/EBS주시경B.ttf') format('truetype'),
+  url('./fonts/MiConv.com__EBS주시경B.woff') format('woff');
 }
 
 @font-face {
   font-family: 'EBS주시경L';
-  src: url('./fonts/EBS주시경L.ttf') format('truetype');
+  src: url('./fonts/EBS주시경L.ttf') format('truetype'),
+  url('./fonts/MiConv.com__EBS주시경L.woff') format('woff');
 }
 
 @font-face {
   font-family: 'EBS주시경M';
-  src: url('./fonts/EBS주시경M.ttf') format('truetype');
+  src: url('./fonts/EBS주시경M.ttf') format('truetype'),
+  url('./fonts/MiConv.com__EBS주시경M.woff') format('woff');
 }
 
 @font-face {
@@ -680,37 +705,44 @@
 
 @font-face {
   font-family: 'HY그래픽M';
-  src: url('./fonts/H2GPRM.TTF') format('truetype');
+  src: url('./fonts/H2GPRM.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2GPRM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY견고딕';
-  src: url('./fonts/H2GTRE.TTF') format('truetype');
+  src: url('./fonts/H2GTRE.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2GTRE.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY중고딕';
-  src: url('./fonts/H2GTRM.TTF') format('truetype');
+  src: url('./fonts/H2GTRM.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2GTRM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY헤드라인M';
-  src: url('./fonts/H2HDRM.TTF') format('truetype');
+  src: url('./fonts/H2HDRM.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2HDRM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY견명조';
-  src: url('./fonts/H2MJRE.TTF') format('truetype');
+  src: url('./fonts/H2MJRE.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2MJRE.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY신명조';
-  src: url('./fonts/H2MJSM.TTF') format('truetype');
+  src: url('./fonts/H2MJSM.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2MJSM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY얕은샘물M';
-  src: url('./fonts/H2SA1M.TTF') format('truetype');
+  src: url('./fonts/H2SA1M.TTF') format('truetype'),
+  url('./fonts/MiConv.com__H2SA1M.woff') format('woff');
 }
 
 @font-face {
@@ -760,7 +792,8 @@
 
 @font-face {
   font-family: '한겨레결체';
-  src: url('./fonts/Hangyeoregyeolche.TTF') format('truetype');
+  src: url('./fonts/Hangyeoregyeolche.TTF') format('truetype'),
+  url('./fonts/MiConv.com__Hangyeoregyeolche.woff') format('woff');
 }
 
 @font-face {
@@ -810,7 +843,8 @@
 
 @font-face {
   font-family: 'Headline';
-  src: url('./fonts/headline.ttf') format('truetype');
+  src: url('./fonts/headline.ttf') format('truetype'),
+  url('./fonts/MiConv.com__headline.woff') format('woff');
 }
 
 @font-face {
@@ -825,57 +859,68 @@
 
 @font-face {
   font-family: '휴먼굵은팸체';
-  src: url('./fonts/HMKBP.TTF') format('truetype');
+  src: url('./fonts/HMKBP.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKBP.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼굵은샘체';
-  src: url('./fonts/HMKBS.TTF') format('truetype');
+  src: url('./fonts/HMKBS.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKBS.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼가는팸체';
-  src: url('./fonts/HMKLP.TTF') format('truetype');
+  src: url('./fonts/HMKLP.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKLP.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼가는샘체';
-  src: url('./fonts/HMKLS.TTF') format('truetype');
+  src: url('./fonts/HMKLS.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKLS.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼아미체';
-  src: url('./fonts/HMKMAMI.TTF') format('truetype');
+  src: url('./fonts/HMKMAMI.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMAMI.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼고딕';
-  src: url('./fonts/HMKMG.TTF') format('truetype');
+  src: url('./fonts/HMKMG.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMG.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼명조';
-  src: url('./fonts/HMKMM.TTF') format('truetype');
+  src: url('./fonts/HMKMM.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMM.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼매직체';
-  src: url('./fonts/HMKMMAG.TTF') format('truetype');
+  src: url('./fonts/HMKMMAG.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMMAG.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼옛체';
-  src: url('./fonts/HMKMOLD.TTF') format('truetype');
+  src: url('./fonts/HMKMOLD.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMOLD.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼둥근헤드라인';
-  src: url('./fonts/HMKMRHD.TTF') format('truetype');
+  src: url('./fonts/HMKMRHD.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMRHD.woff') format('woff');
 }
 
 @font-face {
   font-family: '휴먼중간샘체';
-  src: url('./fonts/HMKMS.TTF') format('truetype');
+  src: url('./fonts/HMKMS.TTF') format('truetype'),
+  url('./fonts/MiConv.com__HMKMS.woff') format('woff');
 }
 
 @font-face {
@@ -890,44 +935,50 @@
 
 @font-face {
   font-family: 'HS두꺼비체';
-  src: url('./fonts/HS두꺼비체.ttf') format('truetype');
+  src: url('./fonts/HS두꺼비체.ttf') format('truetype'),
+  url('./fonts/HS두꺼비체.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HS봄바람체 2.0';
-  src: url('./fonts/HS봄바람체2.0.ttf') format('truetype');
+  src: url('./fonts/HS봄바람체2.0.ttf') format('truetype'),
+  url('./fonts/HS봄바람체2.0.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HS새마을체';
-  src: url('./fonts/HS새마을체.ttf') format('truetype');
+  src: url('./fonts/HS새마을체.ttf') format('truetype'),
+  url('./fonts/HS새마을체.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY 바다 L';
   src: url('./fonts/HYBDAL.TTF') format('truetype'),
-    url('./fonts/HYbdaL.woff') format('woff'),
-    url('./fonts/HYbdaL.woff2') format('woff2');
+  url('./fonts/HYBDAL.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY 바다 M';
-  src: url('./fonts/HYBDAM.TTF') format('truetype');
+  src: url('./fonts/HYBDAM.TTF') format('truetype'),
+  url('./fonts/HYBDAM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY 그래픽';
-  src: url('./fonts/HYGPRM.TTF') format('truetype');
+  src: url('./fonts/HYGPRM.TTF') format('truetype'),
+  url('./fonts/HYGPRM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY 강 B';
-  src: url('./fonts/HYKANB.TTF') format('truetype');
+  src: url('./fonts/HYKANB.TTF') format('truetype'),
+  url('./fonts/HYKANB.woff') format('woff');
 }
 
 @font-face {
   font-family: 'HY 강 M';
-  src: url('./fonts/HYKANM.TTF') format('truetype');
+  src: url('./fonts/HYKANM.TTF') format('truetype'),
+  url('./fonts/HYKANM.woff') format('woff');
 }
 
 @font-face {
@@ -1197,7 +1248,8 @@
 
 @font-face {
   font-family: '넥센타이어체 Bold';
-  src: url('./fonts/NEXEN TIRE_Bold.ttf') format('truetype');
+  src: url('./fonts/NEXEN TIRE_Bold.ttf') format('truetype'),
+  url('./fonts/MiConv.com__NEXEN\ TIRE_Bold.woff') format('woff');
 }
 
 @font-face {
@@ -1357,12 +1409,14 @@
 
 @font-face {
   font-family: '태-조각TB';
-  src: url('./fonts/TaeFont TSTJktB.ttf') format('truetype');
+  src: url('./fonts/TaeFont TSTJktB.ttf') format('truetype'),
+  url('./fonts/MiConv.com__TaeFont\ TSTJktB.woff') format('woff');
 }
 
 @font-face {
   font-family: '태-으뜸B';
-  src: url('./fonts/TaeFont TSTOtmB.ttf') format('truetype');
+  src: url('./fonts/TaeFont TSTOtmB.ttf') format('truetype'),
+  url('./fonts/MiConv.com__TaeFont\ TSTOtmB.woff') format('woff');
 }
 
 @font-face {
@@ -1377,7 +1431,8 @@
 
 @font-face {
   font-family: 'THE선인장';
-  src: url('./fonts/THE선인장.ttf') format('truetype');
+  src: url('./fonts/THE선인장.ttf') format('truetype'),
+  url('./fonts/MiConv.com__THE선인장.woff') format('woff');
 }
 
 @font-face {
@@ -1597,12 +1652,14 @@
 
 @font-face {
   font-family: '강한육군 Bold Vert';
-  src: url('./fonts/강한육군 Bold Vert.ttf') format('truetype');
+  src: url('./fonts/강한육군 Bold Vert.ttf') format('truetype'),
+  url('./fonts/MiConv.com__강한육군\ Bold\ Vert.woff') format('woff');
 }
 
 @font-face {
   font-family: '강한육군 Bold';
-  src: url('./fonts/강한육군 Bold.ttf') format('truetype');
+  src: url('./fonts/강한육군 Bold.ttf') format('truetype'),
+  url('./fonts/MiConv.com__강한육군\ Bold.woff') format('woff');
 }
 
 @font-face {
@@ -1612,7 +1669,8 @@
 
 @font-face {
   font-family: '강한육군 Medium';
-  src: url('./fonts/강한육군 Medium.ttf') format('truetype');
+  src: url('./fonts/강한육군 Medium.ttf') format('truetype'),
+  url('./fonts/MiConv.com__강한육군\ Medium.woff') format('woff');
 }
 
 @font-face {
@@ -1637,7 +1695,8 @@
 
 @font-face {
   font-family: '국립박물관문화재단클래식M';
-  src: url('./fonts/국립박물관문화재단클래식M.ttf') format('truetype');
+  src: url('./fonts/국립박물관문화재단클래식M.ttf') format('truetype'),
+  url('./fonts/MiConv.com__국립박물관문화재단클래식M.woff') format('woff');
 }
 
 @font-face {
@@ -2022,19 +2081,20 @@
 
 @font-face {
   font-family: '이순신돋움체B';
-  src: url('./fonts/이순신돋움체B.ttf') format('truetype');
+  src: url('./fonts/이순신돋움체B.ttf') format('truetype'),
+  url('./fonts/MiConv.com__이순신돋움체B.woff') format('woff');
 }
 
 @font-face {
   font-family: '이순신돋움체L';
   src: url('./fonts/이순신돋움체L.ttf') format('truetype'),
-    url('./fonts/YiSunShinDotumL.woff') format('woff'),
-    url('./fonts/YiSunShinDotumL.woff2') format('woff2');
+  url('./fonts/OYZeYyCL.woff') format('woff');
 }
 
 @font-face {
   font-family: '이순신돋움체M';
-  src: url('./fonts/이순신돋움체M.ttf') format('truetype');
+  src: url('./fonts/이순신돋움체M.ttf') format('truetype'),
+  url('./fonts/MiConv.com__이순신돋움체M.woff') format('woff');
 }
 
 @font-face {
@@ -2074,22 +2134,26 @@
 
 @font-face {
   font-family: '해수체B';
-  src: url('./fonts/해수체B.ttf') format('truetype');
+  src: url('./fonts/해수체B.ttf') format('truetype'),
+  url('./fonts/MiConv.com__해수체B.woff') format('woff');
 }
 
 @font-face {
   font-family: '해수체L';
-  src: url('./fonts/해수체L.ttf') format('truetype');
+  src: url('./fonts/해수체L.ttf') format('truetype'),
+  url('./fonts/MiConv.com__해수체L.woff') format('woff');
 }
 
 @font-face {
   font-family: '해수체M';
-  src: url('./fonts/해수체M.ttf') format('truetype');
+  src: url('./fonts/해수체M.ttf') format('truetype'),
+  url('./fonts/MiConv.com__해수체M.woff') format('woff');
 }
 
 @font-face {
   font-family: '행복고흥B';
-  src: url('./fonts/행복고흥B.ttf') format('truetype');
+  src: url('./fonts/행복고흥B.ttf') format('truetype'),
+  url('./fonts/MiConv.com__행복고흥B.woff') format('woff');
 }
 
 @font-face {
@@ -2104,12 +2168,14 @@
 
 @font-face {
   font-family: '헬스셋고딕Bold';
-  src: url('./fonts/헬스셋고딕Bold.ttf') format('truetype');
+  src: url('./fonts/헬스셋고딕Bold.ttf') format('truetype'),
+  url('./fonts/MiConv.com__헬스셋고딕Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: '헬스셋고딕Light';
-  src: url('./fonts/헬스셋고딕Light.ttf') format('truetype');
+  src: url('./fonts/헬스셋고딕Light.ttf') format('truetype'),
+  url('./fonts/MiConv.com__헬스셋고딕Light.woff') format('woff');
 }
 
 @font-face {

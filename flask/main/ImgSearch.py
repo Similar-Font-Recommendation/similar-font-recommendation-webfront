@@ -3,20 +3,20 @@
 ### 1. 라이브러리 로드
 import pandas as pd
 from flask_restx import Resource, Api, Namespace
-# from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import cosine_similarity
 import shutil
 import sys
 # sys.path.append("/home/sblim/FontProject/_석사코드정리_학제간연구용/3. 유사폰트추천코드/img2vec/img2vec_pytorch")  # Adds higher directory to python modules path.
-# from img_to_vec import Img2Vec
 
+sys.path.append("/Users/user-pc/Documents/GitHub/similar-font-recommendation-deeplearning/img2vec_pytorch")
+from img_to_vec import Img2Vec
 ### 2. 텍스트 렌더링
 from PIL import Image, ImageDraw, ImageFont
 import os
 
 # class로 만들어서 export 하기
 class ImageSearch:
-  def __init__(self,wword,path='/home/sblim/FontProject/FontSearching/input_img/'):
-    self.path= path
+  def __init__(self,wword):
     self.wword = wword
 
   def make_image(self,message, rendering_time, font_list, img_save_path):
@@ -74,9 +74,9 @@ class ImageSearch:
   def searchpart(self):
     ### 3. input 이미지 특징벡터 추출
     img2vec =Img2Vec(model="inception")
-    test_img_input_path = self.path
+    test_img_input_path = "./main/Crop/"
     # test_filename = os.fsdecode(test_img_input_path)
-    test_filename = os.fsdecode('test.png')
+    test_filename = os.fsdecode('crop.png')
     test_img = Image.open(os.path.join(test_img_input_path, test_filename)).convert('RGB')
     # test_img = Image.open(test_img_input_path).convert('RGB')
     print("is test img?", test_img)
@@ -87,7 +87,7 @@ class ImageSearch:
 
     ### 4. 유사도 비교
     #### 4-1. 보유 폰트로 텍스트 렌더링
-    font_list = os.listdir('./ttf_font(430)')
+    font_list = os.listdir('./all_fonts')
     font_list = sorted(font_list)
     msg = self.wword
     rendering_time = "all"

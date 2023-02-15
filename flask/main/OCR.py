@@ -58,6 +58,12 @@ def detect_text(path):
         w['vertices'] = vertices
         l.append(w)
     res_json['texts'] = l
+    
+    iimg = cv2.imread(path,cv2.IMREAD_COLOR)
+    h,w,c = iimg.shape
+    res_json['width'] = w
+    
+    print(res_json)
     if response.error.message:
         raise Exception(
             '{}\nFor more info on error messages, check: '
@@ -67,8 +73,8 @@ def detect_text(path):
 
 
 
-@OCR.route('/home')
+@OCR.route('/test')
 class OCRRun(Resource):
     def get(self):
-        path = './static/test2.jpeg'
+        path = './main/Result/blob.png'
         return detect_text(path)

@@ -1,0 +1,5 @@
+@font-face {
+    font-family: '텐바이텐';
+    src: url('./fonts/10X10.ttf') format('truetype'),
+    url('./fonts/10X10.woff') format('woff');
+  }

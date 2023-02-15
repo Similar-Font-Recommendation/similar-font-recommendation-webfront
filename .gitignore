@@ -25,3 +25,4 @@ yarn-error.log*
 /flask/main/__pycache__
 
 /react/src/fonts
+/flask/all_fonts

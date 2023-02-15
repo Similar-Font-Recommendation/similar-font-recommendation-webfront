@@ -16,6 +16,10 @@
   
 }
 
+#myDiv {position: relative; max-width: 100%;}
+#imageCanvas {vertical-align: top; position: relative ; z-index: 1;}
+#layer2 { position: absolute ; left :0; top:0;z-index: 2;} 
+
 .DZ{
   font-family: '12월롯데마트드림Light'!important;
   text-align: center;

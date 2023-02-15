@@ -92,7 +92,10 @@ class TestImg(Resource):
         pic_data = request.files['file']
         f = request.files['file']
         filename = pic_data.filename
-        f.save("./main/Result/"+filename+'.png')
+        filepath = "./main/Result/"+filename+'.png'
+        f.save(filepath)
+        
+        
         # g.preprossed = ImgPreprocessing(pic_data)
 
         # plt.imshow(preprossed, cmap='gray')
@@ -130,14 +133,6 @@ class TestPost(Resource):
         print(name,age)
         return "POST TEST RESULT :  %s" %name
 
-@Test.route('/post-test/<string:name>')
-class TestPost(Resource):
-    def post(self):
-        name = "test"
-        return "POST TEST RESULT :  %s" %name
-    def get(self,name):
-        return "GET TEST RESULT :  %s" %name
-
 
 @Test.route('/crop')
 class TestCrop(Resource):
@@ -145,18 +140,19 @@ class TestCrop(Resource):
         self.imgpath = ''
         self.filename = ''
     
-    def Imagecrop(self,img,x_1,y_1,w_1,h_1):
-        input_stream = io.BytesIO()
-        img.save(input_stream)
-        data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
-        real_img = cv2.imdecode(data,0) # 컬러 사진
+    def Imagecrop(self,x_1,y_1,w_1,h_1):
+        # input_stream = io.BytesIO()
+        # img.save(input_stream)
+        # data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
+        real_img = cv2.imread("./main/Result/blob.png",0) # 컬러 사진
         # 이미지 크롭해서 반환하기
         x = int(x_1)
         y = int(y_1)
         w = int(w_1)
         h = int(h_1)
         
-        crop_img = real_img[y:y+h,x:x+w]
+        # crop_img = real_img[y:y+h,x:x+w]
+        crop_img = real_img[:,10:]
 
         kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
         # erosion
@@ -171,29 +167,35 @@ class TestCrop(Resource):
                                             cv2.THRESH_BINARY,
                                             neighborhood_size,
                                             subtract_from_mean)
-        self.imgpath = "./main/CropResult/"+self.filename
+        self.imgpath = "./main/Crop/crop.png"
         # image_binarized.save(self.imgpath)
         # np.save(self.imgpath,image_binarized)
-        im = Image.fromarray(image_binarized)
-        im.save(self.imgpath)
+        # im = Image.fromarray(image_binarized)
+        # im.save("tes.jpeg")
+        plt.imsave(self.imgpath,image_binarized)
         return(image_binarized)   
 
 
     def post(self):
-        tes = request.files['file']
+        word = request.form['word']
         x = request.form['x']
         y = request.form['y']
         w = request.form['w']
         h = request.form['h']
-        # wword = request.form['wwo']
-        self.filename = tes.filename
-        g.filename = self.filename
-        preCrop = self.Imagecrop(tes,x,y,w,h)
+        # self.filename = img.filename
+        # g.filename = self.filename
+        preCrop = self.Imagecrop(x,y,w,h)
         # plt.imshow(preCrop, cmap='gray')
         # plt.show()
 
+        # 이미지 검색!
+        # obj = ImageSearch(word)
+        # d = dict()
+        # d['result'] = obj.searchpart()
+        # print(d)
+        # return jsonify(d)
+        
         filename = os.path.join(app.static_folder, 'font_res_2.json')
-
         with open(filename,'r',encoding='UTF8') as test_file:
             data = json.load(test_file)
         return (data)
@@ -204,9 +206,9 @@ class TestCrop(Resource):
 class ImgSearch(Resource):
      def get(self):
         #객체 생성
-        param = request.args.get('imgpath',default='./set',type=str)
-        obj = ImageSearch(param)
+        # param = request.args.get('imgpath',default='./set',type=str)
+        obj = ImageSearch("탕수육")
         d = dict()
-        d['result'] = obj.fortest()
+        d['result'] = obj.searchpart()
         print(d)
         return jsonify(d)
