@@ -8,6 +8,9 @@ import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 import matplotlib.pyplot as plt
 from skimage.util import invert
+#class 가져오기
+from main.ImgSearch import ImageSearch
+
 
 Test = Namespace('Test')
 
@@ -20,9 +23,9 @@ def ImgPreprocessing(pic_data):
     real_img = cv2.cvtColor(real_img,cv2.COLOR_BGR2GRAY)
     
     #이미지 확인하기
-    #plt.imshow(real_img)
-    #plt.show()
-
+    # plt.imshow(real_img)
+    # plt.show()
+    # plt.savefig(real_img,dpi=300,)
     # #erosion
     # kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
     # erosion=cv2.erode(real_img,kernel2,iterations=1)
@@ -56,41 +59,7 @@ def ImgPreprocessing(pic_data):
                                         subtract_from_mean)
     
     return(image_binarized)
-
-def Imagecrop(img,x_1,y_1,w_1,h_1):
-    input_stream = io.BytesIO()
-    img.save(input_stream)
-    data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
-    real_img = cv2.imdecode(data,0) # 컬러 사진
-    # 이미지 크롭해서 반환하기
-    x = int(x_1)
-    y = int(y_1)
-    w = int(w_1)
-    h = int(h_1)
     
-    crop_img = real_img[y:y+h,x:x+w]
-
-    kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
-    # erosion
-    erosion=cv2.erode(crop_img,kernel2,iterations=1)
-    ero_invert = invert(erosion)
-    max_output_value = 255   # 출력 픽셀 강도의 최대값
-    neighborhood_size = 99
-    subtract_from_mean = 10
-    image_binarized = cv2.adaptiveThreshold(ero_invert,
-                                        max_output_value,
-                                        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                        cv2.THRESH_BINARY,
-                                        neighborhood_size,
-                                        subtract_from_mean)
-    return(image_binarized)    
-
-@Test.route('/p')
-class TestHome(Resource):
-    def get(self):
-        print("P")
-        return("성공?")
-
 
 '''fetch test : 리액트 log에 찍기'''
 @Test.route('/users')
@@ -106,7 +75,7 @@ class TestUsers(Resource):
 @Test.route('/fontresult')
 class SendResult(Resource):
     def get(self):
-        filename = os.path.join(app.static_folder, 'font_res.json')
+        filename = os.path.join(app.static_folder, 'font_res_2.json')
 
         with open(filename,'r',encoding='UTF8') as test_file:
             data = json.load(test_file)
@@ -121,13 +90,16 @@ class TestImg(Resource):
 
         # file 받기
         pic_data = request.files['file']
-        g.preprossed = ImgPreprocessing(pic_data)
+        f = request.files['file']
+        filename = pic_data.filename
+        f.save("./main/Result/"+filename+'.png')
+        # g.preprossed = ImgPreprocessing(pic_data)
 
         # plt.imshow(preprossed, cmap='gray')
         # plt.imshow(pic_data,cmap='gray')
         # plt.show()
 
-        filename = pic_data.filename
+        
 
         #  cmd 창에서 확인하기
         print(pic_data)
@@ -136,8 +108,9 @@ class TestImg(Resource):
         # dir_path = os.path.dirname(os.path.realpath(__file__))
         # dir_path = dir_path +"\Result"
         # saved_file_path = os.path.join(dir_path,filename)
-        # pic_data.save(saved_file_path) #saved_file_path 경로에 받은 file 저장
-        # plt.savefig(filename,dpi=300)
+        
+        # pic_data.save(saved_file_path, 'JPEG') #saved_file_path 경로에 받은 file 저장
+        # plt.savefig(filename,dpi=300,)
         # openCV 테스트
         # test = cv2.imread(filename,cv2.IMREAD_COLOR)
         # print("###OpenCV Test### /n")
@@ -157,32 +130,83 @@ class TestPost(Resource):
         print(name,age)
         return "POST TEST RESULT :  %s" %name
 
-@Test.route('/post-test')
+@Test.route('/post-test/<string:name>')
 class TestPost(Resource):
     def post(self):
         name = "test"
         return "POST TEST RESULT :  %s" %name
-    def get(self):
-        name = "test"
-        return "POST TEST RESULT :  %s" %name
+    def get(self,name):
+        return "GET TEST RESULT :  %s" %name
 
 
 @Test.route('/crop')
 class TestCrop(Resource):
     def __init__(self,data):
-        self.test = ''
+        self.imgpath = ''
+        self.filename = ''
     
+    def Imagecrop(self,img,x_1,y_1,w_1,h_1):
+        input_stream = io.BytesIO()
+        img.save(input_stream)
+        data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
+        real_img = cv2.imdecode(data,0) # 컬러 사진
+        # 이미지 크롭해서 반환하기
+        x = int(x_1)
+        y = int(y_1)
+        w = int(w_1)
+        h = int(h_1)
+        
+        crop_img = real_img[y:y+h,x:x+w]
+
+        kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
+        # erosion
+        erosion=cv2.erode(crop_img,kernel2,iterations=1)
+        ero_invert = invert(erosion)
+        max_output_value = 255   # 출력 픽셀 강도의 최대값
+        neighborhood_size = 99
+        subtract_from_mean = 10
+        image_binarized = cv2.adaptiveThreshold(ero_invert,
+                                            max_output_value,
+                                            cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                            cv2.THRESH_BINARY,
+                                            neighborhood_size,
+                                            subtract_from_mean)
+        self.imgpath = "./main/CropResult/"+self.filename
+        # image_binarized.save(self.imgpath)
+        # np.save(self.imgpath,image_binarized)
+        im = Image.fromarray(image_binarized)
+        im.save(self.imgpath)
+        return(image_binarized)   
+
+
     def post(self):
         tes = request.files['file']
         x = request.form['x']
         y = request.form['y']
         w = request.form['w']
         h = request.form['h']
-        # print("x is", x,"y is",y,"w is",w,"h is",h)
-        preCrop = Imagecrop(tes,x,y,w,h)
-        plt.imshow(preCrop, cmap='gray')
-        plt.show()
-        print(x)
-    def get(self):
-        return self.test   
-        
+        # wword = request.form['wwo']
+        self.filename = tes.filename
+        g.filename = self.filename
+        preCrop = self.Imagecrop(tes,x,y,w,h)
+        # plt.imshow(preCrop, cmap='gray')
+        # plt.show()
+
+        filename = os.path.join(app.static_folder, 'font_res_2.json')
+
+        with open(filename,'r',encoding='UTF8') as test_file:
+            data = json.load(test_file)
+        return (data)
+
+   
+## Imgpath test
+@Test.route('/search')
+class ImgSearch(Resource):
+     def get(self):
+        #객체 생성
+        param = request.args.get('imgpath',default='./set',type=str)
+        obj = ImageSearch(param)
+        d = dict()
+        d['result'] = obj.fortest()
+        print(d)
+        return jsonify(d)
