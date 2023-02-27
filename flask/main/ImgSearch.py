@@ -6,9 +6,9 @@ from flask_restx import Resource, Api, Namespace
 from sklearn.metrics.pairwise import cosine_similarity
 import shutil
 import sys
-# sys.path.append("/home/sblim/FontProject/_석사코드정리_학제간연구용/3. 유사폰트추천코드/img2vec/img2vec_pytorch")  # Adds higher directory to python modules path.
+sys.path.append("/home/sblim/FontProject/_석사코드정리_학제간연구용/3. 유사폰트추천코드/img2vec/img2vec_pytorch")  # Adds higher directory to python modules path.
 
-sys.path.append("/Users/user-pc/Documents/GitHub/similar-font-recommendation-deeplearning/img2vec_pytorch")
+#sys.path.append("/Users/user-pc/Documents/GitHub/similar-font-recommendation-deeplearning/img2vec_pytorch")
 from img_to_vec import Img2Vec
 ### 2. 텍스트 렌더링
 from PIL import Image, ImageDraw, ImageFont

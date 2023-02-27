@@ -22,4 +22,4 @@ api.add_namespace(Test,'/api/Test')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
