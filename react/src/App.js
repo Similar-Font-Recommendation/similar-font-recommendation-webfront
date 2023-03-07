@@ -1,11 +1,14 @@
 import './App.css';
 import './Fonts.css';
 // import './test.css'
-import axios, { all } from 'axios';
+import axios from 'axios';
 import React, {createRef, useEffect,useState} from 'react';
-import { Container, Divider,Button, Grid, Image, Header, Menu, Message, Segment, Table, Card } from 'semantic-ui-react'
+import { Button, Grid,Loader,Dimmer, Segment, Table,  Progress} from 'semantic-ui-react'
 import Dropzone from 'react-dropzone';
 import imageCompression from 'browser-image-compression';
+import SetTimer from './components/SetTimer';
+
+
 //rfce
 function App() {
 
@@ -15,10 +18,19 @@ function App() {
   const [useList, setUseList] = useState([]);
   const [imgPath,setImgPath] = useState('');
   const [imgSrc,setImgSrc] = useState('');
-
+  
   //resize
   const [file,setFile] = useState();
   const [fileUrl, setFileUrl] = useState()
+
+  //드래그
+  const [isDragging, setIsDragging] = useState(false);
+  const [isOCR,setIsOCR] = useState(false);
+  const [isShow,setIsShow] = useState(true);
+
+  //progress bar 
+  const [count,setCount] = useState(0);
+  const [percent,setPercent] = useState(0);
 
 
   let takethem =[];
@@ -33,10 +45,20 @@ function App() {
       let r_y = takethem[i][1];
       let r_w = takethem[i][2];
       let r_h = takethem[i][3];
-      if(x <= r_x+r_w && x>=r_x &&y <= r_y+r_h && y>=r_y &&isSelected==false){
+      if(x <= r_x+r_w && x>=r_x &&y <= r_y+r_h && y>=r_y &&isSelected===false){
         res = i;
         isSelected = true;
         
+        //draw in selectedCanvas
+        var word_canvas = document.getElementById("selectedCanvas");
+        word_canvas.width = r_w;
+        word_canvas.height = r_h;
+        var ctx3 = word_canvas.getContext("2d");
+        var img_3 = document.getElementById("preview");
+
+        ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
+        ctx3.drawImage(img_3,r_x,r_y,r_w,r_h,0,0,r_w,r_h);  
+
         
         ctx2.lineWidth = 4;
         ctx2.setStrokeStyle ='green';
@@ -56,11 +78,13 @@ function App() {
   }
 
   async function CtxTest(data){
+    setIsOCR(true);
+    setIsShow(true);
     var canvas = document.getElementById("imageCanvas");
     const ocr_texts = await data.texts;
     const ocr_width = await data.width;
     var ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    // ctx.clearRect(0,0,canvas.width,canvas.height);
     var img = document.getElementById("preview");
     canvas.width = img.width;
     canvas.height = img.height;
@@ -75,6 +99,7 @@ function App() {
     ctx.stroke();
     var ratio = canvas.width / ocr_width;
     console.log("ratio is "+ ratio);
+    
 
     for (var i = 0; i <ocr_texts.length; i++){
       const ocr_bounds =await ocr_texts[i].vertices;
@@ -91,8 +116,14 @@ function App() {
       w = w * ratio;
       h = h * ratio;
 
+
+      ctx.lineWidth = 4;
+      ctx.setStrokeStyle ='white';
+      ctx.strokeRect(x,y,w,h);
+      ctx.lineWidth =2;
       ctx.setStrokeStyle ='black';
       ctx.strokeRect(x,y,w,h);
+      
       let tmparr=[x,y,w,h];
       takethem.push([x,y,w,h]);
     }
@@ -110,6 +141,8 @@ function App() {
   }
 
 
+  
+
 
   async function fetchData(){
     const response = await fetch("/api/OCR/test",{
@@ -119,13 +152,17 @@ function App() {
       }
     });
     const res = await response.json();
+    console.log("OCR :"+res);
     setOcrdata(res);
     const next = await CtxTest(res)
+
     
   }
 
 
   async function handleFile(file){
+
+
     const options ={
       maxSizeMB : 5,
       maxWidthOrHeight : 550
@@ -151,9 +188,32 @@ function App() {
   async function onDrop(pic){    
     var pictureFiles = pic;
 
+    // //최소 이미지 크기 충족하는지 확인
+    var img = new Image();
+    var _URL = window.URL || window.webkitURL;
+    img.src = _URL.createObjectURL(pictureFiles[0]);
+    img.onload = function() {
+      if(img.width < (50) || img.height < (50)) {
+        alert("최소 이미지 사이즈(가로 50px, 세로 50px)이상으로 업로드 해주세요.");
+        _URL.revokeObjectURL(img.src);
+        window.location.reload();
+        return;
+
+      }
+    }
+    //드래그 완료
+    setIsDragging(true);
+
+    //canvas에 이미지 올리기
+    var canvas = document.getElementById("imageCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img,0,0,img.width,img.height);
+    ctx.stroke();
+
+    
     //resize해서 파일 처리하기
     let newFile = await handleFile(pictureFiles[0]);
-  
+    
     var reader = new FileReader();
     reader.onload = r=>{
       var output = document.getElementById('preview');
@@ -186,6 +246,11 @@ function App() {
     var w = selectocr.vertices[1].x - x + 2;
     var h = selectocr.vertices[2].y - y + 2;
 
+    if (w < 40 || h < 40){
+      alert("단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다.");
+      window.location.reload();
+      return;
+    }
     setWord(word);
     const imgData = new FormData();
     imgData.append("word",word);
@@ -244,8 +309,30 @@ function App() {
     }catch(e){
       console.error(e);
     }
+}
 
+  function incrementtest(){
+    setPercent(1);
   }
+
+  function Counter() {
+    
+    useEffect(() => {
+      if ({percent} ===1){
+        const id = setInterval(() => {
+          setCount(c => c + 1);
+        }, 1000);
+        return () => clearInterval(id);
+      }else{
+        setCount(-1);
+      }
+      
+    }, []); 
+  
+    return <h1>{count}</h1>;
+  }
+
+
   return (
   <div className="App">
     <div>
@@ -260,6 +347,7 @@ function App() {
         {/* <canvas className="imageCanvas" id="imageCanvas">이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas> */}
     </div>
 
+  
 
 {/* semantic Grid test */}
   <div>
@@ -268,29 +356,81 @@ function App() {
       <Grid.Column>
         <p>1</p>
           <div className="DZ">
-            <Dropzone className="DZ"   multiple={false} onDrop={onDrop}>
-              {({getRootProps, getInputProps}) => (
-            <section>
-              <div {...getRootProps()}>
-                <input className="dropzone" {...getInputProps({type:'file', accept:'image/*'})} />  
-                <p style={{fontSize:'15pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
-              </div>
-            </section>
-              )}
-            </Dropzone>
-          </div>
-        <img className="preview" id="preview"/>
-        <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
-      
-        <div id="myDiv">
-          <canvas className="imageCanvas" id="imageCanvas" >이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
-          <canvas className="imageCanvas" id="layer2"></canvas>
-        </div>
-        
-      <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
+          <div id="myDiv">
+                  <canvas className="imageCanvas" id="imageCanvas" >이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
+                  <canvas className="imageCanvas" id="layer2"></canvas>
+                </div>
+
+            {
+              !isDragging ?(
+                <Dropzone className="DZ"   multiple={false} onDrop={onDrop}>
+                  {({getRootProps, getInputProps}) => (
+                  <section>
+                  <div {...getRootProps()}>
+                    <input className="dropzone" {...getInputProps({type:'file', accept:'image/*'})} />  
+                    <p style={{fontSize:'15pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
+                  </div>
+                </section>
+                  )}
+                </Dropzone>
+              ):(
+                <>
+                <div>{
+                  !isOCR ?(
+                    <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
+                  ):(
+                    <></>
+                  )
+                }
+                {
+                  isShow ? (
+                    <img className="preview" id="preview"/>
+                  ): (
+                    <>
+                    </>
+                  )
+                }
+                
+                  
+                  
+                </div>
+                
+              </>
+              )
+            
+            
+            }
+
+      </div>
       </Grid.Column>
       <Grid.Column>
         <p>3</p>
+        <div>
+          {/* selected word show */}
+          {
+            !isOCR?(
+              <>
+              </>
+            ):(
+              <><canvas id="selectedCanvas"></canvas>
+              <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
+              </>
+            )
+          }
+          
+        </div>
+        <div>
+          {/* <Progress percent={percent} autoSuccess /> */}
+          {/* <Button onClick={incrementtest}></Button> */}
+          {/* <SetTimer></SetTimer> */}
+        </div>
+        <div>
+        <Segment>
+            <Dimmer active>
+              <Loader />
+            </Dimmer>
+          </Segment>
+        </div>
         <Table celled>
           <Table.Header>
             <Table.Row>
