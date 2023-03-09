@@ -1,9 +1,9 @@
 import './App.css';
 import './Fonts.css';
 // import './test.css'
-import axios from 'axios';
+import axios ,{all} from 'axios';
 import React, {createRef, useEffect,useState} from 'react';
-import { Button, Grid,Loader,Dimmer, Segment, Table,  Progress} from 'semantic-ui-react'
+import { Button, Grid,Loader,Dimmer, Segment, Table,Header, Progress} from 'semantic-ui-react'
 import Dropzone from 'react-dropzone';
 import imageCompression from 'browser-image-compression';
 import SetTimer from './components/SetTimer';
@@ -23,19 +23,27 @@ function App() {
   const [file,setFile] = useState();
   const [fileUrl, setFileUrl] = useState()
 
-  //드래그
+  //리액트 화면 제어
   const [isDragging, setIsDragging] = useState(false);
   const [isOCR,setIsOCR] = useState(false);
   const [isShow,setIsShow] = useState(true);
+  const [isSearch,setIsSearch] = useState(false);
+  const [isLoading,setIsLoading] = useState(true);
+  const [isSelected, setIsSelected] = useState(false);
 
   //progress bar 
   const [count,setCount] = useState(0);
   const [percent,setPercent] = useState(0);
 
+  //max canvas width
+  var max_canvas_width = 600;
+  let show_ratio = 1;
+  const [ttt,setTTT]= useState(1);
+
+
 
   let takethem =[];
   let allJson =[];
-  let isSelected = false;
 
   function findRect(x,y,ctx2,canvas2){
     //canvas 버전으로 바꾸기
@@ -47,28 +55,37 @@ function App() {
       let r_h = takethem[i][3];
       if(x <= r_x+r_w && x>=r_x &&y <= r_y+r_h && y>=r_y &&isSelected===false){
         res = i;
-        isSelected = true;
+        setIsSelected(true);
         
         //draw in selectedCanvas
         var word_canvas = document.getElementById("selectedCanvas");
         word_canvas.width = r_w;
         word_canvas.height = r_h;
         var ctx3 = word_canvas.getContext("2d");
-        var img_3 = document.getElementById("preview");
 
         ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
-        ctx3.drawImage(img_3,r_x,r_y,r_w,r_h,0,0,r_w,r_h);  
-
+        var img_3 = new Image();
+        img_3.src = imgSrc;
+        img_3.onload = function(){
+          console.log("img_3 onload finish")
+          console.log(img_3);
+          // ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
+          console.log("ratio is" + ttt)
+          let t_r_w = r_w / ttt+10;
+          let t_r_h = r_h / ttt + 10;
+          console.log("t_r_w , t_r_h "+ t_r_w+" "+ t_r_h);
+          ctx3.drawImage(img_3,r_x /ttt,r_y /ttt,t_r_w,t_r_h,0,0,r_w,r_h);  
+        }
         
         ctx2.lineWidth = 4;
         ctx2.setStrokeStyle ='green';
         ctx2.globalAlpha = 0.4;
-        ctx2.fillRect(r_x,r_y,r_w,r_h);
+        // ctx2.fillRect(r_x,r_y,r_w,r_h);
         ctx2.globalAlpha = 1.0;
         break;
       }else if(isSelected){
         ctx2.clearRect(0,0,canvas2.width,canvas2.height);
-        isSelected = false;
+        setIsSelected (false);
       }
     }
     setSelectocr(allJson[res]);
@@ -86,8 +103,8 @@ function App() {
     var ctx = canvas.getContext("2d");
     // ctx.clearRect(0,0,canvas.width,canvas.height);
     var img = document.getElementById("preview");
-    canvas.width = img.width;
-    canvas.height = img.height;
+    // canvas.width = img.width;
+    // canvas.height = img.height;
 
     var canvas2 = document.getElementById("layer2");
     var ctx2 = canvas2.getContext("2d");
@@ -95,7 +112,7 @@ function App() {
     canvas2.height = canvas.height;
 
     console.log("canvas size is : "+canvas.width + canvas.height);
-    ctx.drawImage(img,0,0,img.width,img.height);
+    // ctx.drawImage(img,0,0,img.width,img.height);
     ctx.stroke();
     var ratio = canvas.width / ocr_width;
     console.log("ratio is "+ ratio);
@@ -165,7 +182,7 @@ function App() {
 
     const options ={
       maxSizeMB : 5,
-      maxWidthOrHeight : 550
+      maxWidthOrHeight : 2000
     }
     let ree ;
     
@@ -182,12 +199,16 @@ function App() {
       console.log(err);
     }
     return (ree);
+
+
+    
   }
 
 
   async function onDrop(pic){    
     var pictureFiles = pic;
-
+    var canvas = document.getElementById("imageCanvas");
+    var ctx = canvas.getContext("2d");
     // //최소 이미지 크기 충족하는지 확인
     var img = new Image();
     var _URL = window.URL || window.webkitURL;
@@ -198,29 +219,43 @@ function App() {
         _URL.revokeObjectURL(img.src);
         window.location.reload();
         return;
-
       }
     }
     //드래그 완료
     setIsDragging(true);
 
-    //canvas에 이미지 올리기
-    var canvas = document.getElementById("imageCanvas");
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img,0,0,img.width,img.height);
-    ctx.stroke();
-
     
     //resize해서 파일 처리하기
     let newFile = await handleFile(pictureFiles[0]);
     
+    var img_resized = new Image();
     var reader = new FileReader();
     reader.onload = r=>{
-      var output = document.getElementById('preview');
+      // var output = document.getElementById('preview');
+      // setImgSrc(reader.result);
+      // output.src = reader.result;
       setImgSrc(reader.result);
-      output.src = reader.result;
+      img_resized.src = reader.result;
     };
     reader.readAsDataURL(newFile);
+    img_resized.onload = function(){
+      //canvas에 이미지 올리기
+      console.log("원래 가로" + img_resized.width);
+      
+      let r_width = img_resized.width;
+      let r_height = img_resized.height;
+      if (r_width > max_canvas_width){
+        let show_ratio = max_canvas_width / r_width
+        r_width = r_width*show_ratio;
+        r_height = r_height*show_ratio;
+        console.log("ratio is" + show_ratio);
+        console.log("바꾼 가로 " + r_width);
+        setTTT(show_ratio);
+      }
+      canvas.width = r_width;
+      canvas.height = r_height;
+      ctx.drawImage(img_resized,0,0,r_width,r_height);
+    }
 
     if(pictureFiles.length >0){
       setImgPath(pictureFiles[0].path);
@@ -239,6 +274,7 @@ function App() {
   }
 
   async function CropGo(){
+    setIsSearch(true);
     console.log("Cp1");
     var word = selectocr.word;
     var x = selectocr.vertices[0].x-2;
@@ -246,11 +282,11 @@ function App() {
     var w = selectocr.vertices[1].x - x + 2;
     var h = selectocr.vertices[2].y - y + 2;
 
-    if (w < 40 || h < 40){
-      alert("단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다.");
-      window.location.reload();
-      return;
-    }
+    // if (w < 40 || h < 40){
+    //   alert("단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다.");
+    //   window.location.reload();
+    //   return;
+    // }
     setWord(word);
     const imgData = new FormData();
     imgData.append("word",word);
@@ -265,6 +301,7 @@ function App() {
       .then((response)=>response.data)
       .then((actualData)=>{
         setUseList(actualData.result);
+        setIsLoading(false);
         console.log(useList);
       })
       .catch((err) =>{
@@ -335,32 +372,17 @@ function App() {
 
   return (
   <div className="App">
-    <div>
-      {/* <Button onClick ={fetchData}>OCR 후 그림그리기 </Button> */}
-      {/* <Button onClick={onClick}>POST 테스트</Button> */}
-      <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
-      <Button onClick={ClickResult}>결과 리스트화</Button>
-      <Button onClick={OneClassGet}>이미지경로테스트</Button>
-    </div>
-    <div>
-    
-        {/* <canvas className="imageCanvas" id="imageCanvas">이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas> */}
-    </div>
-
-  
-
-{/* semantic Grid test */}
+    <Header id="Header"as='h1' content='✏️폰트 검색 시스템' textAlign='center' />
+  {/* semantic Grid test */}
   <div>
   <Grid columns={2}>
     <Grid.Row>
-      <Grid.Column>
-        <p>1</p>
-          <div className="DZ">
-          <div id="myDiv">
-                  <canvas className="imageCanvas" id="imageCanvas" >이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
-                  <canvas className="imageCanvas" id="layer2"></canvas>
-                </div>
-
+      <Grid.Column className='Grid'>
+        <h3><span class="title">검색하고자 하는 이미지 첨부</span></h3>
+          <div className="DZ"><div id="myDiv">
+                    <canvas className="imageCanvas" id="imageCanvas" height="1">이 브라우저는 'canvas'기능을 제공하지 않습니다.</canvas>
+                    <canvas className="imageCanvas" id="layer2" height="1"></canvas>
+                    </div>
             {
               !isDragging ?(
                 <Dropzone className="DZ"   multiple={false} onDrop={onDrop}>
@@ -368,104 +390,141 @@ function App() {
                   <section>
                   <div {...getRootProps()}>
                     <input className="dropzone" {...getInputProps({type:'file', accept:'image/*'})} />  
-                    <p style={{fontSize:'15pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
+                    <p style={{fontSize:'12pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
                   </div>
                 </section>
                   )}
                 </Dropzone>
               ):(
                 <>
-                <div>{
-                  !isOCR ?(
+                <div>
+                {
+                  isShow ? (
+                    <>
+                    <img className="preview" id="preview"/>
+                    
+                    </>
+                    
+                  ): (
+                    <>
+                    <p>test</p>
+                    </>
+                  )
+                }
+                </div>
+              </>
+              )            
+            }
+      </div>
+      {
+                  isDragging&&!isOCR ?(
                     <Button onClick ={fetchData}>OCR 후 그림그리기 </Button>
                   ):(
                     <></>
                   )
                 }
+      </Grid.Column>
+      <Grid.Column className='Grid'>
+        <div className='Grid2'>
+          <h3><span class="title">선택한 단어 </span></h3>
+          <div id='selectbox'>
+            {/* selected word show */}
+            {
+              !isOCR?(
+                <div id="beforeOCRbox">
+                  <h4 textAlign='center'>먼저 이미지를 첨부해주세요</h4>
+                </div>
+              ):(
+                <>
+                <div><canvas id="selectedCanvas" height="3"></canvas></div>
+                {/* <Button onClick={CropGo}> 단어전송 및 결과 반환</Button> */}
                 {
-                  isShow ? (
-                    <img className="preview" id="preview"/>
-                  ): (
-                    <>
-                    </>
-                  )
-                }
-                
+                  isSelected?(
+                  <>
+                  <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
                   
+                  </>
+                ):(
+                  <>
+                    <p textAlign='center'>이미지 속 검색하려는 단어를 선택해주세요</p>  
+                  </>
+                )
+                }
+                </>
+              )
+            }
+            
+          </div>
+        </div>
+        <div className='Grid2'>
+          <h3><span class="title">이미지 속 폰트 검색 결과 조회</span></h3>
+          <div id='searchresult'>
+            {
+              !isSearch?(
+                <>
+                <div id='bigbox'>
+                  <h4>이곳에 순위별로 표시됩니다. </h4>
                   
                 </div>
-                
-              </>
+                </>
+              ):(
+                <>
+                {
+                  isLoading?(
+                    <>
+                    <Segment>
+
+                        <Loader active inline='centered' size='big' content='검색중입니다. 잠시만 기다려주세요.'/>
+                    </Segment>
+                    </>
+                  ):(
+                    <>
+                    
+                    <Table celled>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.HeaderCell>순위</Table.HeaderCell>
+                        <Table.HeaderCell>폰트명</Table.HeaderCell>
+                        <Table.HeaderCell>글자</Table.HeaderCell>
+                      </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                    {useList.map((res, index) =>{
+                      
+                      const font = res +', "YWDA"';
+                      console.log(font);
+                      const TdStyle = {
+                        fontFamily: font,
+                        margin : 3,
+                        color : 'blue',
+                        fontSize : 24
+                      };
+                      return(
+                        <tr key={index}>
+                          <td> {index +1}</td>
+                          <td>
+                            {res}
+                          </td>
+                          <td style={TdStyle}>
+                            {word}
+                          </td>
+                        </tr>
+                      );  
+                      })} 
+                    </Table.Body>
+
+                  </Table>
+                  </>
+                  )
+                }
+              </> 
               )
-            
-            
             }
-
-      </div>
-      </Grid.Column>
-      <Grid.Column>
-        <p>3</p>
-        <div>
-          {/* selected word show */}
-          {
-            !isOCR?(
-              <>
-              </>
-            ):(
-              <><canvas id="selectedCanvas"></canvas>
-              <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
-              </>
-            )
-          }
-          
+          </div>
+        
         </div>
-        <div>
-          {/* <Progress percent={percent} autoSuccess /> */}
-          {/* <Button onClick={incrementtest}></Button> */}
-          {/* <SetTimer></SetTimer> */}
-        </div>
-        <div>
-        <Segment>
-            <Dimmer active>
-              <Loader />
-            </Dimmer>
-          </Segment>
-        </div>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>순위</Table.HeaderCell>
-              <Table.HeaderCell>폰트명</Table.HeaderCell>
-              <Table.HeaderCell>글자</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>
-          {useList.map((res, index) =>{
-            
-            const font = res +', "YWDA"';
-            console.log(font);
-            const TdStyle = {
-              fontFamily: font,
-              margin : 3,
-              color : 'blue',
-              fontSize : 24
-            };
-            return(
-              <tr key={index}>
-                <td> {index +1}</td>
-                <td>
-                  {res}
-                </td>
-                <td style={TdStyle}>
-                  {word}
-                </td>
-              </tr>
-            );  
-            })} 
-          </Table.Body>
-
-        </Table>
+        
       </Grid.Column>
     </Grid.Row>
 
