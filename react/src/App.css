@@ -36,7 +36,7 @@
   border-radius: 0.2em;
   padding: 3em;
   padding-top:3.8em;
-  height: 17vh;
+  min-height: 17vh;
 }
 #searchresult{
   border: 0.1em solid #316896;
@@ -62,7 +62,11 @@
 
 
 h3{
-  font-size: large;
+  font-size: 20pt;
+}
+
+h4{
+  font-size: 17pt;
 }
 
 .Grid2{

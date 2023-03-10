@@ -275,7 +275,6 @@ function App() {
 
   async function CropGo(){
     setIsSearch(true);
-    console.log("Cp1");
     var word = selectocr.word;
     var x = selectocr.vertices[0].x-2;
     var y = selectocr.vertices[0].y-2;
@@ -294,7 +293,6 @@ function App() {
     imgData.append("y",y);
     imgData.append("w",w);
     imgData.append("h",h);
-    console.log("checkpoint2");
     //여기서 글자값 보내주기
     await axios
       .post("./api/Test/crop",imgData)
@@ -390,7 +388,7 @@ function App() {
                   <section>
                   <div {...getRootProps()}>
                     <input className="dropzone" {...getInputProps({type:'file', accept:'image/*'})} />  
-                    <p style={{fontSize:'12pt'}}>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</p>
+                    <h4>업로드 할 이미지를 드래그하거나 박스를 <span style={{color:'lightBlue'}}> 클릭</span>하세요</h4>
                   </div>
                 </section>
                   )}
@@ -437,12 +435,10 @@ function App() {
               ):(
                 <>
                 <div><canvas id="selectedCanvas" height="3"></canvas></div>
-                {/* <Button onClick={CropGo}> 단어전송 및 결과 반환</Button> */}
                 {
                   isSelected?(
                   <>
                   <Button onClick={CropGo}> 단어전송 및 결과 반환</Button>
-                  
                   </>
                 ):(
                   <>
@@ -483,9 +479,9 @@ function App() {
                     <Table celled>
                     <Table.Header>
                       <Table.Row>
-                        <Table.HeaderCell>순위</Table.HeaderCell>
-                        <Table.HeaderCell>폰트명</Table.HeaderCell>
-                        <Table.HeaderCell>글자</Table.HeaderCell>
+                        <Table.HeaderCell width={2} style={{textAlign : 'center'}}> 순위</Table.HeaderCell>
+                        <Table.HeaderCell width={5} style={{textAlign : 'center'}}>폰트명</Table.HeaderCell>
+                        <Table.HeaderCell width={30} style={{textAlign : 'center'}}>글자</Table.HeaderCell>
                       </Table.Row>
                     </Table.Header>
 
@@ -497,8 +493,9 @@ function App() {
                       const TdStyle = {
                         fontFamily: font,
                         margin : 3,
-                        color : 'blue',
-                        fontSize : 24
+                        color : 'black',
+                        fontSize : 40,
+                        textAlign: 'center'
                       };
                       return(
                         <tr key={index}>

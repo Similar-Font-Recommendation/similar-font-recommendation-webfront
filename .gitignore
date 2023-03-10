@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /flask/main/__pycache__
-
+/react/build
 /react/src/fonts
 /flask/all_fonts

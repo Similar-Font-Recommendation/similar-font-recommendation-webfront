@@ -6,7 +6,8 @@ import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 import matplotlib.pyplot as plt
 from skimage.util import invert
-
+import time
+import math
 
 # 이미지 invert 여부
 def imginvert(img):
@@ -62,8 +63,8 @@ def imgbinarized(img):
     ret, dst = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY|cv2.THRESH_OTSU)
     return dst
 
-def oneimgprocessing(crop_one_img,filename):
-    
+def ImgProcessing(crop_one_img,filename):
+    start = time.time()
     kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT,(1,1))
     # 한장씩 다 저장해보기....
     npath = "./main/Result/"+filename+"one.jpg"
@@ -101,7 +102,36 @@ def oneimgprocessing(crop_one_img,filename):
         res=cv2.erode(binarizedd,kernel2,iterations=1)
         tmp_path = "./main/Crop/"+filename+"_erosion.jpg"
         cv2.imwrite(tmp_path, res)
-    return res
+
+    end = time.time()
+    print("이미지 해상도 높이기 전까지 시간")
+    print(end-start, '\n\n')
+    #원본 저장
+    tmp_path = "./main/Crop/"+filename+"final_original.jpg"
+    cv2.imwrite(tmp_path,res)
+    s_res = SuperRes(res)
+    # 화진 높인 이미지 저장
+    tmp_path = "./main/Crop/"+filename+"final_s_res.jpg"
+    cv2.imwrite(tmp_path,s_res)
+    
+    h, w = s_res.shape
+    if h < 60:
+        print("need resize up")
+        ratio_h = h / 60
+        img_resize = cv2.resize(s_res, None, fx=ratio_h, fy=ratio_h, interpolation = cv2.INTER_CUBIC)
+    elif h > 60:
+        print("need resize down")
+        ratio_h =  60 / h
+        img_resize = cv2.resize(s_res, None, fx=ratio_h, fy=ratio_h, interpolation = cv2.INTER_CUBIC)
+    else:
+        img_resize = s_res
+    
+
+    path = "/home/sblim/FontProject/FontSearching/input_img/" + filename+".jpg"
+    cv2.imwrite(path,img_resize)
+    end = time.time()
+    print("이미지 전체 소요 시간")
+    print(end-start, '\n\n')
     
 
 

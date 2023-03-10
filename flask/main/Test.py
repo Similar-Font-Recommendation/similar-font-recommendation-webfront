@@ -1,4 +1,4 @@
-from flask import request, Flask, json, current_app as app
+from flask import request, Flask, json,jsonify ,current_app as app
 from flask_restx import Resource, Api,Namespace
 import io
 import cv2
@@ -11,16 +11,23 @@ from PIL import ImageFont, ImageDraw, Image
 import matplotlib.pyplot as plt
 from skimage.util import invert
 from main.OCR import detect_one
-from main.ImgProcessing import oneimgprocessing
+from main.ImgProcessing import ImgProcessing
 from main.ImgProcessing import SuperRes
+#class 가져오기
+import sys
+sys.path.append("/home/sblim/FontProject/FontSearching")
+from font_searching_system_def import search
+import time
+
+
 
 # 폰트 검색 모델 가져오기
-import sys
-sys.path.append("/home/sblim/FontProject/tensorflow_system/models/research/object_detection/images/map/fontsearching")
-from font_recommendation_based_on_stroke_elements_eunji import StrokeRecommendation
-sys.path.append('/home/sblim/FontProject/tensorflow_system/models/research/object_detection')
-from object_detection_for_system_v2_jiae import object_detection_main
-import time
+# import sys
+# sys.path.append("/home/sblim/FontProject/tensorflow_system/models/research/object_detection/images/map/fontsearching")
+# from font_recommendation_based_on_stroke_elements_eunji import StrokeRecommendation
+# sys.path.append('/home/sblim/FontProject/tensorflow_system/models/research/object_detection')
+# from object_detection_for_system_v2_jiae import object_detection_main
+# import time
 
 
 
@@ -151,8 +158,6 @@ class TestCrop(Resource):
     def onebyoneCrop(self):
 
         json = detect_one(self.imgpath)
-        print("!!!!!!!!!!!!!!확인하기!!!!!!!!!!")
-        print(json)
         word_length = len(json['texts'][0]['symbol'])
         print(json)
         word_img = cv2.imread(self.imgpath,cv2.IMREAD_GRAYSCALE)
@@ -212,100 +217,41 @@ class TestCrop(Resource):
 
 
     def Imagecrop(self,x_1,y_1,w_1,h_1):
-        # input_stream = io.BytesIO()
-        # img.save(input_stream)
-        # data = np.fromstring(input_stream.getvalue(), dtype=np.uint8)
         real_img = cv2.imread("./main/Result/blob.jpg",cv2.IMREAD_GRAYSCALE) # gray
         # 이미지 크롭해서 반환하기
         x = int(x_1)
         y = int(y_1)
         w = int(w_1)
         h = int(h_1)
-        
         crop_img = real_img[y:y+h,x:x+w]
-        #이미지 해상도 높이기
         self.imgpath = "./main/Crop/crop.jpg"
         cv2.imwrite(self.imgpath, crop_img)
 
-        self.onebyoneCrop()
+
+        #이미지 전처리 및 저장
+        ImgProcessing(crop_img,"test")
+
+        
+        # self.onebyoneCrop()
 
     def post(self):
-        # word = request.form['word']
+        start = time.time()
+        word = request.form['word']
         x = request.form['x']
         y = request.form['y']
         w = request.form['w']
         h = request.form['h']
-        # self.filename = img.filename
-        # g.filename = self.filename
         self.Imagecrop(x,y,w,h) # 이미지 자르기
-        # plt.imshow(preCrop, cmap='gray')
-        # plt.show()
+        end = time.time()
+        print("@@이미지 저장까지 걸린 시간@@")
+        print(end - start , '\n\n')
+
         
-        ImgSearchPart = ImgSearch()
-        data = ImgSearchPart.get()
-        return (data)
-
-   
-## Imgpath test
-@Test.route('/search')
-class ImgSearch(Resource):
-     def get(self):
-        start = time.time()
-        #객체 생성
-        print('\n\n\n@@@@@@@@@@@@@@1. 형태소 추출@@@@@@@@@@@@@@@@')
+        d = dict()
+        obj = search(app.config['IMG2VEC'])
+        # obj = search(Img2Vec(model="inception"))
+        d['result'] = obj.font_searching(word)
         end = time.time()
-        print(f"{end - start:.5f} sec\n\n\n")
-        object_detection_main()
-        # osObject = ObjectDetection()
-        # tmp = osObject.findObject()
-        print('\n\n\n******************1.1. 형태소 추출 완료!!!******************')
-        end = time.time()
-        print(f"{end - start:.5f} sec\n\n\n")
-        print('\n\n\n******************2. 폰트 검색******************')
-        end = time.time()
-        print(f"{end - start:.5f} sec\n\n\n")
-        start_2 = time.time() # 2 -> 3까지 얼마나??
-        end_2 = time.time()
-        print('\n****2 -> 3 시작\n' )
-        print(f"{end_2 - start_2:.5f} sec\n\n\n")
-        mypath ="/home/sblim/FontProject/tensorflow_system/models/research/object_detection/images/map/fontsearching/"
-        # ##### 3. 획요소 특징 벡터 파일 로드
-        bbichim_df = pd.read_csv(mypath+'형태소별 특징벡터/bbichim_clustering_feature_vector.csv').drop(['fontname'], axis=1)
-        buri_df = pd.read_csv(mypath+'형태소별 특징벡터/buri_clustering_feature_vector.csv').drop(['fontname'], axis=1)
-        kkeokim_df = pd.read_csv(mypath+'형태소별 특징벡터/kkeokim_clustering_feature_vector.csv').drop(['fontname'], axis=1)
-        kkokjijum_df = pd.read_csv(mypath+'형태소별 특징벡터/kkokjijum_clustering_feature_vector.csv').drop(['fontname'], axis=1)
-        sangtu_df = pd.read_csv(mypath+'형태소별 특징벡터/sangtu_clustering_feature_vector.csv').drop(['fontname'], axis=1)
-        stroke_df = [bbichim_df, buri_df, kkeokim_df, kkokjijum_df, sangtu_df]
-
-        # ##### 3 - 1. 클러스터 중심점 벡터 파일 로드
-        bbichim_centroid = pd.read_csv(mypath+"클러스터 중심점/bbichim_cluster_centers_.csv")
-        buri_centroid = pd.read_csv(mypath+"클러스터 중심점/buri_cluster_centers_.csv")
-        kkeokim_centroid = pd.read_csv(mypath+"클러스터 중심점/kkeokim_cluster_centers_.csv")
-        kkokjijum_centroid = pd.read_csv(mypath+"클러스터 중심점/kkokjijum_cluster_centers_.csv")
-        sangtu_centroid = pd.read_csv(mypath+"클러스터 중심점/sangtu_cluster_centers_.csv")
-        centroid_df = [bbichim_centroid, buri_centroid, kkeokim_centroid, kkokjijum_centroid, sangtu_centroid]
-
-
-        obj = StrokeRecommendation(app.config['IMG2VEC'],stroke_df, centroid_df)
-        obj.find_font()
-        print('\n\n\n******************2.2. 폰트 검색 완료!!******************')
-        end = time.time()
-        print(f"{end - start:.5f} sec\n\n\n")
-
-        filename = os.path.join(app.static_folder, 'font_result.json')
-        with open(filename,'r',encoding='UTF8') as test_file:
-            data = json.load(test_file)
-
-        end_2 = time.time()
-        print('\n****2 -> 2.2 폰트 검색 완료까지\n' )
-        print(f"{end_2 - start_2:.5f} sec\n\n\n")
-        print('\n\n\n******************3. 검색 결과 로드 완료!!******************')
-        end = time.time()
-        print(f"{end - start:.5f} sec\n\n\n")
-
-        end_2 = time.time()
-        print('\n****2 -> 3 검색 결과 로드 완료까지\n' )
-        print(f"{end_2 - start_2:.5f} sec\n\n\n")
-
-
-        return (data)
+        print("@@총 걸린 시간@@")
+        print(end - start , '\n\n')
+        return (jsonify(d))
