@@ -1,27 +1,52 @@
 @charset "utf=8";
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap');
 
-@font-face{
-  font-family: "12롯데마트행복Medium";
-  src: url("./assets/12롯데마트행복Medium.ttf");
-}
-@font-face{
-  font-family: "12롯데마트행복Light";
-  src: url("./assets/12롯데마트드림Light.ttf");
-}
 
 *{
-  font-family: '12롯데마트행복Medium', sans-serif;
+  font-family: 'Gothic A1', sans-serif;
+  
 }
 
-.box{
-  margin-left: 2vw;
-}
-@media (max-width: 600px) {
-  .box{
-    margin : 0;
+@media (max-width: 800px) {
+  .Grid{
+    margin-left : 2px;
+    display: block;
+    margin-left: 20vw; margin-right: 3vw;
+
   }
-  
+}
+
+.App{
+  margin: 3em;
+  text-align: center;
+}
+
+#Header{
+  margin-top: 3vh;
+  margin-bottom: 1em;
+}
+
+
+
+#myDiv {position: relative; max-width: 100%;}
+#imageCanvas {vertical-align: top; position: relative ; z-index: 1;}
+#layer2 { position: absolute ; left :0; top:0;z-index: 2;} 
+#selectbox {
+  border: 0.1em solid #316896;
+  border-radius: 0.2em;
+  padding: 3em;
+  padding-top:3.8em;
+  min-height: 17vh;
+}
+#searchresult{
+  border: 0.1em solid #316896;
+  border-radius: 0.2em;
+  padding: 3em;
+  padding-top:3em;
+}
+#bigbox{
+  padding: 5em;
+  /* padding-top: 10em; */
 }
 
 .DZ{
@@ -29,6 +54,26 @@
   text-align: center;
   border-radius: 0.2em;
   padding: 3em;
-  padding-top:3em;
+  padding-top:2.8em;
   border: 0.1em solid #316896;
+  min-height: 17vh;
+}
+
+
+
+h3{
+  font-size: 20pt;
+}
+
+h4{
+  font-size: 17pt;
+}
+
+.Grid2{
+  padding:em;
+  padding-bottom: 3em;
+}
+
+.title{
+  background-color: cornsilk;
 }
