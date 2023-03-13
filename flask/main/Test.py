@@ -51,6 +51,15 @@ class TestPost(Resource):
         print(name,age)
         return "POST TEST RESULT :  %s" %name
 
+@Test.route('/fontresult')
+class FontResult(Resource):
+    def get(self):
+        filename = os.path.join(app.static_folder, 'font_res.json')
+
+        with open(filename,'r',encoding='UTF8') as test_file:
+            data = json.load(test_file)
+        return (data)
+
 @Test.route('/image')
 class TestImg(Resource):
     
@@ -223,6 +232,11 @@ class TestCrop(Resource):
         y = int(y_1)
         w = int(w_1)
         h = int(h_1)
+        if x <= 0 :
+            x = 1
+        if y <= 0 :
+            y = 1
+        
         crop_img = real_img[y:y+h,x:x+w]
         self.imgpath = "./main/Crop/crop.jpg"
         cv2.imwrite(self.imgpath, crop_img)
