@@ -8,14 +8,39 @@
 @media (max-width: 800px) {
   .Grid {
     margin-left: 2px;
-    display: block;
-    margin-left: 20vw;
-    margin-right: 3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
+  }
+  .ui.grid > .row {
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
   }
 }
 
 .App {
-  margin: 3em;
+  padding: 1em 3em 0 3em;
   text-align: center;
 }
 
@@ -29,8 +54,8 @@
   /* position: inherit absolute; */
   justify-content: center;
   align-items: center;
-  /* left: 50%;
-  top: 50%; */
+  /* margin: auto; */
+  /* top: 50%; */
 }
 #imageCanvas {
   vertical-align: top;
@@ -53,18 +78,23 @@
 #selectbox {
   border: 0.1em solid #316896;
   border-radius: 0.2em;
-  padding: 3em;
-  padding-top: 3.8em;
-  min-height: 20vh;
+  padding: 1em;
+  padding-top: 1.8em;
+  min-height: 11em;
+  max-height: 10.1em;
 }
 #searchresult {
   border: 0.1em solid #316896;
   border-radius: 0.2em;
-  padding: 3em;
-  padding-top: 3em;
+  padding-right: 3em;
+  padding-left: 3em;
+  height: 25.8em;
+  /* max-height: 41%; */
+  overflow: auto;
 }
+
 #bigbox {
-  padding: 5em;
+  padding: 12em 5em 5em 5em;
   /* padding-top: 10em; */
 }
 
@@ -75,8 +105,10 @@
   padding: 3em;
   padding-top: 2.8em;
   border: 0.1em solid #316896;
-  min-height: 20vh;
+  height: 40.5em;
   position: relative;
+  /* display: flex; */
+  align-items: center;
 }
 
 h3 {
@@ -88,13 +120,9 @@ h4 {
 }
 
 .Grid2 {
-  padding: em;
-  padding-bottom: 3em;
+  padding-bottom: 1em;
 }
 
-.title {
-  background-color: cornsilk;
-}
 #contentdiv {
   border-top: 1em solid #316896;
   padding-top: 1em;

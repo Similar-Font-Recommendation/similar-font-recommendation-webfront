@@ -3,6 +3,7 @@ import "./Fonts.css";
 // import './test.css'
 import info from "./info.png";
 import info_desc from "./info_desc.png";
+import image_icon from "./image_icon.png";
 import axios, { all } from "axios";
 import React, { createRef, useEffect, useState, useRef } from "react";
 import {
@@ -47,6 +48,7 @@ function App() {
 
   //max canvas width
   var max_canvas_width = 500;
+  var max_canvas_height = 400;
   let show_ratio = 1;
   const [ttt, setTTT] = useState(1);
 
@@ -266,10 +268,25 @@ function App() {
     img_resized.onload = function () {
       //canvas에 이미지 올리기
       console.log("원래 가로" + img_resized.width);
-
+      console.log("원래 세로 " + img_resized.height);
       let r_width = img_resized.width;
       let r_height = img_resized.height;
-      if (r_width > max_canvas_width) {
+      if (r_width > max_canvas_width && r_height > max_canvas_height) {
+        console.log("one");
+        let tmp_ratio_w = max_canvas_width / r_width;
+        let tmp_ratio_h = max_canvas_height / r_height;
+        let show_ratio_all = tmp_ratio_w;
+        if (tmp_ratio_h < tmp_ratio_w) {
+          show_ratio_all = tmp_ratio_h;
+        }
+        r_width = r_width * show_ratio_all;
+        r_height = r_height * show_ratio_all;
+        console.log("ratio is" + show_ratio_all);
+        console.log("바꾼 가로 " + r_width);
+        console.log("바꾼 세로 " + r_height);
+        setTTT(show_ratio_all);
+        rattio = show_ratio_all;
+      } else if (r_width > max_canvas_width) {
         let show_ratio = max_canvas_width / r_width;
         r_width = r_width * show_ratio;
         r_height = r_height * show_ratio;
@@ -277,7 +294,25 @@ function App() {
         console.log("바꾼 가로 " + r_width);
         setTTT(show_ratio);
         rattio = show_ratio;
+      } else if (r_height > max_canvas_height) {
+        console.log("two");
+        let show_ratio_h = max_canvas_height / r_height;
+        r_width = r_width * show_ratio_h;
+        r_height = r_height * show_ratio_h;
+        console.log("ratio is" + show_ratio_h);
+        console.log("바꾼 가로 " + r_width);
+        console.log("바꾼 세로 " + r_height);
+        setTTT(show_ratio_h);
+        rattio = show_ratio_h;
       }
+
+      if (r_height < 300) {
+        var imgcan = document.getElementById("myDiv");
+        let m_T = (400 - r_height) / 2;
+        console.log("m_T is " + m_T);
+        imgcan.style.marginTop = m_T + "px";
+      }
+
       canvas.width = r_width;
       canvas.height = r_height;
 
@@ -385,6 +420,7 @@ function App() {
       setIdx(1);
 
       var ctn = document.getElementById("container");
+      ctn.style.display = "none";
       ctn.style.visibility = "hidden";
       barRef.current = new ProgressBar.Line("#container", {
         strokeWidth: 4,
@@ -414,23 +450,22 @@ function App() {
 
   function pro_bar_run() {
     var ctn = document.getElementById("container");
+    ctn.style.display = "block";
+    ctn.style.marginTop = "10em";
     ctn.style.visibility = "visible";
     // barRef.current.animate(0);
     barRef.current.animate(1.0, {
       duration: 10000,
       from: { color: "#FFEA82" },
       to: { color: "#ED6A5A" },
-      step: (state, bar) => {
-        bar.setText(Math.round(bar.value() * 100) + " %");
-      },
     });
-    // bar.animate(1.0);
   }
 
   function pro_bar_fin() {
     var ctn = document.getElementById("container");
     barRef.current.set(0);
     ctn.style.visibility = "hidden";
+    ctn.style.display = "none";
     console.log(document.querySelectorAll("container"));
   }
 
@@ -447,7 +482,7 @@ function App() {
                 width={30}
                 style={{
                   position: "absolute",
-                  top: 45,
+                  // top: "0.8em",
                   marginLeft: 10,
                   marginBottom: 0,
                 }}
@@ -466,19 +501,17 @@ function App() {
       </Header>
       {/* semantic Grid test */}
       <div>
-        <Button onClick={pro_bar_run}>테스트</Button>
-
-        <Grid columns={2}>
+        <Grid columns={2} className="Grid">
           <Grid.Row>
-            <Grid.Column className="Grid">
+            <Grid.Column>
               <h3>
-                <span className="title">검색하고자 하는 이미지 첨부</span>
+                <span className="title">①이미지 첨부</span>
               </h3>
               <div className="DZ">
                 {!isDragging ? (
                   <Dropzone className="DZ" multiple={false} onDrop={onDrop}>
                     {({ getRootProps, getInputProps }) => (
-                      <section>
+                      <section style={{ marginTop: "5em", marginBottom: "0" }}>
                         <div {...getRootProps()}>
                           <input
                             className="dropzone"
@@ -487,10 +520,16 @@ function App() {
                               accept: "image/*",
                             })}
                           />
+                          <img src={image_icon} width={120}></img>
                           <h4>
-                            업로드 할 이미지를 드래그하거나 박스를{" "}
-                            <span style={{ color: "lightBlue" }}> 클릭</span>
-                            하세요
+                            검색하고 싶은 글자 이미지를 드래그하거나 박스를
+                            클릭하세요
+                            <br></br>
+                            <span style={{ color: "gray", fontSize: 12 }}>
+                              {" "}
+                              지원 형식 : png, jpg <br></br> * 저화질 이미지는
+                              검색 정확도가 낮게 나올 수 있습니다.
+                            </span>
                           </h4>
                         </div>
                       </section>
@@ -521,13 +560,15 @@ function App() {
             <Grid.Column className="Grid">
               <div className="Grid2">
                 <h3>
-                  <span className="title">선택한 단어 </span>
+                  <span className="title">②선택한 단어 확인 </span>
                 </h3>
                 <div id="selectbox">
                   {/* selected word show */}
                   {!isDragging ? (
                     <div id="beforeOCRbox">
-                      <h4 textAlign="center">먼저 이미지를 첨부해주세요</h4>
+                      <p textAlign="center" style={{ paddingTop: "3em" }}>
+                        ←먼저 왼쪽 박스에서 이미지를 첨부해주세요
+                      </p>
                     </div>
                   ) : (
                     <>
@@ -540,7 +581,7 @@ function App() {
                         </>
                       ) : (
                         <>
-                          <p textAlign="center">
+                          <p textAlign="center" style={{ paddingTop: "1.7em" }}>
                             이미지 속 검색하려는 단어를 선택해주세요
                           </p>
                         </>
@@ -551,35 +592,26 @@ function App() {
               </div>
               <div className="Grid2">
                 <h3>
-                  <span className="title">이미지 속 폰트 검색 결과 조회</span>
+                  <span className="title">③폰트 검색 결과</span>
                 </h3>
                 <div id="searchresult">
-                  <div id="container"></div>
+                  <div
+                    id="container"
+                    className="container"
+                    style={{ marginTop: 100 }}
+                  ></div>
                   {!isSearch ? (
                     <>
                       <div id="bigbox">
-                        <h4>이곳에 순위별로 표시됩니다. </h4>
+                        <h4>이곳에 검색 결과를 보여줍니다. </h4>
                       </div>
                     </>
                   ) : (
                     <>
                       {isLoading ? (
                         <>
-                          <div
-                            className="container"
-                            id="container"
-                            // style={{ visibility: "hidden" }}
-                          ></div>
                           {pro_bar_run()}
-                          {/* <Segment>
-                            <Loader
-                              indeterminate
-                              active
-                              inline="centered"
-                              size="big"
-                              content="검색중입니다. 잠시만 기다려주세요."
-                            />
-                          </Segment> */}
+                          <div>검색중입니다</div>
                         </>
                       ) : (
                         <>
