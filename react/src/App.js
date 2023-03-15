@@ -58,7 +58,6 @@ function App() {
   function findRect(x, y, ctx, canvas, src, rattio) {
     //canvas 버전으로 바꾸기
     var res = 0;
-    console.log("findRect 들어옴");
     for (var i = 0; i < takethem.length; i++) {
       let r_x = takethem[i][0];
       let r_y = takethem[i][1];
@@ -83,15 +82,9 @@ function App() {
         ctx3.clearRect(0, 0, word_canvas.width, word_canvas.height);
         let img_3 = new Image();
         // img_3.src = imgSrc;
-        console.log("src is longlong2" + src);
         img_3.src = src;
-        console.log(img_3.src + "img onload start");
         img_3.onload = function () {
-          console.log("img_3 onload finish");
-
           // ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
-          console.log("ratio is" + ttt);
-          console.log("rattio is " + rattio);
 
           // let t_r_w = r_w / ttt + 10;
           // let t_r_h = r_h / ttt + 10;
@@ -178,12 +171,9 @@ function App() {
     }
 
     canvas.addEventListener("click", function (event) {
-      console.log("클릭은 됨");
       var rect = canvas.getBoundingClientRect();
       var x = event.clientX - rect.left;
       var y = event.clientY - rect.top;
-
-      console.log("src is long2 : " + src);
       findRect(x, y, ctx, canvas, src, rattio);
       console.log("(" + x + ", " + y + ") is clicked.");
     });
@@ -260,8 +250,6 @@ function App() {
       // output.src = reader.result;
       setImgSrc(reader.result);
       src_tmp = reader.result;
-      console.log(imgSrc + " img src +++");
-      console.log(src_tmp + "src_tmp +++");
       img_resized.src = reader.result;
     };
     reader.readAsDataURL(newFile);
@@ -272,7 +260,7 @@ function App() {
       let r_width = img_resized.width;
       let r_height = img_resized.height;
       if (r_width > max_canvas_width && r_height > max_canvas_height) {
-        console.log("one");
+        console.log("all over");
         let tmp_ratio_w = max_canvas_width / r_width;
         let tmp_ratio_h = max_canvas_height / r_height;
         let show_ratio_all = tmp_ratio_w;
@@ -295,7 +283,7 @@ function App() {
         setTTT(show_ratio);
         rattio = show_ratio;
       } else if (r_height > max_canvas_height) {
-        console.log("two");
+        console.log("height over");
         let show_ratio_h = max_canvas_height / r_height;
         r_width = r_width * show_ratio_h;
         r_height = r_height * show_ratio_h;
@@ -306,10 +294,12 @@ function App() {
         rattio = show_ratio_h;
       }
 
-      if (r_height < 300) {
+      if (r_height < 500) {
         var imgcan = document.getElementById("myDiv");
-        let m_T = (400 - r_height) / 2;
+        let r_height_em = (r_height / 14).toFixed(2);
+        let m_T = ((34.5 - r_height_em) / 2) * 14;
         console.log("m_T is " + m_T);
+
         imgcan.style.marginTop = m_T + "px";
       }
 
@@ -367,11 +357,13 @@ function App() {
     var w = selectocr.vertices[1].x - x + 2;
     var h = selectocr.vertices[2].y - y + 2;
 
-    // if (w < 40 || h < 40){
-    //   alert("단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다.");
-    //   window.location.reload();
-    //   return;
-    // }
+    if (w < 40 || h < 40) {
+      alert(
+        "단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다."
+      );
+      window.location.reload();
+      return;
+    }
     setWord(word);
     const imgData = new FormData();
     imgData.append("word", word);
@@ -466,7 +458,6 @@ function App() {
     barRef.current.set(0);
     ctn.style.visibility = "hidden";
     ctn.style.display = "none";
-    console.log(document.querySelectorAll("container"));
   }
 
   return (
@@ -505,13 +496,13 @@ function App() {
           <Grid.Row>
             <Grid.Column>
               <h3>
-                <span className="title">①이미지 첨부</span>
+                <span className="title">①&nbsp;이미지 첨부</span>
               </h3>
               <div className="DZ">
                 {!isDragging ? (
                   <Dropzone className="DZ" multiple={false} onDrop={onDrop}>
                     {({ getRootProps, getInputProps }) => (
-                      <section style={{ marginTop: "5em", marginBottom: "0" }}>
+                      <section style={{ marginTop: "9em", marginBottom: "0" }}>
                         <div {...getRootProps()}>
                           <input
                             className="dropzone"
@@ -527,8 +518,7 @@ function App() {
                             <br></br>
                             <span style={{ color: "gray", fontSize: 12 }}>
                               {" "}
-                              지원 형식 : png, jpg <br></br> * 저화질 이미지는
-                              검색 정확도가 낮게 나올 수 있습니다.
+                              지원 형식 : png, jpg
                             </span>
                           </h4>
                         </div>
@@ -548,10 +538,17 @@ function App() {
                     <></>
                   ) : (
                     <>
-                      <Button onClick={refresh} style={{ marginTop: 7 }}>
-                        {" "}
-                        이미지 다시 선택하기
-                      </Button>
+                      <div style={{ marginTop: 7 }}>
+                        <Button
+                          basic
+                          color="blue"
+                          onClick={refresh}
+                          style={{ display: "block", margin: "auto" }}
+                        >
+                          {" "}
+                          이미지 다시 선택하기
+                        </Button>
+                      </div>
                     </>
                   )}
                 </div>
@@ -560,14 +557,14 @@ function App() {
             <Grid.Column className="Grid">
               <div className="Grid2">
                 <h3>
-                  <span className="title">②선택한 단어 확인 </span>
+                  <span className="title">②&nbsp;선택한 단어 확인 </span>
                 </h3>
                 <div id="selectbox">
                   {/* selected word show */}
                   {!isDragging ? (
                     <div id="beforeOCRbox">
                       <p textAlign="center" style={{ paddingTop: "3em" }}>
-                        ←먼저 왼쪽 박스에서 이미지를 첨부해주세요
+                        ←&nbsp;먼저 왼쪽 박스에서 이미지를 첨부해주세요
                       </p>
                     </div>
                   ) : (
@@ -577,7 +574,10 @@ function App() {
                       </div>
                       {isSelected ? (
                         <>
-                          <Button onClick={CropGo}> 폰트 검색</Button>
+                          <Button basic color="blue" onClick={CropGo}>
+                            {" "}
+                            폰트 검색
+                          </Button>
                         </>
                       ) : (
                         <>
@@ -592,7 +592,7 @@ function App() {
               </div>
               <div className="Grid2">
                 <h3>
-                  <span className="title">③폰트 검색 결과</span>
+                  <span className="title">③&nbsp;폰트 검색 결과</span>
                 </h3>
                 <div id="searchresult">
                   <div
