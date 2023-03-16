@@ -2,7 +2,7 @@ import "./App.css?ver=1";
 import "./Fonts.css";
 // import './test.css'
 import info from "./info.png";
-import info_desc from "./info_desc.png";
+import info_desc from "./info_desc.jpeg";
 import image_icon from "./image_icon.png";
 import axios, { all } from "axios";
 import React, { createRef, useEffect, useState, useRef } from "react";
@@ -75,19 +75,30 @@ function App() {
 
         //draw in selectedCanvas
         var word_canvas = document.getElementById("selectedCanvas");
-        word_canvas.width = r_w;
-        word_canvas.height = r_h;
+        let n_ratio = 1;
+        let n_r_h = r_h;
+        let n_r_w = r_w;
+        if (r_h > 70) {
+          n_ratio = r_h / 70;
+          console.log("기존 t_r_w , t_r_h " + r_w + " " + r_h);
+          console.log("n_ratio" + n_ratio);
+          n_r_h = r_h / n_ratio;
+          n_r_w = r_w / n_ratio;
+        }
+        word_canvas.width = n_r_w;
+        word_canvas.height = n_r_h;
+
+        //canvas max height 맞추기
         let ctx3 = word_canvas.getContext("2d");
 
         ctx3.clearRect(0, 0, word_canvas.width, word_canvas.height);
         let img_3 = new Image();
-        // img_3.src = imgSrc;
         img_3.src = src;
         img_3.onload = function () {
           // ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
+          var selectcontrol = document.getElementById("selectboxcontrol");
+          selectcontrol.style.marginTop = (126 - (n_r_h + 36)) / 2 + "px";
 
-          // let t_r_w = r_w / ttt + 10;
-          // let t_r_h = r_h / ttt + 10;
           let t_r_w = r_w / rattio + 10;
           let t_r_h = r_h / rattio + 10;
 
@@ -100,8 +111,8 @@ function App() {
             t_r_h,
             0,
             0,
-            r_w,
-            r_h
+            n_r_w,
+            n_r_h
           );
         };
 
@@ -127,18 +138,8 @@ function App() {
     const ocr_texts = await data.texts;
     const ocr_width = await data.width;
     var ctx = canvas.getContext("2d");
-    // ctx.clearRect(0,0,canvas.width,canvas.height);
-    // var img = document.getElementById("preview");
-    // canvas.width = img.width;
-    // canvas.height = img.height;
-
-    // var canvas2 = document.getElementById("layer2");
-    // var ctx2 = canvas2.getContext("2d");
-    // canvas2.width = canvas.width;
-    // canvas2.height = canvas.height;
 
     console.log("canvas size is : " + canvas.width + canvas.height);
-    // ctx.drawImage(img,0,0,img.width,img.height);
     ctx.stroke();
     var ratio = canvas.width / ocr_width;
     console.log("ratio is " + ratio);
@@ -485,7 +486,6 @@ function App() {
             mouseLeaveDelay={1500}
             on="click"
           >
-            이미지 첨부해서 설명하기
             <img src={info_desc} width={1000}></img>
           </Popup>
         </h1>
@@ -540,8 +540,7 @@ function App() {
                     <>
                       <div style={{ marginTop: 7 }}>
                         <Button
-                          basic
-                          color="blue"
+                          primary
                           onClick={refresh}
                           style={{ display: "block", margin: "auto" }}
                         >
@@ -561,33 +560,38 @@ function App() {
                 </h3>
                 <div id="selectbox">
                   {/* selected word show */}
-                  {!isDragging ? (
-                    <div id="beforeOCRbox">
-                      <p textAlign="center" style={{ paddingTop: "3em" }}>
-                        ←&nbsp;먼저 왼쪽 박스에서 이미지를 첨부해주세요
-                      </p>
-                    </div>
-                  ) : (
-                    <>
-                      <div>
-                        <canvas id="selectedCanvas" height="3"></canvas>
+                  <div id="selectboxcontrol">
+                    {!isDragging ? (
+                      <div id="beforeOCRbox">
+                        <p textAlign="center" style={{ paddingTop: "3em" }}>
+                          ←&nbsp;먼저 왼쪽 박스에서 이미지를 첨부해주세요
+                        </p>
                       </div>
-                      {isSelected ? (
-                        <>
-                          <Button basic color="blue" onClick={CropGo}>
-                            {" "}
-                            폰트 검색
-                          </Button>
-                        </>
-                      ) : (
-                        <>
-                          <p textAlign="center" style={{ paddingTop: "1.7em" }}>
-                            이미지 속 검색하려는 단어를 선택해주세요
-                          </p>
-                        </>
-                      )}
-                    </>
-                  )}
+                    ) : (
+                      <>
+                        <div>
+                          <canvas id="selectedCanvas" height="3"></canvas>
+                        </div>
+                        {isSelected ? (
+                          <>
+                            <Button primary onClick={CropGo}>
+                              {" "}
+                              폰트 검색
+                            </Button>
+                          </>
+                        ) : (
+                          <>
+                            <p
+                              textAlign="center"
+                              style={{ paddingTop: "1.7em" }}
+                            >
+                              이미지 속 검색하려는 단어를 선택해주세요
+                            </p>
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="Grid2">
