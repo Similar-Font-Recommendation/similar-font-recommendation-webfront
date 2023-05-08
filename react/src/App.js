@@ -6,51 +6,26 @@ import info_desc from "./info_desc.jpeg";
 import image_icon from "./image_icon.png";
 import axios, { all } from "axios";
 import React, { createRef, useEffect, useState, useRef } from "react";
-import {
-  Button,
-  Grid,
-  Loader,
-  Dimmer,
-  Segment,
-  Table,
-  Header,
-  Popup,
-  Progress,
-} from "semantic-ui-react";
+import { Button, Grid, Table, Header, Popup } from "semantic-ui-react";
 import Dropzone from "react-dropzone";
 import imageCompression from "browser-image-compression";
 
 //rfce
 function App() {
-  const [ocrdata, setOcrdata] = useState();
   const [selectocr, setSelectocr] = useState([]);
   const [word, setWord] = useState("가나다라마바사");
   const [useList, setUseList] = useState([]);
-  const [imgPath, setImgPath] = useState("");
-  const [imgSrc, setImgSrc] = useState("");
-
-  //resize
-  const [file, setFile] = useState();
-  const [fileUrl, setFileUrl] = useState();
 
   //리액트 화면 제어
   const [isDragging, setIsDragging] = useState(false);
-  const [isOCR, setIsOCR] = useState(false);
-  const [isShow, setIsShow] = useState(true);
   const [isSearch, setIsSearch] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [isClickOnce, setIsClickOnce] = useState(false);
 
-  //progress bar
-  const [count, setCount] = useState(0);
-  const [percent, setPercent] = useState(0);
-
   //max canvas width
   var max_canvas_width = 500;
   var max_canvas_height = 400;
-  let show_ratio = 1;
-  const [ttt, setTTT] = useState(1);
 
   let takethem = [];
   let allJson = [];
@@ -63,13 +38,7 @@ function App() {
       let r_y = takethem[i][1];
       let r_w = takethem[i][2];
       let r_h = takethem[i][3];
-      if (
-        x <= r_x + r_w &&
-        x >= r_x &&
-        y <= r_y + r_h &&
-        y >= r_y &&
-        isSelected === false
-      ) {
+      if (x <= r_x + r_w && x >= r_x && y <= r_y + r_h && y >= r_y && isSelected === false) {
         res = i;
         setIsSelected(true);
 
@@ -80,8 +49,6 @@ function App() {
         let n_r_w = r_w;
         if (r_h > 70) {
           n_ratio = r_h / 70;
-          console.log("기존 t_r_w , t_r_h " + r_w + " " + r_h);
-          console.log("n_ratio" + n_ratio);
           n_r_h = r_h / n_ratio;
           n_r_w = r_w / n_ratio;
         }
@@ -95,34 +62,16 @@ function App() {
         let img_3 = new Image();
         img_3.src = src;
         img_3.onload = function () {
-          // ctx3.clearRect(0,0,word_canvas.width,word_canvas.height);
           var selectcontrol = document.getElementById("selectboxcontrol");
           selectcontrol.style.marginTop = (126 - (n_r_h + 36)) / 2 + "px";
 
           let t_r_w = r_w / rattio + 10;
           let t_r_h = r_h / rattio + 10;
-
-          console.log("t_r_w , t_r_h " + t_r_w + " " + t_r_h);
-          ctx3.drawImage(
-            img_3,
-            r_x / rattio,
-            r_y / rattio,
-            t_r_w,
-            t_r_h,
-            0,
-            0,
-            n_r_w,
-            n_r_h
-          );
+          ctx3.drawImage(img_3, r_x / rattio, r_y / rattio, t_r_w, t_r_h, 0, 0, n_r_w, n_r_h);
         };
 
-        // ctx.clearRect(0, 0, canvas2.width, canvas2.height);
-        // ctx.globalAlpha = 0.4;
-        // ctx.fillRect(r_x, r_y, r_w, r_h);
-        // ctx.globalAlpha = 1.0;
         break;
       } else if (isSelected) {
-        // ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
         setIsSelected(false);
       }
     }
@@ -132,8 +81,6 @@ function App() {
   }
 
   async function CtxTest(data, src, rattio) {
-    setIsOCR(true);
-    setIsShow(true);
     var canvas = document.getElementById("imageCanvas");
     const ocr_texts = await data.texts;
     const ocr_width = await data.width;
@@ -189,7 +136,6 @@ function App() {
     });
     const res = await response.json();
     console.log("OCR :" + res);
-    setOcrdata(res);
     CtxTest(res);
   }
 
@@ -202,12 +148,8 @@ function App() {
 
     try {
       const compressedFile = await imageCompression(file, options);
-      setFile(compressedFile);
       ree = compressedFile;
       const promise = imageCompression.getDataUrlFromFile(compressedFile);
-      promise.then((result) => {
-        setFileUrl(result);
-      });
     } catch (err) {
       console.log("handleFileOnchange 에러");
       console.log(err);
@@ -221,17 +163,19 @@ function App() {
     var canvas = document.getElementById("imageCanvas");
     var ctx = canvas.getContext("2d");
 
-    // var canvas_j = document.getElementById("justblock");
-    // var ctx_j = canvas.getContext("2d");
+    let filename = pictureFiles[0].name;
+    let fileName = filename.slice(filename.indexOf(".") + 1).toLowerCase();
+    if (fileName != "png" && fileName != "jpg") {
+      alert("파일 형식을 jpg, png로 설정해주세요.");
+      window.location.reload();
+    }
     // //최소 이미지 크기 충족하는지 확인
     var img = new Image();
     var _URL = window.URL || window.webkitURL;
     img.src = _URL.createObjectURL(pictureFiles[0]);
     img.onload = function () {
       if (img.width < 50 || img.height < 50) {
-        alert(
-          "최소 이미지 사이즈(가로 50px, 세로 50px)이상으로 업로드 해주세요."
-        );
+        alert("최소 이미지 사이즈(가로 50px, 세로 50px)이상으로 업로드 해주세요.");
         _URL.revokeObjectURL(img.src);
         window.location.reload();
         return;
@@ -246,10 +190,6 @@ function App() {
     var img_resized = new Image();
     var reader = new FileReader();
     reader.onload = (r) => {
-      // var output = document.getElementById('preview');
-      // setImgSrc(reader.result);
-      // output.src = reader.result;
-      setImgSrc(reader.result);
       src_tmp = reader.result;
       img_resized.src = reader.result;
     };
@@ -273,7 +213,6 @@ function App() {
         console.log("ratio is" + show_ratio_all);
         console.log("바꾼 가로 " + r_width);
         console.log("바꾼 세로 " + r_height);
-        setTTT(show_ratio_all);
         rattio = show_ratio_all;
       } else if (r_width > max_canvas_width) {
         let show_ratio = max_canvas_width / r_width;
@@ -281,7 +220,6 @@ function App() {
         r_height = r_height * show_ratio;
         console.log("ratio is" + show_ratio);
         console.log("바꾼 가로 " + r_width);
-        setTTT(show_ratio);
         rattio = show_ratio;
       } else if (r_height > max_canvas_height) {
         console.log("height over");
@@ -291,7 +229,6 @@ function App() {
         console.log("ratio is" + show_ratio_h);
         console.log("바꾼 가로 " + r_width);
         console.log("바꾼 세로 " + r_height);
-        setTTT(show_ratio_h);
         rattio = show_ratio_h;
       }
 
@@ -299,22 +236,15 @@ function App() {
         var imgcan = document.getElementById("myDiv");
         let r_height_em = (r_height / 14).toFixed(2);
         let m_T = ((34.5 - r_height_em) / 2) * 14;
-        console.log("m_T is " + m_T);
-
         imgcan.style.marginTop = m_T + "px";
       }
 
       canvas.width = r_width;
       canvas.height = r_height;
-
-      // canvas_j.width = r_width;
-      // canvas_j.height = r_height;
-      // ctx_j.fillRect(0, 0, r_width, r_height);
       ctx.drawImage(img_resized, 0, 0, r_width, r_height);
     };
 
     if (pictureFiles.length > 0) {
-      setImgPath(pictureFiles[0].path);
       const imgData = new FormData();
       imgData.append("file", newFile);
       await axios
@@ -322,9 +252,7 @@ function App() {
         .then(console.log("onDrop 성공"))
         .then((res) => {
           console.log(res);
-          // fetchData();
         })
-        // .then(fetchData(src_tmp))
         .catch((e) => {
           console.error(e);
         });
@@ -333,7 +261,6 @@ function App() {
         .then((response) => {
           const res = response.data;
           console.log("OCR: " + res);
-          setOcrdata(res);
           CtxTest(res, src_tmp, rattio);
         })
         .catch((e) => {
@@ -358,10 +285,8 @@ function App() {
     var w = selectocr.vertices[1].x - x + 2;
     var h = selectocr.vertices[2].y - y + 2;
 
-    if (w < 40 || h < 40) {
-      alert(
-        "단어를 검색할 수 있는 최소 이미지 사이즈(가로 40px, 세로 40px)보다 작습니다."
-      );
+    if (w < 50 || h < 50) {
+      alert("단어를 검색할 수 있는 최소 이미지 사이즈(가로 50px, 세로 50px)보다 작습니다.");
       window.location.reload();
       return;
     }
@@ -385,19 +310,6 @@ function App() {
         console.log(err.message);
       });
   }
-
-  //폰트 검색 결과 출력
-  const ClickResult = () => {
-    fetch("/api/Test/fontresult")
-      .then((response) => response.json())
-      .then((actualData) => {
-        setUseList(actualData.result);
-        console.log(useList);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
 
   function refresh() {
     window.location.reload();
@@ -446,7 +358,6 @@ function App() {
     ctn.style.display = "block";
     ctn.style.marginTop = "10em";
     ctn.style.visibility = "visible";
-    // barRef.current.animate(0);
     barRef.current.animate(1.0, {
       duration: 10000,
       from: { color: "#FFEA82" },
@@ -508,27 +419,21 @@ function App() {
                             className="dropzone"
                             {...getInputProps({
                               type: "file",
-                              accept: "image/*",
+                              accept: ".jpg, .png",
                             })}
                           />
                           <img src={image_icon} width={120}></img>
                           <h4>
-                            검색하고 싶은 글자 이미지를 드래그하거나 박스를
-                            클릭하세요
+                            검색하고 싶은 글자 이미지를 드래그하거나 박스를 클릭하세요
                             <br></br>
-                            <span style={{ color: "gray", fontSize: 12 }}>
-                              {" "}
-                              지원 형식 : png, jpg
-                            </span>
+                            <span style={{ color: "gray", fontSize: 12 }}> 지원 형식 : png, jpg</span>
                           </h4>
                         </div>
                       </section>
                     )}
                   </Dropzone>
                 ) : (
-                  <>
-                    {/* <Button onClick={refresh}> 이미지 다시 선택하기</Button> */}
-                  </>
+                  <></>
                 )}
                 <div id="myDiv">
                   <canvas className="imageCanvas" id="imageCanvas" height="1">
@@ -539,11 +444,7 @@ function App() {
                   ) : (
                     <>
                       <div style={{ marginTop: 7 }}>
-                        <Button
-                          primary
-                          onClick={refresh}
-                          style={{ display: "block", margin: "auto" }}
-                        >
+                        <Button primary onClick={refresh} style={{ display: "block", margin: "auto" }}>
                           {" "}
                           이미지 다시 선택하기
                         </Button>
@@ -581,10 +482,7 @@ function App() {
                           </>
                         ) : (
                           <>
-                            <p
-                              textAlign="center"
-                              style={{ paddingTop: "1.7em" }}
-                            >
+                            <p textAlign="center" style={{ paddingTop: "1.7em" }}>
                               이미지 속 검색하려는 단어를 선택해주세요
                             </p>
                           </>
@@ -599,11 +497,7 @@ function App() {
                   <span className="title">③&nbsp;폰트 검색 결과</span>
                 </h3>
                 <div id="searchresult">
-                  <div
-                    id="container"
-                    className="container"
-                    style={{ marginTop: 100 }}
-                  ></div>
+                  <div id="container" className="container" style={{ marginTop: 100 }}></div>
                   {!isSearch ? (
                     <>
                       <div id="bigbox">
@@ -623,23 +517,14 @@ function App() {
                           <Table celled>
                             <Table.Header>
                               <Table.Row>
-                                <Table.HeaderCell
-                                  width={2}
-                                  style={{ textAlign: "center" }}
-                                >
+                                <Table.HeaderCell width={2} style={{ textAlign: "center" }}>
                                   {" "}
                                   순위
                                 </Table.HeaderCell>
-                                <Table.HeaderCell
-                                  width={5}
-                                  style={{ textAlign: "center" }}
-                                >
+                                <Table.HeaderCell width={5} style={{ textAlign: "center" }}>
                                   폰트명
                                 </Table.HeaderCell>
-                                <Table.HeaderCell
-                                  width={30}
-                                  style={{ textAlign: "center" }}
-                                >
+                                <Table.HeaderCell width={30} style={{ textAlign: "center" }}>
                                   글자
                                 </Table.HeaderCell>
                               </Table.Row>
@@ -647,7 +532,6 @@ function App() {
 
                             <Table.Body>
                               {useList.map((res, index) => {
-                                // const font = res + ', "YWDA"';
                                 const font = '"' + res + '"';
                                 console.log(font);
                                 const TdStyle = {
@@ -659,20 +543,14 @@ function App() {
                                 };
                                 return (
                                   <tr key={index}>
-                                    <td style={{ textAlign: "center" }}>
-                                      {" "}
-                                      {index + 1}
-                                    </td>
-                                    <td style={{ textAlign: "center" }}>
-                                      {res}
-                                    </td>
+                                    <td style={{ textAlign: "center" }}> {index + 1}</td>
+                                    <td style={{ textAlign: "center" }}>{res}</td>
                                     <td style={TdStyle}>{word}</td>
                                   </tr>
                                 );
                               })}
                             </Table.Body>
                           </Table>
-                          {/* <Button onClick={refresh}> 다시 검색하기</Button> */}
                         </>
                       )}
                     </>
