@@ -1,2213 +1,2582 @@
 @charset "utf=8";
 
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 
-@font-face{
-  font-family: 'YWDA';
-  src : url('./fonts/YWDA05.TTF') format('truetype');
+@font-face {
+  font-family: "YWDA";
+  src: url("./fonts/YWDA05.TTF") format("truetype");
 }
-
 
 @font-face {
-  font-family: '텐바이텐';
-  src: url('./fonts/10X10.ttf') format('truetype'),
-  url('./fonts/10X10.woff') format('woff');
+  font-family: "텐바이텐";
+  src: url("./fonts/10X10.woff") format("woff"), url("./fonts/10X10.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: '텐바이텐 Bold';
-  src: url('./fonts/10X10Bold.ttf') format('truetype');
+  font-family: "텐바이텐 Bold";
+  src: url("./fonts/10X10Bold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: '앵무부리';
-  src: url('./fonts/116angmuburi.ttf') format('truetype');
+  font-family: "앵무부리";
+  src: url("./fonts/116angmuburi.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: '수박화체';
-  src: url('./fonts/116watermelon.ttf') format('truetype');
+  font-family: "수박화체";
+  src: url("./fonts/116watermelon.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: '롯데마트드림Bold';
-  src: url('./fonts/12롯데마트드림Bold.ttf') format('truetype'),
-      url('./fonts/12롯데마트드림Bold.woff') format('woff'),
-      url('./fonts/AnyConv.com__12롯데마트드림Bold.woff2') format('font-woff2');
+  font-family: "롯데마트드림Bold";
+  src: url("./fonts/MiConv.com__12롯데마트드림Bold.otf") format("opentype"),
+    url("./fonts/12롯데마트드림Bold.woff") format("woff"), url("./fonts/12롯데마트드림Bold.ttf") format("truetype"),
+    url("./fonts/AnyConv.com__12롯데마트드림Bold.woff2") format("font-woff2");
 }
 
 @font-face {
-  font-family: '롯데마트드림Light';
-  src: url('./fonts/12롯데마트드림Light.ttf') format('truetype'),
-  url('./fonts/12롯데마트드림Light.woff') format('woff'),
-  url('./fonts/AnyConv.com__12롯데마트드림Light.woff2') format('font-woff2');
+  font-display: swap;
+  font-family: "롯데마트드림Light";
+  src: url("./fonts/MiConv.com__12롯데마트드림Light.otf") format("opentype"),
+    url("./fonts/12롯데마트드림Light.woff") format("woff"), url("./fonts/12롯데마트드림Light.ttf") format("truetype"),
+    url("./fonts/AnyConv.com__12롯데마트드림Light.woff2") format("font-woff2");
 }
 
 @font-face {
-  font-family: '롯데마트드림Medium';
-  src: url('./fonts/12롯데마트드림Medium.ttf') format('truetype'),
-    url('./fonts/12롯데마트드림Medium.woff') format('woff'),
-    url('./fonts/AnyConv.com__12롯데마트드림Medium.woff2') format('font-woff2');
+  font-display: swap;
+  font-family: "롯데마트드림Medium";
+  src: url("./fonts/MiConv.com__12롯데마트드림Medium.otf") format("opentype"),
+    url("./fonts/12롯데마트드림Medium.woff") format("woff"), url("./fonts/12롯데마트드림Medium.ttf") format("truetype"),
+    url("./fonts/AnyConv.com__12롯데마트드림Medium.woff2") format("font-woff2");
 }
 
 @font-face {
-  font-family: '롯데마트행복Bold';
-  src: url('./fonts/12롯데마트행복Bold.ttf') format('truetype');
+  font-family: "롯데마트행복Bold";
+  src: url("./fonts/12롯데마트행복Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '롯데마트행복Light';
-  src: url('./fonts/12롯데마트행복Light.ttf') format('truetype'),
-  url('./fonts/12롯데마트행복Light.woff') format('woff'),
-  url('./fonts/AnyConv.com__12롯데마트행복Light.woff2') format('font-woff2');
+  font-family: "롯데마트행복Light";
+  src: url("./fonts/MiConv.com__12롯데마트행복Light.otf") format("opentype"),
+    url("./fonts/12롯데마트행복Light.ttf") format("truetype"), url("./fonts/12롯데마트행복Light.woff") format("woff"),
+    url("./fonts/AnyConv.com__12롯데마트행복Light.woff2") format("font-woff2");
 }
 
 @font-face {
-  font-family: '롯데마트행복Medium';
-  src: url('./fonts/12롯데마트행복Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "롯데마트행복Medium";
+  src: url("./fonts/12롯데마트행복Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도서관체';
-  src: url('./fonts/20835804_도서관체_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도서관체";
+  src: url("./fonts/20835804_도서관체_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '성동고딕';
-  src: url('./fonts/20835814_SungDongGothicEB_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "성동고딕";
+  src: url("./fonts/20835814_SungDongGothicEB_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '성동고딕B';
-  src: url('./fonts/20835815_SungDongGothicB_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "성동고딕B";
+  src: url("./fonts/20835815_SungDongGothicB_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '경기천년제목 Bold';
-  src: url('./fonts/20950864_경기천년제목TTF_Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년제목 Bold";
+  src: url("./fonts/20950864_경기천년제목TTF_Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '경기천년제목 Medium';
-  src: url('./fonts/20950866_경기천년제목TTF_Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년제목 Medium";
+  src: url("./fonts/20950866_경기천년제목TTF_Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '경기천년제목V Bold';
-  src: url('./fonts/20950867_경기천년제목TTFV_Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년제목V Bold";
+  src: url("./fonts/20950867_경기천년제목TTFV_Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '경기천년바탕 Bold';
-  src: url('./fonts/20950870_경기천년바탕TTF_Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년바탕 Bold";
+  src: url("./fonts/20950870_경기천년바탕TTF_Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '경기천년바탕 Regular';
-  src: url('./fonts/20950871_경기천년바탕TTF_Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년바탕 Regular";
+  src: url("./fonts/20950871_경기천년바탕TTF_Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빛고을광주체 Light';
-  src: url('./fonts/20950914_빛고을광주_Light_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빛고을광주체 Light";
+  src: url("./fonts/20950914_빛고을광주_Light_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빛고을광주체 Medium';
-  src: url('./fonts/20950916_빛고을광주_Medium_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빛고을광주체 Medium";
+  src: url("./fonts/20950916_빛고을광주_Medium_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빛고을광주체 Bold';
-  src: url('./fonts/20950918_빛고을광주_Bold_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빛고을광주체 Bold";
+  src: url("./fonts/20950918_빛고을광주_Bold_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '김포평화바탕';
-  src: url('./fonts/20950938_Batang_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "김포평화바탕";
+  src: url("./fonts/20950938_Batang_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '순천체R';
-  src: url('./fonts/20956072_SuncheonR_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "순천체R";
+  src: url("./fonts/20956072_SuncheonR_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '순천체B';
-  src: url('./fonts/20956073_SuncheonB_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "순천체B";
+  src: url("./fonts/20956073_SuncheonB_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '전주완판본 순체 B';
-  src: url('./fonts/20957733_전주완판본 순B_TTF.ttf') format('truetype'),
-      url('./fonts/20957733_전주완판본-순B_TTF.woff') format('woff'),
-      url('./fonts/20957733_전주완판본\ 순B_TTF.woff2') format('woff2'),
-      url('./fonts/20957733_전주완판본-순B_TTF.otf') format('opentype');
+  font-display: swap;
+  font-family: "전주완판본 순체 B";
+  src: url("./fonts/20957733_전주완판본 순B_TTF.ttf") format("truetype"),
+    url("./fonts/20957733_전주완판본-순B_TTF.woff") format("woff"),
+    url("./fonts/20957733_전주완판본\ 순B_TTF.woff2") format("woff2"),
+    url("./fonts/20957733_전주완판본-순B_TTF.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '전주완판본 순체 L';
-  src: url('./fonts/20957736_전주완판본 순L_TTF.ttf') format('truetype'),
-      url('./fonts/20957736_전주완판본-순L_TTF.woff') format('woff'),
-      url('./fonts/20957736_전주완판본\ 순L_TTF.woff2') format('woff2'),
-      url('./fonts/20957736_전주완판본-순L_TTF.otf') format('opentype');
+  font-display: swap;
+  font-family: "전주완판본 순체 L";
+  src: url("./fonts/20957736_전주완판본 순L_TTF.ttf") format("truetype"),
+    url("./fonts/20957736_전주완판본-순L_TTF.woff") format("woff"),
+    url("./fonts/20957736_전주완판본\ 순L_TTF.woff2") format("woff2"),
+    url("./fonts/20957736_전주완판본-순L_TTF.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '전주완판본 순체 R';
-  src: url('./fonts/20957738_전주완판본 순R_TTF.ttf') format('truetype'),
-  url('./fonts/20957738_전주완판본-순R_TTF.woff') format('woff'),
-  url('./fonts/20957738_전주완판본\ 순R_TTF.woff2') format('woff2'),
-  url('./fonts/20957738_전주완판본-순R_TTF.otf') format('opentype');
+  font-display: swap;
+  font-family: "전주완판본 순체 R";
+  src: url("./fonts/20957738_전주완판본 순R_TTF.ttf") format("truetype"),
+    url("./fonts/20957738_전주완판본-순R_TTF.woff") format("woff"),
+    url("./fonts/20957738_전주완판본\ 순R_TTF.woff2") format("woff2"),
+    url("./fonts/20957738_전주완판본-순R_TTF.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '전주완판본 각체 B';
-  src: url('./fonts/20957740_전주완판본 각B_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "전주완판본 각체 B";
+  src: url("./fonts/20957740_전주완판본 각B_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '전주완판본 각체 L';
-  src: url('./fonts/20957742_전주완판본 각L_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "전주완판본 각체 L";
+  src: url("./fonts/20957742_전주완판본 각L_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '전주완판본 각체 R';
-  src: url('./fonts/20957744_전주완판본 각R_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "전주완판본 각체 R";
+  src: url("./fonts/20957744_전주완판본 각R_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지 고딕 R';
-  src: url('./fonts/20958935_UTOIMAGE_유토이미지고딕_R_TTF.ttf') format('truetype'),
-  url('./fonts/MiConv.com__20958935_UTOIMAGE_유토이미지고딕_R_TTF.woff') format('woff');;
-      
+  font-display: swap;
+  font-family: "유토이미지 고딕 R";
+  src: url("./fonts/MiConv.com__20958935_UTOIMAGE_유토이미지고딕_R_TTF.woff") format("woff"),
+    url("./fonts/20958935_UTOIMAGE_유토이미지고딕_R_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지 별나라달님체';
-  src: url('./fonts/20958949_UTOIMAGE_유토이미지별나라달님_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "유토이미지 별나라달님체";
+  src: url("./fonts/20958949_UTOIMAGE_유토이미지별나라달님_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지 빨간우체통체';
-  src: url('./fonts/20958955_UTOIMAGE_유토이미지빨간우체통_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "유토이미지 빨간우체통체";
+  src: url("./fonts/20958955_UTOIMAGE_유토이미지빨간우체통_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지 플라워체';
-  src: url('./fonts/20958971_UTOIMAGE_플라워_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "유토이미지 플라워체";
+  src: url("./fonts/20958971_UTOIMAGE_플라워_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지체';
-  src: url('./fonts/20958979_UTOIMAGE_유토이미지_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "유토이미지체";
+  src: url("./fonts/20958979_UTOIMAGE_유토이미지_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '유토이미지 고딕 B';
-  src: url('./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.ttf') format('truetype'),
-  url('./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.woff') format('woff');
+  font-display: swap;
+  font-family: "유토이미지 고딕 B";
+  src: url("./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.ttf") format("truetype"),
+    url("./fonts/20958981_UTOIMAGE_유토이미지고딕_B_TTF.woff") format("woff");
 }
 
 @font-face {
-  font-family: '유토이미지 고딕 L';
-  src: url('./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.ttf') format('truetype'),
-  url('./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.woff') format('woff');
+  font-display: swap;
+  font-family: "유토이미지 고딕 L";
+  src: url("./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.ttf") format("truetype"),
+    url("./fonts/20958983_UTOIMAGE_유토이미지고딕_L_TTF.woff") format("woff");
 }
 
 @font-face {
-  font-family: '아리따 부리 B';
-  src: url('./fonts/Arita-buriB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "아리따 부리 B";
+  src: url("./fonts/Arita-buriB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '아리따 부리 L';
-  src: url('./fonts/Arita-buriL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "아리따 부리 L";
+  src: url("./fonts/Arita-buriL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '아리따 부리 M';
-  src: url('./fonts/Arita-buriM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "아리따 부리 M";
+  src: url("./fonts/Arita-buriM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '아리따 부리 SB';
-  src: url('./fonts/Arita-buriSB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "아리따 부리 SB";
+  src: url("./fonts/Arita-buriSB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '애터미체 Bold';
-  src: url('./fonts/Atomy-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "애터미체 Bold";
+  src: url("./fonts/Atomy-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '애터미체 Light';
-  src: url('./fonts/Atomy-Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "애터미체 Light";
+  src: url("./fonts/Atomy-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '애터미체 Medium';
-  src: url('./fonts/Atomy-Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "애터미체 Medium";
+  src: url("./fonts/Atomy-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'a타이틀고딕2';
-  src: url('./fonts/a타이틀고딕2.ttf') format('truetype');
+  font-display: swap;
+  font-family: "a타이틀고딕2";
+  src: url("./fonts/a타이틀고딕2.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'a타이틀고딕3';
-  src: url('./fonts/a타이틀고딕3.ttf') format('truetype');
+  font-display: swap;
+  font-family: "a타이틀고딕3";
+  src: url("./fonts/a타이틀고딕3.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'a타이틀고딕4';
-  src: url('./fonts/a타이틀고딕4.ttf') format('truetype');
+  font-display: swap;
+  font-family: "a타이틀고딕4";
+  src: url("./fonts/a타이틀고딕4.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '바른바탕체 B';
-  src: url('./fonts/BareunBatangB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "바른바탕체 B";
+  src: url("./fonts/BareunBatangB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '바른바탕체 L';
-  src: url('./fonts/BareunBatangL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "바른바탕체 L";
+  src: url("./fonts/BareunBatangL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '바른바탕체 M';
-  src: url('./fonts/BareunBatangM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "바른바탕체 M";
+  src: url("./fonts/BareunBatangM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '바탕체';
-  src: url('./fonts/BatangChe.ttf') format('truetype');
+  font-display: swap;
+  font-family: "바탕체";
+  src: url("./fonts/BatangChe.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '넥슨 배찌체';
-  src: url('./fonts/Bazzi.ttf') format('truetype');
+  font-display: swap;
+  font-family: "넥슨 배찌체";
+  src: url("./fonts/Bazzi.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레체';
-  src: url('./fonts/BinggraeChe.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레체";
+  src: url("./fonts/BinggraeChe.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레 메로나체 Bold';
-  src: url('./fonts/BinggraeMelona-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레 메로나체 Bold";
+  src: url("./fonts/BinggraeMelona-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레 메로나';
-  src: url('./fonts/BinggraeMelona.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레 메로나";
+  src: url("./fonts/BinggraeMelona.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레 싸만코체 Bold';
-  src: url('./fonts/BinggraeSamanco-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레 싸만코체 Bold";
+  src: url("./fonts/BinggraeSamanco-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레 싸만코체';
-  src: url('./fonts/BinggraeSamanco.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레 싸만코체";
+  src: url("./fonts/BinggraeSamanco.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빙그레체Ⅱ';
-  src: url('./fonts/BinggraeⅡ.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빙그레체Ⅱ";
+  src: url("./fonts/BinggraeⅡ.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도현체';
-  src: url('./fonts/BMDOHYEON_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도현체";
+  src: url("./fonts/BMDOHYEON_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '을지로10년후체';
-  src: url('./fonts/BMEuljiro10yearslater.ttf') format('truetype');
+  font-display: swap;
+  font-family: "을지로10년후체";
+  src: url("./fonts/BMEuljiro10yearslater.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '을지로체';
-  src: url('./fonts/BMEULJIROTTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "을지로체";
+  src: url("./fonts/BMEULJIROTTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한나체 Air';
-  src: url('./fonts/BMHANNAAir_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한나체 Air";
+  src: url("./fonts/BMHANNAAir_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한나체 Pro';
-  src: url('./fonts/BMHANNAPro.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한나체 Pro";
+  src: url("./fonts/BMHANNAPro.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한나는11살체';
-  src: url('./fonts/BMHANNA_11yrs_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한나는11살체";
+  src: url("./fonts/BMHANNA_11yrs_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '주아체';
-  src: url('./fonts/BMJUA_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "주아체";
+  src: url("./fonts/BMJUA_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '기랑해랑체';
-  src: url('./fonts/BMKIRANGHAERANG-TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "기랑해랑체";
+  src: url("./fonts/BMKIRANGHAERANG-TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '연성체';
-  src: url('./fonts/BMYEONSUNG_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "연성체";
+  src: url("./fonts/BMYEONSUNG_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '부산체';
-  src: url('./fonts/BusanFont_Provisional.ttf') format('truetype'),
-  url('./fonts/AnyConv.com__BusanFont_Provisional.woff') format('woff');
+  font-display: swap;
+  font-family: "부산체";
+  src: url("./fonts/BusanFont_Provisional.ttf") format("truetype"),
+    url("./fonts/AnyConv.com__BusanFont_Provisional.woff") format("woff");
 }
 
 @font-face {
-  font-family: '카페24 당당해체';
-  src: url('./fonts/Cafe24Dangdanghae.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 당당해체";
+  src: url("./fonts/Cafe24Dangdanghae.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 단정해체';
-  src: url('./fonts/Cafe24Danjunghae.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 단정해체";
+  src: url("./fonts/Cafe24Danjunghae.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 동동체';
-  src: url('./fonts/Cafe24Dongdong.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 동동체";
+  src: url("./fonts/Cafe24Dongdong.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 아네모네 에어체';
-  src: url('./fonts/Cafe24Ohsquareair.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 아네모네 에어체";
+  src: url("./fonts/Cafe24Ohsquareair.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 빛나는별체';
-  src: url('./fonts/Cafe24Shiningstar.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 빛나는별체";
+  src: url("./fonts/Cafe24Shiningstar.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 쑥쑥체';
-  src: url('./fonts/Cafe24Ssukssuk.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 쑥쑥체";
+  src: url("./fonts/Cafe24Ssukssuk.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 써라운드체';
-  src: url('./fonts/Cafe24Ssurround.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 써라운드체";
+  src: url("./fonts/Cafe24Ssurround.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '카페24 숑숑체';
-  src: url('./fonts/Cafe24Syongsyong.ttf') format('truetype');
+  font-display: swap;
+  font-family: "카페24 숑숑체";
+  src: url("./fonts/Cafe24Syongsyong.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '창원단감아삭체 Bold';
-  src: url('./fonts/ChangwonDangamAsac-Bold_0712.ttf') format('truetype');
+  font-display: swap;
+  font-family: "창원단감아삭체 Bold";
+  src: url("./fonts/ChangwonDangamAsac-Bold_0712.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '쿠키런체 Black';
-  src: url('./fonts/CookieRun Black.ttf') format('truetype');
+  font-display: swap;
+  font-family: "쿠키런체 Black";
+  src: url("./fonts/CookieRun Black.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '쿠키런체 Bold';
-  src: url('./fonts/CookieRun Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "쿠키런체 Bold";
+  src: url("./fonts/CookieRun Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '디자인하우스체';
-  src: url('./fonts/designhouseBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "디자인하우스체";
+  src: url("./fonts/designhouseBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '디자인하우스체 Light';
-  src: url('./fonts/designhouseLight.ttf') format('truetype');
+  font-display: swap;
+  font-family: "디자인하우스체 Light";
+  src: url("./fonts/designhouseLight.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '영양군 음식디미방체';
-  src: url('./fonts/dimibang.ttf') format('truetype'),
-   url('./fonts/dimibang.woff2') format('font-woff2'),
-   url('./fonts/AnyConv.com__dimibang.otf') format('opentype');
+  font-display: swap;
+  font-family: "영양군 음식디미방체";
+  src: url("./fonts/dimibang.ttf") format("truetype"), url("./fonts/dimibang.woff2") format("font-woff2"),
+    url("./fonts/AnyConv.com__dimibang.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '동글 Bold';
-  src: url('./fonts/Dongle-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "동글 Bold";
+  src: url("./fonts/Dongle-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '동글 Light';
-  src: url('./fonts/Dongle-Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "동글 Light";
+  src: url("./fonts/Dongle-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '동글 Regular';
-  src: url('./fonts/Dongle-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "동글 Regular";
+  src: url("./fonts/Dongle-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도스고딕';
-  src: url('./fonts/DOSGothic.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도스고딕";
+  src: url("./fonts/DOSGothic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도스이야기 굵은체';
-  src: url('./fonts/DOSIyagiBoldface.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도스이야기 굵은체";
+  src: url("./fonts/DOSIyagiBoldface.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도스명조';
-  src: url('./fonts/DOSMyungjo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도스명조";
+  src: url("./fonts/DOSMyungjo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도스필기';
-  src: url('./fonts/DOSPilgi.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도스필기";
+  src: url("./fonts/DOSPilgi.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '도스샘물';
-  src: url('./fonts/DOSSaemmul.ttf') format('truetype');
+  font-display: swap;
+  font-family: "도스샘물";
+  src: url("./fonts/DOSSaemmul.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '돋움체';
-  src: url('./fonts/DotumChe.ttf') format('truetype');
+  font-display: swap;
+  font-family: "돋움체";
+  src: url("./fonts/DotumChe.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '둥근모꼴';
-  src: url('./fonts/DungGeunMo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "둥근모꼴";
+  src: url("./fonts/DungGeunMo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX아리랑 B';
-  src: url('./fonts/DXAriB-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX아리랑 B";
+  src: url("./fonts/DXAriB-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX아우라';
-  src: url('./fonts/DXAura-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX아우라";
+  src: url("./fonts/DXAura-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX작가세상 M';
-  src: url('./fonts/DXAWM-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX작가세상 M";
+  src: url("./fonts/DXAWM-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX방탄고딕';
-  src: url('./fonts/DXBangtango-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX방탄고딕";
+  src: url("./fonts/DXBangtango-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX봄결 ExBold';
-  src: url('./fonts/DXBomgExtraBold-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX봄결 ExBold";
+  src: url("./fonts/DXBomgExtraBold-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX블루마린라운드 ExBold';
-  src: url('./fonts/DXBrmRExtraBold-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX블루마린라운드 ExBold";
+  src: url("./fonts/DXBrmRExtraBold-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX어린이그림';
-  src: url('./fonts/DXChildsdrawing-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX어린이그림";
+  src: url("./fonts/DXChildsdrawing-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX동화나라 Bold';
-  src: url('./fonts/DXDnaraB-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX동화나라 Bold";
+  src: url("./fonts/DXDnaraB-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX퓨리티 Bold';
-  src: url('./fonts/DXFrtyB-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX퓨리티 Bold";
+  src: url("./fonts/DXFrtyB-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX헤드02 Bold';
-  src: url('./fonts/DXHead02B-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX헤드02 Bold";
+  src: url("./fonts/DXHead02B-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX설레임2 Medium';
-  src: url('./fonts/DXHfl2M-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/DXHfl2M-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX설레임2 Medium";
+  src: url("./fonts/DXHfl2M-KSCpc-EUC-H.ttf") format("truetype"), url("./fonts/DXHfl2M-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX설레임 Medium';
-  src: url('./fonts/DXHflM-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXHflM-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX설레임 Medium";
+  src: url("./fonts/DXHflM-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXHflM-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX우등생 Bold';
-  src: url('./fonts/DXHSB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXHSB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX우등생 Bold";
+  src: url("./fonts/DXHSB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXHSB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX한울 Bold';
-  src: url('./fonts/DXHWrB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXHWrB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX한울 Bold";
+  src: url("./fonts/DXHWrB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXHWrB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX경필명조 Bold';
-  src: url('./fonts/DXKPMB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXKPMB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX경필명조 Bold";
+  src: url("./fonts/DXKPMB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXKPMB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX모던고딕 Bold';
-  src: url('./fonts/DXMgoB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXMgoB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX모던고딕 Bold";
+  src: url("./fonts/DXMgoB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXMgoB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX모던고딕 RoundBold';
-  src: url('./fonts/DXMgoRB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXMgoRB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX모던고딕 RoundBold";
+  src: url("./fonts/DXMgoRB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXMgoRB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX국민시대 Regular';
-  src: url('./fonts/DXNPeriod-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/DXNPeriod-KSCpc-EUC-H.woff2') format('font-woff2'),
-  url('./fonts/DXNPeriod-KSCpc-EUC-H.otf') format('opentype');
+  font-display: swap;
+  font-family: "DX국민시대 Regular";
+  src: url("./fonts/DXNPeriod-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/DXNPeriod-KSCpc-EUC-H.woff2") format("font-woff2"),
+    url("./fonts/DXNPeriod-KSCpc-EUC-H.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'DX새신문명조 Bold';
-  src: url('./fonts/DXNShnmB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXNShnmB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX새신문명조 Bold";
+  src: url("./fonts/DXNShnmB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXNShnmB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX프로방스 Bold';
-  src: url('./fonts/DXPRVB-KSCpc-EUC-H.ttf') format('truetype'),
-  url('./fonts/MiConv.com__DXPRVB-KSCpc-EUC-H.woff') format('woff');
+  font-display: swap;
+  font-family: "DX프로방스 Bold";
+  src: url("./fonts/DXPRVB-KSCpc-EUC-H.ttf") format("truetype"),
+    url("./fonts/MiConv.com__DXPRVB-KSCpc-EUC-H.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DX르네상스 Bold';
-  src: url('./fonts/DXRESB-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX르네상스 Bold";
+  src: url("./fonts/DXRESB-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX단선고딕 Thin';
-  src: url('./fonts/DXSglinegoTh-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX단선고딕 Thin";
+  src: url("./fonts/DXSglinegoTh-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX신문명조';
-  src: url('./fonts/DXShnm-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX신문명조";
+  src: url("./fonts/DXShnm-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX스피드 Medium';
-  src: url('./fonts/DXSpdM-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX스피드 Medium";
+  src: url("./fonts/DXSpdM-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'DX우리강산 Bold';
-  src: url('./fonts/DXWGSB-KSCpc-EUC-H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "DX우리강산 Bold";
+  src: url("./fonts/DXWGSB-KSCpc-EUC-H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'EBS주시경B';
-  src: url('./fonts/EBS주시경B.ttf') format('truetype'),
-  url('./fonts/MiConv.com__EBS주시경B.woff') format('woff');
+  font-display: swap;
+  font-family: "EBS주시경B";
+  src: url("./fonts/EBS주시경B.ttf") format("truetype"), url("./fonts/MiConv.com__EBS주시경B.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'EBS주시경L';
-  src: url('./fonts/EBS주시경L.ttf') format('truetype'),
-  url('./fonts/MiConv.com__EBS주시경L.woff') format('woff');
+  font-display: swap;
+  font-family: "EBS주시경L";
+  src: url("./fonts/EBS주시경L.ttf") format("truetype"), url("./fonts/MiConv.com__EBS주시경L.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'EBS주시경M';
-  src: url('./fonts/EBS주시경M.ttf') format('truetype'),
-  url('./fonts/MiConv.com__EBS주시경M.woff') format('woff');
+  font-display: swap;
+  font-family: "EBS주시경M";
+  src: url("./fonts/EBS주시경M.ttf") format("truetype"), url("./fonts/MiConv.com__EBS주시경M.woff") format("woff");
 }
 
 @font-face {
-  font-family: '마초체';
-  src: url('./fonts/EF_MACHO(윈도우용_TTF).ttf') format('truetype');
+  font-display: swap;
+  font-family: "마초체";
+  src: url("./fonts/EF_MACHO(윈도우용_TTF).ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '엘리스디지털배움체 Regular';
-  src: url('./fonts/EliceDigitalBaeum_Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "엘리스디지털배움체 Regular";
+  src: url("./fonts/EliceDigitalBaeum_Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '설립체';
-  src: url('./fonts/establish Retrosans.ttf') format('truetype');
+  font-display: swap;
+  font-family: "설립체";
+  src: url("./fonts/establish Retrosans.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가비아 청연체';
-  src: url('./fonts/GabiaCheongyeon.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가비아 청연체";
+  src: url("./fonts/GabiaCheongyeon.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가비아 마음결체';
-  src: url('./fonts/GabiaMaeumgyeol.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가비아 마음결체";
+  src: url("./fonts/GabiaMaeumgyeol.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가비아 봄바람체';
-  src: url('./fonts/gabia_bombaram.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가비아 봄바람체";
+  src: url("./fonts/gabia_bombaram.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가비아 납작블럭체';
-  src: url('./fonts/gabia_napjakBlock.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가비아 납작블럭체";
+  src: url("./fonts/gabia_napjakBlock.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가비아 솔미체';
-  src: url('./fonts/gabia_solmee.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가비아 솔미체";
+  src: url("./fonts/gabia_solmee.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '가나초콜릿체';
-  src: url('./fonts/Ghanachocolate.ttf') format('truetype');
+  font-display: swap;
+  font-family: "가나초콜릿체";
+  src: url("./fonts/Ghanachocolate.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '고도체 B';
-  src: url('./fonts/GodoB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "고도체 B";
+  src: url("./fonts/GodoB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '고도체 M';
-  src: url('./fonts/GodoM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "고도체 M";
+  src: url("./fonts/GodoM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '고양덕양체 B';
-  src: url('./fonts/GOYANGDEOGYANG B.TTF') format('truetype');
+  font-display: swap;
+  font-family: "고양덕양체 B";
+  src: url("./fonts/GOYANGDEOGYANG B.TTF") format("truetype");
 }
 
 @font-face {
-  font-family: '고양덕양체 EB';
-  src: url('./fonts/GOYANGDEOGYANG EB.TTF') format('truetype');
+  font-display: swap;
+  font-family: "고양덕양체 EB";
+  src: url("./fonts/GOYANGDEOGYANG EB.TTF") format("truetype");
 }
 
 @font-face {
-  font-family: '굴림체';
-  src: url('./fonts/GulimChe.ttf') format('truetype');
+  font-display: swap;
+  font-family: "굴림체";
+  src: url("./fonts/GulimChe.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'HY그래픽M';
-  src: url('./fonts/H2GPRM.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2GPRM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY그래픽M";
+  src: url("./fonts/H2GPRM.TTF") format("truetype"), url("./fonts/MiConv.com__H2GPRM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY견고딕';
-  src: url('./fonts/H2GTRE.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2GTRE.woff') format('woff');
+  font-display: swap;
+  font-family: "HY견고딕";
+  src: url("./fonts/H2GTRE.TTF") format("truetype"), url("./fonts/MiConv.com__H2GTRE.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY중고딕';
-  src: url('./fonts/H2GTRM.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2GTRM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY중고딕";
+  src: url("./fonts/H2GTRM.TTF") format("truetype"), url("./fonts/MiConv.com__H2GTRM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY헤드라인M';
-  src: url('./fonts/H2HDRM.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2HDRM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY헤드라인M";
+  src: url("./fonts/H2HDRM.TTF") format("truetype"), url("./fonts/MiConv.com__H2HDRM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY견명조';
-  src: url('./fonts/H2MJRE.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2MJRE.woff') format('woff'),
-  url('./fonts/H2MJRE.woff2') format('font-woff2'),
-  url('./fonts/H2MJRE.otf') format('opentype');
+  font-display: swap;
+  font-family: "HY견명조";
+  src: url("./fonts/H2MJRE.TTF") format("truetype"), url("./fonts/MiConv.com__H2MJRE.woff") format("woff"),
+    url("./fonts/H2MJRE.woff2") format("font-woff2"), url("./fonts/H2MJRE.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'HY신명조';
-  src: url('./fonts/H2MJSM.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2MJSM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY신명조";
+  src: url("./fonts/H2MJSM.TTF") format("truetype"), url("./fonts/MiConv.com__H2MJSM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY얕은샘물M';
-  src: url('./fonts/H2SA1M.TTF') format('truetype'),
-  url('./fonts/MiConv.com__H2SA1M.woff') format('woff');
+  font-display: swap;
+  font-family: "HY얕은샘물M";
+  src: url("./fonts/H2SA1M.TTF") format("truetype"), url("./fonts/MiConv.com__H2SA1M.woff") format("woff");
 }
 
 @font-face {
-  font-family: '함렡체 Black';
-  src: url('./fonts/Hahmlet-Black.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함렡체 Black";
+  src: url("./fonts/Hahmlet-Black.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '함렡체 Bold';
-  src: url('./fonts/Hahmlet-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함렡체 Bold";
+  src: url("./fonts/Hahmlet-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '함렡체 Light';
-  src: url('./fonts/Hahmlet-Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함렡체 Light";
+  src: url("./fonts/Hahmlet-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '함렡체 Regular';
-  src: url('./fonts/Hahmlet-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함렡체 Regular";
+  src: url("./fonts/Hahmlet-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한컴 백제 B';
-  src: url('./fonts/HANBaekB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한컴 백제 B";
+  src: url("./fonts/HANBaekB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '함초롬바탕체';
-  src: url('./fonts/HANBatang.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함초롬바탕체";
+  src: url("./fonts/HANBatang.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '함초롬바탕체 B';
-  src: url('./fonts/HANBatangB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "함초롬바탕체 B";
+  src: url("./fonts/HANBatangB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한글누리체';
-  src: url('./fonts/HangeulNuriB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한글누리체";
+  src: url("./fonts/HangeulNuriB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한글누리체 R';
-  src: url('./fonts/HangeulNuriR.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한글누리체 R";
+  src: url("./fonts/HangeulNuriR.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한겨레결체';
-  src: url('./fonts/Hangyeoregyeolche.TTF') format('truetype'),
-  url('./fonts/MiConv.com__Hangyeoregyeolche.woff') format('woff');
+  font-display: swap;
+  font-family: "한겨레결체";
+  src: url("./fonts/Hangyeoregyeolche.TTF") format("truetype"),
+    url("./fonts/MiConv.com__Hangyeoregyeolche.woff") format("woff");
 }
 
 @font-face {
-  font-family: '한컴 바겐세일 B';
-  src: url('./fonts/HANSaleB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한컴 바겐세일 B";
+  src: url("./fonts/HANSaleB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한컴 바겐세일 M';
-  src: url('./fonts/HANSaleM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한컴 바겐세일 M";
+  src: url("./fonts/HANSaleM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한솔체 B';
-  src: url('./fonts/HANSolB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한솔체 B";
+  src: url("./fonts/HANSolB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한솔체 M';
-  src: url('./fonts/HANSolM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한솔체 M";
+  src: url("./fonts/HANSolM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한컴 소망 B';
-  src: url('./fonts/HANSomaB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한컴 소망 B";
+  src: url("./fonts/HANSomaB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한컴 소망 M';
-  src: url('./fonts/HANSomaM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한컴 소망 M";
+  src: url("./fonts/HANSomaM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'HanS 붐붐';
-  src: url('./fonts/HanS_BoomBoom.ttf') format('truetype');
+  font-display: swap;
+  font-family: "HanS 붐붐";
+  src: url("./fonts/HanS_BoomBoom.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '윤고딕 230';
-  src: url('./fonts/HANYGO230.ttf') format('truetype');
+  font-display: swap;
+  font-family: "윤고딕 230";
+  src: url("./fonts/HANYGO230.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '윤고딕 240';
-  src: url('./fonts/HANYGO240.ttf') format('truetype');
+  font-display: swap;
+  font-family: "윤고딕 240";
+  src: url("./fonts/HANYGO240.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Headline';
-  src: url('./fonts/headline.ttf') format('truetype'),
-  url('./fonts/MiConv.com__headline.woff') format('woff');
+  font-display: swap;
+  font-family: "Headline";
+  src: url("./fonts/headline.ttf") format("truetype"), url("./fonts/MiConv.com__headline.woff") format("woff");
 }
 
 @font-face {
-  font-family: '빛의계승자체 Bold';
-  src: url('./fonts/HeirofLightBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빛의계승자체 Bold";
+  src: url("./fonts/HeirofLightBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '빛의계승자체 Regular';
-  src: url('./fonts/HeirofLightRegular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "빛의계승자체 Regular";
+  src: url("./fonts/HeirofLightRegular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '휴먼굵은팸체';
-  src: url('./fonts/HMKBP.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKBP.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼굵은팸체";
+  src: url("./fonts/HMKBP.TTF") format("truetype"), url("./fonts/MiConv.com__HMKBP.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼굵은샘체';
-  src: url('./fonts/HMKBS.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKBS.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼굵은샘체";
+  src: url("./fonts/HMKBS.TTF") format("truetype"), url("./fonts/MiConv.com__HMKBS.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼가는팸체';
-  src: url('./fonts/HMKLP.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKLP.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼가는팸체";
+  src: url("./fonts/HMKLP.TTF") format("truetype"), url("./fonts/MiConv.com__HMKLP.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼가는샘체';
-  src: url('./fonts/HMKLS.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKLS.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼가는샘체";
+  src: url("./fonts/HMKLS.TTF") format("truetype"), url("./fonts/MiConv.com__HMKLS.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼아미체';
-  src: url('./fonts/HMKMAMI.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMAMI.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼아미체";
+  src: url("./fonts/HMKMAMI.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMAMI.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼고딕';
-  src: url('./fonts/HMKMG.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMG.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼고딕";
+  src: url("./fonts/HMKMG.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMG.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼명조';
-  src: url('./fonts/HMKMM.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMM.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼명조";
+  src: url("./fonts/HMKMM.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMM.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼매직체';
-  src: url('./fonts/HMKMMAG.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMMAG.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼매직체";
+  src: url("./fonts/HMKMMAG.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMMAG.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼옛체';
-  src: url('./fonts/HMKMOLD.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMOLD.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼옛체";
+  src: url("./fonts/HMKMOLD.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMOLD.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼둥근헤드라인';
-  src: url('./fonts/HMKMRHD.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMRHD.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼둥근헤드라인";
+  src: url("./fonts/HMKMRHD.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMRHD.woff") format("woff");
 }
 
 @font-face {
-  font-family: '휴먼중간샘체';
-  src: url('./fonts/HMKMS.TTF') format('truetype'),
-  url('./fonts/MiConv.com__HMKMS.woff') format('woff');
+  font-display: swap;
+  font-family: "휴먼중간샘체";
+  src: url("./fonts/HMKMS.TTF") format("truetype"), url("./fonts/MiConv.com__HMKMS.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HS새마을체 Regular';
-  src: url('./fonts/HSSaemaul-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "HS새마을체 Regular";
+  src: url("./fonts/HSSaemaul-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'HS겨울눈꽃체';
-  src: url('./fonts/HS겨울눈꽃체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "HS겨울눈꽃체";
+  src: url("./fonts/HS겨울눈꽃체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'HS두꺼비체';
-  src: url('./fonts/HS두꺼비체.ttf') format('truetype'),
-  url('./fonts/HS두꺼비체.woff') format('woff');
+  font-display: swap;
+  font-family: "HS두꺼비체";
+  src: url("./fonts/HS두꺼비체.ttf") format("truetype"), url("./fonts/HS두꺼비체.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HS봄바람체 2.0';
-  src: url('./fonts/HS봄바람체2.0.ttf') format('truetype'),
-  url('./fonts/HS봄바람체2.0.woff') format('woff');
+  font-display: swap;
+  font-family: "HS봄바람체 2.0";
+  src: url("./fonts/HS봄바람체2.0.ttf") format("truetype"), url("./fonts/HS봄바람체2.0.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HS새마을체';
-  src: url('./fonts/HS새마을체.ttf') format('truetype'),
-  url('./fonts/HS새마을체.woff') format('woff');
+  font-display: swap;
+  font-family: "HS새마을체";
+  src: url("./fonts/HS새마을체.ttf") format("truetype"), url("./fonts/HS새마을체.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY 바다 L';
-  src: url('./fonts/HYBDAL.TTF') format('truetype'),
-  url('./fonts/HYBDAL.woff') format('woff');
+  font-display: swap;
+  font-family: "HY 바다 L";
+  src: url("./fonts/HYBDAL.TTF") format("truetype"), url("./fonts/HYBDAL.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY 바다 M';
-  src: url('./fonts/HYBDAM.TTF') format('truetype'),
-  url('./fonts/HYBDAM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY 바다 M";
+  src: url("./fonts/HYBDAM.TTF") format("truetype"), url("./fonts/HYBDAM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY 그래픽';
-  src: url('./fonts/HYGPRM.TTF') format('truetype'),
-  url('./fonts/HYGPRM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY 그래픽";
+  src: url("./fonts/HYGPRM.TTF") format("truetype"), url("./fonts/HYGPRM.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY 강 B';
-  src: url('./fonts/HYKANB.TTF') format('truetype'),
-  url('./fonts/HYKANB.woff') format('woff');
+  font-display: swap;
+  font-family: "HY 강 B";
+  src: url("./fonts/HYKANB.TTF") format("truetype"), url("./fonts/HYKANB.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'HY 강 M';
-  src: url('./fonts/HYKANM.TTF') format('truetype'),
-  url('./fonts/HYKANM.woff') format('woff');
+  font-display: swap;
+  font-family: "HY 강 M";
+  src: url("./fonts/HYKANM.TTF") format("truetype"), url("./fonts/HYKANM.woff") format("woff");
 }
 
 @font-face {
-  font-family: '이롭게 바탕체';
-  src: url('./fonts/IropkeBatangM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "이롭게 바탕체";
+  src: url("./fonts/IropkeBatangM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한글재민체';
-  src: url('./fonts/Jaemin.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한글재민체";
+  src: url("./fonts/Jaemin.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '제주고딕';
-  src: url('./fonts/JejuGothic.ttf') format('truetype');
+  font-display: swap;
+  font-family: "제주고딕";
+  src: url("./fonts/JejuGothic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '제주한라산';
-  src: url('./fonts/JejuHallasan.ttf') format('truetype');
+  font-display: swap;
+  font-family: "제주한라산";
+  src: url("./fonts/JejuHallasan.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '제주명조';
-  src: url('./fonts/JejuMyeongjo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "제주명조";
+  src: url("./fonts/JejuMyeongjo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '정선아리랑체';
-  src: url('./fonts/JSArirang.ttf') format('truetype');
+  font-display: swap;
+  font-family: "정선아리랑체";
+  src: url("./fonts/JSArirang.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '정선아리랑혼체';
-  src: url('./fonts/JSArirangHON.ttf') format('truetype');
+  font-display: swap;
+  font-family: "정선아리랑혼체";
+  src: url("./fonts/JSArirangHON.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '정선아리랑뿌리체';
-  src: url('./fonts/JSArirangPPURI.ttf') format('truetype');
+  font-display: swap;
+  font-family: "정선아리랑뿌리체";
+  src: url("./fonts/JSArirangPPURI.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음고딕 B';
-  src: url('./fonts/KBIZ한마음고딕 B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음고딕 B";
+  src: url("./fonts/KBIZ한마음고딕 B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음고딕 H';
-  src: url('./fonts/KBIZ한마음고딕 H.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음고딕 H";
+  src: url("./fonts/KBIZ한마음고딕 H.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음고딕 L';
-  src: url('./fonts/KBIZ한마음고딕 L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음고딕 L";
+  src: url("./fonts/KBIZ한마음고딕 L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음고딕 M';
-  src: url('./fonts/KBIZ한마음고딕 M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음고딕 M";
+  src: url("./fonts/KBIZ한마음고딕 M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음고딕 R';
-  src: url('./fonts/KBIZ한마음고딕 R.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음고딕 R";
+  src: url("./fonts/KBIZ한마음고딕 R.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음명조 B';
-  src: url('./fonts/KBIZ한마음명조 B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음명조 B";
+  src: url("./fonts/KBIZ한마음명조 B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음명조 L';
-  src: url('./fonts/KBIZ한마음명조 L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음명조 L";
+  src: url("./fonts/KBIZ한마음명조 L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음명조 M';
-  src: url('./fonts/KBIZ한마음명조 M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음명조 M";
+  src: url("./fonts/KBIZ한마음명조 M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KBIZ 한마음명조 R';
-  src: url('./fonts/KBIZ한마음명조 R.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KBIZ 한마음명조 R";
+  src: url("./fonts/KBIZ한마음명조 R.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KCC안중근체';
-  src: url('./fonts/KCCAhnjunggeun(Windows용).ttf') format('truetype');
+  font-display: swap;
+  font-family: "KCC안중근체";
+  src: url("./fonts/KCCAhnjunggeun(Windows용).ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KCC임권택체';
-  src: url('./fonts/KCCImkwontaek.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KCC임권택체";
+  src: url("./fonts/KCCImkwontaek.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KCC김훈체';
-  src: url('./fonts/KCC김훈체(Windows용).ttf') format('truetype');
+  font-display: swap;
+  font-family: "KCC김훈체";
+  src: url("./fonts/KCC김훈체(Windows용).ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KCC은영체';
-  src: url('./fonts/KCC은영체(Windows용).ttf') format('truetype');
+  font-display: swap;
+  font-family: "KCC은영체";
+  src: url("./fonts/KCC은영체(Windows용).ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 바탕체 Bold';
-  src: url('./fonts/KoPubWorld Batang Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 바탕체 Bold";
+  src: url("./fonts/KoPubWorld Batang Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 바탕체 Light';
-  src: url('./fonts/KoPubWorld Batang Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 바탕체 Light";
+  src: url("./fonts/KoPubWorld Batang Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 바탕체 Medium';
-  src: url('./fonts/KoPubWorld Batang Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 바탕체 Medium";
+  src: url("./fonts/KoPubWorld Batang Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 돋움체 Bold';
-  src: url('./fonts/KoPubWorld Dotum Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 돋움체 Bold";
+  src: url("./fonts/KoPubWorld Dotum Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 돋움체 Light';
-  src: url('./fonts/KoPubWorld Dotum Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 돋움체 Light";
+  src: url("./fonts/KoPubWorld Dotum Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KoPub 돋움체 Medium';
-  src: url('./fonts/KoPubWorld Dotum Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "KoPub 돋움체 Medium";
+  src: url("./fonts/KoPubWorld Dotum Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '코트라 희망체';
-  src: url('./fonts/KOTRA HOPE_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "코트라 희망체";
+  src: url("./fonts/KOTRA HOPE_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '코트라 도약체';
-  src: url('./fonts/KOTRA LEAP_TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "코트라 도약체";
+  src: url("./fonts/KOTRA LEAP_TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '코트라 볼드체';
-  src: url('./fonts/KOTRA_BOLD.ttf') format('truetype');
+  font-display: swap;
+  font-family: "코트라 볼드체";
+  src: url("./fonts/KOTRA_BOLD.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '로커스 상상고딕체';
-  src: url('./fonts/locus_sangsang.ttf') format('truetype');
+  font-display: swap;
+  font-family: "로커스 상상고딕체";
+  src: url("./fonts/locus_sangsang.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '맑은 고딕';
-  src: url('./fonts/MalgunGothic.ttf') format('truetype');
+  font-display: swap;
+  font-family: "맑은 고딕";
+  src: url("./fonts/MalgunGothic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '메이플스토리 Bold';
-  src: url('./fonts/Maplestory Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "메이플스토리 Bold";
+  src: url("./fonts/Maplestory Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '메이플스토리 Light';
-  src: url('./fonts/Maplestory Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "메이플스토리 Light";
+  src: url("./fonts/Maplestory Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '마포애민';
-  src: url('./fonts/MapoAgape.ttf') format('truetype');
+  font-display: swap;
+  font-family: "마포애민";
+  src: url("./fonts/MapoAgape.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '마포배낭여행';
-  src: url('./fonts/MapoBackpacking.ttf') format('truetype');
+  font-display: swap;
+  font-family: "마포배낭여행";
+  src: url("./fonts/MapoBackpacking.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '마포다카포';
-  src: url('./fonts/MapoDacapo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "마포다카포";
+  src: url("./fonts/MapoDacapo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '마포홍대프리덤';
-  src: url('./fonts/MapoHongdaeFreedom.ttf') format('truetype');
+  font-display: swap;
+  font-family: "마포홍대프리덤";
+  src: url("./fonts/MapoHongdaeFreedom.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '마포마포나루';
-  src: url('./fonts/MapoMaponaru.ttf') format('truetype');
+  font-display: swap;
+  font-family: "마포마포나루";
+  src: url("./fonts/MapoMaponaru.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '미래로글꼴';
-  src: url('./fonts/MiraeroNormal.ttf') format('truetype');
+  font-display: swap;
+  font-family: "미래로글꼴";
+  src: url("./fonts/MiraeroNormal.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 붓';
-  src: url('./fonts/NanumBrush.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 붓";
+  src: url("./fonts/NanumBrush.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔고딕에코';
-  src: url('./fonts/NanumGothicEco.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔고딕에코";
+  src: url("./fonts/NanumGothicEco.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔고딕에코 Bold';
-  src: url('./fonts/NanumGothicEcoBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔고딕에코 Bold";
+  src: url("./fonts/NanumGothicEcoBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔고딕에코 ExtraBold';
-  src: url('./fonts/NanumGothicEcoExtraBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔고딕에코 ExtraBold";
+  src: url("./fonts/NanumGothicEcoExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔명조';
-  src: url('./fonts/NanumMyeongJo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔명조";
+  src: url("./fonts/NanumMyeongJo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔명조에코';
-  src: url('./fonts/NanumMyeongjoEco.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔명조에코";
+  src: url("./fonts/NanumMyeongjoEco.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔명조에코 Bold';
-  src: url('./fonts/NanumMyeongjoEcoBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔명조에코 Bold";
+  src: url("./fonts/NanumMyeongjoEcoBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔명조에코 ExtraBold';
-  src: url('./fonts/NanumMyeongjoEcoExtraBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔명조에코 ExtraBold";
+  src: url("./fonts/NanumMyeongjoEcoExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 펜';
-  src: url('./fonts/NanumPen.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 펜";
+  src: url("./fonts/NanumPen.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔스퀘어';
-  src: url('./fonts/NanumSquare.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔스퀘어";
+  src: url("./fonts/NanumSquare.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '넷마블체 B';
-  src: url('./fonts/netmarbleB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "넷마블체 B";
+  src: url("./fonts/netmarbleB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '넷마블체 L';
-  src: url('./fonts/netmarbleL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "넷마블체 L";
+  src: url("./fonts/netmarbleL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '넷마블체 M';
-  src: url('./fonts/netmarbleM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "넷마블체 M";
+  src: url("./fonts/netmarbleM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '넥센타이어체 Bold';
-  src: url('./fonts/NEXEN TIRE_Bold.ttf') format('truetype'),
-  url('./fonts/MiConv.com__NEXEN\ TIRE_Bold.woff') format('woff');
+  font-display: swap;
+  font-family: "넥센타이어체 Bold";
+  src: url("./fonts/NEXEN TIRE_Bold.ttf") format("truetype"),
+    url("./fonts/MiConv.com__NEXEN\ TIRE_Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: '넥센타이어체 Regular';
-  src: url('./fonts/NEXEN TIRE_Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "넥센타이어체 Regular";
+  src: url("./fonts/NEXEN TIRE_Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '닉스곤체 B 2.0';
-  src: url('./fonts/NIXGONFONTS B 2.0.ttf') format('truetype');
+  font-display: swap;
+  font-family: "닉스곤체 B 2.0";
+  src: url("./fonts/NIXGONFONTS B 2.0.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '닉스곤체 M 2.0';
-  src: url('./fonts/NIXGONFONTS M 2.0.ttf') format('truetype');
+  font-display: swap;
+  font-family: "닉스곤체 M 2.0";
+  src: url("./fonts/NIXGONFONTS M 2.0.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'ON I고딕';
-  src: url('./fonts/ON I고딕.ttf') format('truetype');
+  font-display: swap;
+  font-family: "ON I고딕";
+  src: url("./fonts/ON I고딕.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '원스토어 모바일POP체';
-  src: url('./fonts/ONE Mobile POP.ttf') format('truetype');
+  font-display: swap;
+  font-family: "원스토어 모바일POP체";
+  src: url("./fonts/ONE Mobile POP.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '포천 오성과한음체 Bold';
-  src: url('./fonts/OSeongandHanEum-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "포천 오성과한음체 Bold";
+  src: url("./fonts/OSeongandHanEum-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '포천 오성과한음체 Regular';
-  src: url('./fonts/OSeongandHanEum-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "포천 오성과한음체 Regular";
+  src: url("./fonts/OSeongandHanEum-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '푸른전남체 Bold';
-  src: url('./fonts/PureunJeonnam-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "푸른전남체 Bold";
+  src: url("./fonts/PureunJeonnam-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '푸른전남체 Medium';
-  src: url('./fonts/PureunJeonnam-Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "푸른전남체 Medium";
+  src: url("./fonts/PureunJeonnam-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '푸른전남체';
-  src: url('./fonts/PureunJeonnam.ttf') format('truetype');
+  font-display: swap;
+  font-family: "푸른전남체";
+  src: url("./fonts/PureunJeonnam.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '평창평화체 Bold';
-  src: url('./fonts/PyeongChangPeace-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "평창평화체 Bold";
+  src: url("./fonts/PyeongChangPeace-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '평창평화체 Light';
-  src: url('./fonts/PyeongChangPeace-Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "평창평화체 Light";
+  src: url("./fonts/PyeongChangPeace-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '노회찬체';
-  src: url('./fonts/ROEHOE-CHAN.ttf') format('truetype');
+  font-display: swap;
+  font-family: "노회찬체";
+  src: url("./fonts/ROEHOE-CHAN.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '삼국지3글꼴';
-  src: url('./fonts/Sam3KRFont.ttf') format('truetype');
+  font-display: swap;
+  font-family: "삼국지3글꼴";
+  src: url("./fonts/Sam3KRFont.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '상주다정다감체';
-  src: url('./fonts/SANGJU Dajungdagam.ttf') format('truetype');
+  font-display: swap;
+  font-family: "상주다정다감체";
+  src: url("./fonts/SANGJU Dajungdagam.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '상주곶감체';
-  src: url('./fonts/SANGJU Gotgam.ttf') format('truetype');
+  font-display: swap;
+  font-family: "상주곶감체";
+  src: url("./fonts/SANGJU Gotgam.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '상주경천섬체';
-  src: url('./fonts/SANGJU Gyeongcheon Island.ttf') format('truetype');
+  font-display: swap;
+  font-family: "상주경천섬체";
+  src: url("./fonts/SANGJU Gyeongcheon Island.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '산돌독수리체';
-  src: url('./fonts/SDDogSuRiBold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "산돌독수리체";
+  src: url("./fonts/SDDogSuRiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '산돌이야기체';
-  src: url('./fonts/SDLeeYaGi.ttf') format('truetype');
+  font-display: swap;
+  font-family: "산돌이야기체";
+  src: url("./fonts/SDLeeYaGi.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '세방고딕 Bold';
-  src: url('./fonts/SEBANG Gothic Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "세방고딕 Bold";
+  src: url("./fonts/SEBANG Gothic Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '세방고딕';
-  src: url('./fonts/SEBANG Gothic.ttf') format('truetype');
+  font-display: swap;
+  font-family: "세방고딕";
+  src: url("./fonts/SEBANG Gothic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산체';
-  src: url('./fonts/SeoulNamsanvert.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산체";
+  src: url("./fonts/SeoulNamsanvert.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'SF망고빙수';
-  src: url('./fonts/SF망고빙수 TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "SF망고빙수";
+  src: url("./fonts/SF망고빙수 TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '스포카 한 산스 Bold';
-  src: url('./fonts/Spoqa Han Sans Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "스포카 한 산스 Bold";
+  src: url("./fonts/Spoqa Han Sans Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '스포카 한 산스 Light';
-  src: url('./fonts/Spoqa Han Sans Light.ttf') format('truetype'),
-  url('./fonts/Spoqa\ Han\ Sans\ Light.woff2') format('font-woff2'),
-  url('./fonts/Spoqa-Han-Sans-Light.otf') format('opentype');
+  font-display: swap;
+  font-family: "스포카 한 산스 Light";
+  src: url("./fonts/Spoqa Han Sans Light.ttf") format("truetype"),
+    url("./fonts/Spoqa\ Han\ Sans\ Light.woff2") format("font-woff2"),
+    url("./fonts/Spoqa-Han-Sans-Light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '스포카 한 산스 Regular';
-  src: url('./fonts/Spoqa Han Sans Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "스포카 한 산스 Regular";
+  src: url("./fonts/Spoqa Han Sans Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '스포카 한 산스 Thin';
-  src: url('./fonts/Spoqa Han Sans Thin.ttf') format('truetype'),
-  url('./fonts/Spoqa\ Han\ Sans\ Thin.woff2') format('font-woff2'),
-  url('./fonts/Spoqa-Han-Sans-Thin.otf') format('opentype');
+  font-display: swap;
+  font-family: "스포카 한 산스 Thin";
+  src: url("./fonts/Spoqa Han Sans Thin.ttf") format("truetype"),
+    url("./fonts/Spoqa\ Han\ Sans\ Thin.woff2") format("font-woff2"),
+    url("./fonts/Spoqa-Han-Sans-Thin.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '정묵바위체';
-  src: url('./fonts/SSRockRegular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "정묵바위체";
+  src: url("./fonts/SSRockRegular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '순바탕 Bold';
-  src: url('./fonts/SunBatang-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "순바탕 Bold";
+  src: url("./fonts/SunBatang-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '순바탕 Light';
-  src: url('./fonts/SunBatang-Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "순바탕 Light";
+  src: url("./fonts/SunBatang-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '순바탕 Medium';
-  src: url('./fonts/SunBatang-Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "순바탕 Medium";
+  src: url("./fonts/SunBatang-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '태-조각TB';
-  src: url('./fonts/TaeFont TSTJktB.ttf') format('truetype'),
-  url('./fonts/MiConv.com__TaeFont\ TSTJktB.woff') format('woff'),
-  url('./fonts/TaeFont\ TSTJktB.woff2') format('font-woff2'),
-  url('./fonts/TaeFont-TSTJktB.otf') format('opentype');
+  font-display: swap;
+  font-family: "태-조각TB";
+  src: url("./fonts/TaeFont TSTJktB.ttf") format("truetype"),
+    url("./fonts/MiConv.com__TaeFont\ TSTJktB.woff") format("woff"),
+    url("./fonts/TaeFont\ TSTJktB.woff2") format("font-woff2"), url("./fonts/TaeFont-TSTJktB.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '태-으뜸B';
-  src: url('./fonts/TaeFont TSTOtmB.ttf') format('truetype'),
-  url('./fonts/MiConv.com__TaeFont\ TSTOtmB.woff') format('woff'),
-  url('./fonts/TaeFont\ TSTOtmB.woff2') format('font-woff2'),
-  url('./fonts/TaeFont-TSTOtmB.otf') format('opentype');
+  font-display: swap;
+  font-family: "태-으뜸B";
+  src: url("./fonts/TaeFont TSTOtmB.ttf") format("truetype"),
+    url("./fonts/MiConv.com__TaeFont\ TSTOtmB.woff") format("woff"),
+    url("./fonts/TaeFont\ TSTOtmB.woff2") format("font-woff2"), url("./fonts/TaeFont-TSTOtmB.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'THE뉴스속보';
-  src: url('./fonts/THE_Nyuseusokbo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "THE뉴스속보";
+  src: url("./fonts/THE_Nyuseusokbo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'THE명품굴림B';
-  src: url('./fonts/THE명품굴림B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "THE명품굴림B";
+  src: url("./fonts/THE명품굴림B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'THE선인장';
-  src: url('./fonts/THE선인장.ttf') format('truetype'),
-  url('./fonts/MiConv.com__THE선인장.woff') format('woff');
+  font-display: swap;
+  font-family: "THE선인장";
+  src: url("./fonts/THE선인장.ttf") format("truetype"), url("./fonts/MiConv.com__THE선인장.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'THE정직';
-  src: url('./fonts/THE정직.ttf') format('truetype');
+  font-display: swap;
+  font-family: "THE정직";
+  src: url("./fonts/THE정직.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '티몬체';
-  src: url('./fonts/TmonMonsori.ttf') format('truetype');
+  font-display: swap;
+  font-family: "티몬체";
+  src: url("./fonts/TmonMonsori.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'tvN 즐거운이야기 Bold';
-  src: url('./fonts/tvN 즐거운이야기 Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "tvN 즐거운이야기 Bold";
+  src: url("./fonts/tvN 즐거운이야기 Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'tvN 즐거운이야기 Light';
-  src: url('./fonts/tvN 즐거운이야기 Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "tvN 즐거운이야기 Light";
+  src: url("./fonts/tvN 즐거운이야기 Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'tvN 즐거운이야기 Medium';
-  src: url('./fonts/tvN 즐거운이야기 Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "tvN 즐거운이야기 Medium";
+  src: url("./fonts/tvN 즐거운이야기 Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '티웨이 항공체';
-  src: url('./fonts/tway_air.ttf') format('truetype');
+  font-display: swap;
+  font-family: "티웨이 항공체";
+  src: url("./fonts/tway_air.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '티웨이 날다체';
-  src: url('./fonts/tway_fly.ttf') format('truetype');
+  font-display: swap;
+  font-family: "티웨이 날다체";
+  src: url("./fonts/tway_fly.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '티웨이 하늘체';
-  src: url('./fonts/tway_sky.ttf') format('truetype');
+  font-display: swap;
+  font-family: "티웨이 하늘체";
+  src: url("./fonts/tway_sky.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 발레리나 B';
-  src: url('./fonts/Typo_BallerinaB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 발레리나 B";
+  src: url("./fonts/Typo_BallerinaB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 발레리나 M';
-  src: url('./fonts/Typo_BallerinaM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 발레리나 M";
+  src: url("./fonts/Typo_BallerinaM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 도담';
-  src: url('./fonts/Typo_Dodam.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 도담";
+  src: url("./fonts/Typo_Dodam.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 돈키왕자 M';
-  src: url('./fonts/Typo_DonkiPrinceM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 돈키왕자 M";
+  src: url("./fonts/Typo_DonkiPrinceM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 어울림 B';
-  src: url('./fonts/Typo_EoulrimB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 어울림 B";
+  src: url("./fonts/Typo_EoulrimB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 어울림 L';
-  src: url('./fonts/Typo_EoulrimL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 어울림 L";
+  src: url("./fonts/Typo_EoulrimL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 어울림 M';
-  src: url('./fonts/Typo_EoulrimM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 어울림 M";
+  src: url("./fonts/Typo_EoulrimM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 홍익인간 M';
-  src: url('./fonts/Typo_HongikinganM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 홍익인간 M";
+  src: url("./fonts/Typo_HongikinganM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 정조 M';
-  src: url('./fonts/Typo_JeongJoM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 정조 M";
+  src: url("./fonts/Typo_JeongJoM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 세종대왕 훈민';
-  src: url('./fonts/Typo_KingSejong_Hunmin.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 세종대왕 훈민";
+  src: url("./fonts/Typo_KingSejong_Hunmin.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 달꽃';
-  src: url('./fonts/Typo_MoonFlowerM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 달꽃";
+  src: url("./fonts/Typo_MoonFlowerM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 명탐정';
-  src: url('./fonts/Typo_SherlockM.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 명탐정";
+  src: url("./fonts/Typo_SherlockM.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 씨고딕180';
-  src: url('./fonts/Typo_SSiGothic180.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 씨고딕180";
+  src: url("./fonts/Typo_SSiGothic180.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 씨명조180';
-  src: url('./fonts/Typo_SSiMyungJo180.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 씨명조180";
+  src: url("./fonts/Typo_SSiMyungJo180.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '타이포 스톰 B';
-  src: url('./fonts/Typo_StormB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "타이포 스톰 B";
+  src: url("./fonts/Typo_StormB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 꿍디체';
-  src: url('./fonts/UhBee GGoongD.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 꿍디체";
+  src: url("./fonts/UhBee GGoongD.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 나현체 Bold';
-  src: url('./fonts/Uhbee NaHyun Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 나현체 Bold";
+  src: url("./fonts/Uhbee NaHyun Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 나현체';
-  src: url('./fonts/Uhbee NaHyun.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 나현체";
+  src: url("./fonts/Uhbee NaHyun.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 남지은체 Bold';
-  src: url('./fonts/UhBee Namjieun Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 남지은체 Bold";
+  src: url("./fonts/UhBee Namjieun Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 남지은체';
-  src: url('./fonts/UhBee Namjieun.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 남지은체";
+  src: url("./fonts/UhBee Namjieun.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 소윤체';
-  src: url('./fonts/UhBee Soyun.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 소윤체";
+  src: url("./fonts/UhBee Soyun.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 선홍체 BOLD';
-  src: url('./fonts/UhBee Sunhong BOLD.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 선홍체 BOLD";
+  src: url("./fonts/UhBee Sunhong BOLD.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 선홍체';
-  src: url('./fonts/UhBee Sunhong.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 선홍체";
+  src: url("./fonts/UhBee Sunhong.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 스윗체';
-  src: url('./fonts/UhBee swit.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 스윗체";
+  src: url("./fonts/UhBee swit.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 순수결정체 Bold';
-  src: url('./fonts/UhBee U JEONG Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 순수결정체 Bold";
+  src: url("./fonts/UhBee U JEONG Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '어비 순수결정체';
-  src: url('./fonts/UhBee U JEONG.ttf') format('truetype');
+  font-display: swap;
+  font-family: "어비 순수결정체";
+  src: url("./fonts/UhBee U JEONG.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양굵은구조고딕';
-  src: url('./fonts/yangfont02.ttf') format('truetype');
+  font-display: swap;
+  font-family: "양굵은구조고딕";
+  src: url("./fonts/yangfont02.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양평군체 B';
-  src: url('./fonts/yangpyeong_B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "양평군체 B";
+  src: url("./fonts/yangpyeong_B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양평군체 L';
-  src: url('./fonts/yangpyeong_L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "양평군체 L";
+  src: url("./fonts/yangpyeong_L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양평군체 M';
-  src: url('./fonts/yangpyeong_M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "양평군체 M";
+  src: url("./fonts/yangpyeong_M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Y이드스트릿체 B';
-  src: url('./fonts/YdestreetB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "Y이드스트릿체 B";
+  src: url("./fonts/YdestreetB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Y이드스트릿체 L';
-  src: url('./fonts/YdestreetL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "Y이드스트릿체 L";
+  src: url("./fonts/YdestreetL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '영도체';
-  src: url('./fonts/Yeongdo.ttf') format('truetype');
+  font-display: swap;
+  font-family: "영도체";
+  src: url("./fonts/Yeongdo.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양재깨비체M';
-  src: url('./fonts/YGBI08.TTF') format('truetype');
+  font-display: swap;
+  font-family: "양재깨비체M";
+  src: url("./fonts/YGBI08.TTF") format("truetype");
 }
 
 @font-face {
-  font-family: '청소년체';
-  src: url('./fonts/Youth.ttf') format('truetype');
+  font-display: swap;
+  font-family: "청소년체";
+  src: url("./fonts/Youth.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '강한육군 Bold Vert';
-  src: url('./fonts/강한육군 Bold Vert.ttf') format('truetype'),
-  url('./fonts/MiConv.com__강한육군\ Bold\ Vert.woff') format('woff');
+  font-display: swap;
+  font-family: "강한육군 Bold Vert";
+  src: url("./fonts/강한육군 Bold Vert.ttf") format("truetype"),
+    url("./fonts/MiConv.com__강한육군\ Bold\ Vert.woff") format("woff");
 }
 
 @font-face {
-  font-family: '강한육군 Bold';
-  src: url('./fonts/강한육군 Bold.ttf') format('truetype'),
-  url('./fonts/MiConv.com__강한육군\ Bold.woff') format('woff');
+  font-display: swap;
+  font-family: "강한육군 Bold";
+  src: url("./fonts/강한육군 Bold.ttf") format("truetype"),
+    url("./fonts/MiConv.com__강한육군\ Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: '강한육군 Medium Vert';
-  src: url('./fonts/강한육군 Medium Vert.ttf') format('truetype');
+  font-display: swap;
+  font-family: "강한육군 Medium Vert";
+  src: url("./fonts/강한육군 Medium Vert.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '강한육군 Medium';
-  src: url('./fonts/강한육군 Medium.ttf') format('truetype'),
-  url('./fonts/MiConv.com__강한육군\ Medium.woff') format('woff');
+  font-display: swap;
+  font-family: "강한육군 Medium";
+  src: url("./fonts/강한육군 Medium.ttf") format("truetype"),
+    url("./fonts/MiConv.com__강한육군\ Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: '경기천년제목 Light';
-  src: url('./fonts/경기천년제목_Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "경기천년제목 Light";
+  src: url("./fonts/경기천년제목_Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '고양일산 R';
-  src: url('./fonts/고양일산 R.TTF') format('truetype');
+  font-display: swap;
+  font-family: "고양일산 R";
+  src: url("./fonts/고양일산 R.TTF") format("truetype");
 }
 
 @font-face {
-  font-family: '국립박물관문화재단클래식B';
-  src: url('./fonts/국립박물관문화재단클래식B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "국립박물관문화재단클래식B";
+  src: url("./fonts/국립박물관문화재단클래식B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '국립박물관문화재단클래식L';
-  src: url('./fonts/국립박물관문화재단클래식L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "국립박물관문화재단클래식L";
+  src: url("./fonts/국립박물관문화재단클래식L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '국립박물관문화재단클래식M';
-  src: url('./fonts/국립박물관문화재단클래식M.ttf') format('truetype'),
-  url('./fonts/MiConv.com__국립박물관문화재단클래식M.woff') format('woff');
+  font-display: swap;
+  font-family: "국립박물관문화재단클래식M";
+  src: url("./fonts/국립박물관문화재단클래식M.ttf") format("truetype"),
+    url("./fonts/MiConv.com__국립박물관문화재단클래식M.woff") format("woff");
 }
 
 @font-face {
-  font-family: '국립중앙도서관글자체';
-  src: url('./fonts/국립중앙도서관글자체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "국립중앙도서관글자체";
+  src: url("./fonts/국립중앙도서관글자체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 가람연꽃';
-  src: url('./fonts/나눔손글씨 가람연꽃.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 가람연꽃";
+  src: url("./fonts/나눔손글씨 가람연꽃.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 갈맷글';
-  src: url('./fonts/나눔손글씨 갈맷글.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 갈맷글";
+  src: url("./fonts/나눔손글씨 갈맷글.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 강부장님체';
-  src: url('./fonts/나눔손글씨 강부장님체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 강부장님체";
+  src: url("./fonts/나눔손글씨 강부장님체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 고딕 아니고 고딩';
-  src: url('./fonts/나눔손글씨 고딕 아니고 고딩.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 고딕 아니고 고딩";
+  src: url("./fonts/나눔손글씨 고딕 아니고 고딩.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 고려글꼴';
-  src: url('./fonts/나눔손글씨 고려글꼴.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 고려글꼴";
+  src: url("./fonts/나눔손글씨 고려글꼴.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 곰신체';
-  src: url('./fonts/나눔손글씨 곰신체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 곰신체";
+  src: url("./fonts/나눔손글씨 곰신체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 규리의 일기';
-  src: url('./fonts/나눔손글씨 규리의 일기.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 규리의 일기";
+  src: url("./fonts/나눔손글씨 규리의 일기.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 김유이체';
-  src: url('./fonts/나눔손글씨 김유이체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 김유이체";
+  src: url("./fonts/나눔손글씨 김유이체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 꽃내음';
-  src: url('./fonts/나눔손글씨 꽃내음.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 꽃내음";
+  src: url("./fonts/나눔손글씨 꽃내음.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 끄트머리체';
-  src: url('./fonts/나눔손글씨 끄트머리체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 끄트머리체";
+  src: url("./fonts/나눔손글씨 끄트머리체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 다행체';
-  src: url('./fonts/나눔손글씨 다행체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 다행체";
+  src: url("./fonts/나눔손글씨 다행체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 대광유리';
-  src: url('./fonts/나눔손글씨 대광유리.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 대광유리";
+  src: url("./fonts/나눔손글씨 대광유리.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 딸에게 엄마가';
-  src: url('./fonts/나눔손글씨 딸에게 엄마가.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 딸에게 엄마가";
+  src: url("./fonts/나눔손글씨 딸에게 엄마가.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 반짝반짝 별';
-  src: url('./fonts/나눔손글씨 반짝반짝 별.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 반짝반짝 별";
+  src: url("./fonts/나눔손글씨 반짝반짝 별.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 세계적인 한글';
-  src: url('./fonts/나눔손글씨 세계적인 한글.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 세계적인 한글";
+  src: url("./fonts/나눔손글씨 세계적인 한글.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 세아체';
-  src: url('./fonts/나눔손글씨 세아체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 세아체";
+  src: url("./fonts/나눔손글씨 세아체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 세화체';
-  src: url('./fonts/나눔손글씨 세화체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 세화체";
+  src: url("./fonts/나눔손글씨 세화체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 소방관의 기도';
-  src: url('./fonts/나눔손글씨 소방관의 기도.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 소방관의 기도";
+  src: url("./fonts/나눔손글씨 소방관의 기도.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 시우 귀여워';
-  src: url('./fonts/나눔손글씨 시우 귀여워.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 시우 귀여워";
+  src: url("./fonts/나눔손글씨 시우 귀여워.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 신혼부부';
-  src: url('./fonts/나눔손글씨 신혼부부.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 신혼부부";
+  src: url("./fonts/나눔손글씨 신혼부부.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 아빠의 연애편지';
-  src: url('./fonts/나눔손글씨 아빠의 연애편지.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 아빠의 연애편지";
+  src: url("./fonts/나눔손글씨 아빠의 연애편지.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 아줌마 자유';
-  src: url('./fonts/나눔손글씨 아줌마 자유.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 아줌마 자유";
+  src: url("./fonts/나눔손글씨 아줌마 자유.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 엄마사랑';
-  src: url('./fonts/나눔손글씨 엄마사랑.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 엄마사랑";
+  src: url("./fonts/나눔손글씨 엄마사랑.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 와일드';
-  src: url('./fonts/나눔손글씨 와일드.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 와일드";
+  src: url("./fonts/나눔손글씨 와일드.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 외할머니글씨';
-  src: url('./fonts/나눔손글씨 외할머니글씨.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 외할머니글씨";
+  src: url("./fonts/나눔손글씨 외할머니글씨.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 유니 띵땅띵땅';
-  src: url('./fonts/나눔손글씨 유니 띵땅띵땅.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 유니 띵땅띵땅";
+  src: url("./fonts/나눔손글씨 유니 띵땅띵땅.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 자부심지우';
-  src: url('./fonts/나눔손글씨 자부심지우.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 자부심지우";
+  src: url("./fonts/나눔손글씨 자부심지우.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 잘하고 있어';
-  src: url('./fonts/나눔손글씨 잘하고 있어.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 잘하고 있어";
+  src: url("./fonts/나눔손글씨 잘하고 있어.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 장미체';
-  src: url('./fonts/나눔손글씨 장미체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 장미체";
+  src: url("./fonts/나눔손글씨 장미체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 점꼴체';
-  src: url('./fonts/나눔손글씨 점꼴체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 점꼴체";
+  src: url("./fonts/나눔손글씨 점꼴체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 정은체';
-  src: url('./fonts/나눔손글씨 정은체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 정은체";
+  src: url("./fonts/나눔손글씨 정은체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 중학생';
-  src: url('./fonts/나눔손글씨 중학생.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 중학생";
+  src: url("./fonts/나눔손글씨 중학생.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 진주 박경아체';
-  src: url('./fonts/나눔손글씨 진주 박경아체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 진주 박경아체";
+  src: url("./fonts/나눔손글씨 진주 박경아체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 철필글씨';
-  src: url('./fonts/나눔손글씨 철필글씨.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 철필글씨";
+  src: url("./fonts/나눔손글씨 철필글씨.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 칼국수';
-  src: url('./fonts/나눔손글씨 칼국수.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 칼국수";
+  src: url("./fonts/나눔손글씨 칼국수.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 코코체';
-  src: url('./fonts/나눔손글씨 코코체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 코코체";
+  src: url("./fonts/나눔손글씨 코코체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 한윤체';
-  src: url('./fonts/나눔손글씨 한윤체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 한윤체";
+  src: url("./fonts/나눔손글씨 한윤체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 행복한 도비';
-  src: url('./fonts/나눔손글씨 행복한 도비.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 행복한 도비";
+  src: url("./fonts/나눔손글씨 행복한 도비.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 혜준체';
-  src: url('./fonts/나눔손글씨 혜준체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 혜준체";
+  src: url("./fonts/나눔손글씨 혜준체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 희망누리';
-  src: url('./fonts/나눔손글씨 희망누리.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 희망누리";
+  src: url("./fonts/나눔손글씨 희망누리.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '나눔손글씨 흰꼬리수리';
-  src: url('./fonts/나눔손글씨 흰꼬리수리.ttf') format('truetype');
+  font-display: swap;
+  font-family: "나눔손글씨 흰꼬리수리";
+  src: url("./fonts/나눔손글씨 흰꼬리수리.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '동그라미재단B';
-  src: url('./fonts/동그라미재단B.ttf') format('truetype'),
-  url('./fonts/동그라미재단B.woff2') format('font-woff2'),
-  url('./fonts/AnyConv.com__동그라미재단B.otf')format('opentype');
+  font-display: swap;
+  font-family: "동그라미재단B";
+  src: url("./fonts/동그라미재단B.ttf") format("truetype"), url("./fonts/동그라미재단B.woff2") format("font-woff2"),
+    url("./fonts/AnyConv.com__동그라미재단B.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '동그라미재단L';
-  src: url('./fonts/동그라미재단L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "동그라미재단L";
+  src: url("./fonts/동그라미재단L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '동그라미재단M';
-  src: url('./fonts/동그라미재단M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "동그라미재단M";
+  src: url("./fonts/동그라미재단M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '문화재돌봄체 Bold';
-  src: url('./fonts/문화재돌봄체 Bold.ttf') format('truetype');
+  font-display: swap;
+  font-family: "문화재돌봄체 Bold";
+  src: url("./fonts/문화재돌봄체 Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '문화재돌봄체 Regular';
-  src: url('./fonts/문화재돌봄체 Regular.ttf') format('truetype');
+  font-display: swap;
+  font-family: "문화재돌봄체 Regular";
+  src: url("./fonts/문화재돌봄체 Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '배스킨라빈스 B';
-  src: url('./fonts/배스킨라빈스 B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "배스킨라빈스 B";
+  src: url("./fonts/배스킨라빈스 B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '비트로 코어체';
-  src: url('./fonts/비트로 코어 TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "비트로 코어체";
+  src: url("./fonts/비트로 코어 TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '비트로 프라이드체';
-  src: url('./fonts/비트로 프라이드 TTF.ttf') format('truetype');
+  font-display: swap;
+  font-family: "비트로 프라이드체";
+  src: url("./fonts/비트로 프라이드 TTF.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산 장체 B';
-  src: url('./fonts/서울남산 장체B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산 장체 B";
+  src: url("./fonts/서울남산 장체B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산 장체 BL';
-  src: url('./fonts/서울남산 장체BL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산 장체 BL";
+  src: url("./fonts/서울남산 장체BL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산 장체 EB';
-  src: url('./fonts/서울남산 장체EB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산 장체 EB";
+  src: url("./fonts/서울남산 장체EB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산 장체 L';
-  src: url('./fonts/서울남산 장체L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산 장체 L";
+  src: url("./fonts/서울남산 장체L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울남산 장체 M';
-  src: url('./fonts/서울남산 장체M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울남산 장체 M";
+  src: url("./fonts/서울남산 장체M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울한강 장체 B';
-  src: url('./fonts/서울한강 장체B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울한강 장체 B";
+  src: url("./fonts/서울한강 장체B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울한강 장체 BL';
-  src: url('./fonts/서울한강 장체BL.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울한강 장체 BL";
+  src: url("./fonts/서울한강 장체BL.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울한강 장체 EB';
-  src: url('./fonts/서울한강 장체EB.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울한강 장체 EB";
+  src: url("./fonts/서울한강 장체EB.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울한강 장체 L';
-  src: url('./fonts/서울한강 장체L.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울한강 장체 L";
+  src: url("./fonts/서울한강 장체L.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '서울한강 장체 M';
-  src: url('./fonts/서울한강 장체M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "서울한강 장체 M";
+  src: url("./fonts/서울한강 장체M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '솔뫼 김대건 Light';
-  src: url('./fonts/솔뫼 김대건 Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "솔뫼 김대건 Light";
+  src: url("./fonts/솔뫼 김대건 Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '솔뫼 김대건 Medium';
-  src: url('./fonts/솔뫼 김대건 Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "솔뫼 김대건 Medium";
+  src: url("./fonts/솔뫼 김대건 Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '솔인써니체';
-  src: url('./fonts/솔인써니체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "솔인써니체";
+  src: url("./fonts/솔인써니체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '양진체';
-  src: url('./fonts/양진체v0.9_ttf.ttf') format('truetype');
+  font-display: swap;
+  font-family: "양진체";
+  src: url("./fonts/양진체v0.9_ttf.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 경영체';
-  src: url('./fonts/온글잎 경영체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 경영체";
+  src: url("./fonts/온글잎 경영체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 만두몽키체';
-  src: url('./fonts/온글잎 만두몽키체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 만두몽키체";
+  src: url("./fonts/온글잎 만두몽키체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 무궁체';
-  src: url('./fonts/온글잎 무궁체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 무궁체";
+  src: url("./fonts/온글잎 무궁체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 민혜체';
-  src: url('./fonts/온글잎 민혜체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 민혜체";
+  src: url("./fonts/온글잎 민혜체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 보현체';
-  src: url('./fonts/온글잎 보현체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 보현체";
+  src: url("./fonts/온글잎 보현체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 석영체';
-  src: url('./fonts/온글잎 석영체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 석영체";
+  src: url("./fonts/온글잎 석영체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 안될과학궤도체';
-  src: url('./fonts/온글잎 안될과학궤도체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 안될과학궤도체";
+  src: url("./fonts/온글잎 안될과학궤도체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 안될과학약체';
-  src: url('./fonts/온글잎 안될과학약체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 안될과학약체";
+  src: url("./fonts/온글잎 안될과학약체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 안될과학유니랩장체';
-  src: url('./fonts/온글잎 안될과학유니랩장체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 안될과학유니랩장체";
+  src: url("./fonts/온글잎 안될과학유니랩장체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 윤우체';
-  src: url('./fonts/온글잎 윤우체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 윤우체";
+  src: url("./fonts/온글잎 윤우체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 의연체';
-  src: url('./fonts/온글잎 의연체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 의연체";
+  src: url("./fonts/온글잎 의연체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '온글잎 해솜체';
-  src: url('./fonts/온글잎 해솜체.ttf') format('truetype');
+  font-display: swap;
+  font-family: "온글잎 해솜체";
+  src: url("./fonts/온글잎 해솜체.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '이순신돋움체B';
-  src: url('./fonts/이순신돋움체B.ttf') format('truetype'),
-  url('./fonts/MiConv.com__이순신돋움체B.woff') format('woff');
+  font-display: swap;
+  font-family: "이순신돋움체B";
+  src: url("./fonts/이순신돋움체B.ttf") format("truetype"), url("./fonts/MiConv.com__이순신돋움체B.woff") format("woff");
 }
 
 @font-face {
-  font-family: '이순신돋움체L';
-  src: url('./fonts/이순신돋움체L.ttf') format('truetype'),
-  url('./fonts/OYZeYyCL.woff') format('woff');
+  font-display: swap;
+  font-family: "이순신돋움체L";
+  src: url("./fonts/이순신돋움체L.ttf") format("truetype"), url("./fonts/OYZeYyCL.woff") format("woff");
 }
 
 @font-face {
-  font-family: '이순신돋움체M';
-  src: url('./fonts/이순신돋움체M.ttf') format('truetype'),
-  url('./fonts/MiConv.com__이순신돋움체M.woff') format('woff');
+  font-display: swap;
+  font-family: "이순신돋움체M";
+  src: url("./fonts/이순신돋움체M.ttf") format("truetype"), url("./fonts/MiConv.com__이순신돋움체M.woff") format("woff");
 }
 
 @font-face {
-  font-family: '조선일보명조';
-  src: url('./fonts/조선일보명조.ttf') format('truetype'),
-  url('./fonts/조선일보명조.woff2') format('font-woff2');
+  font-display: swap;
+  font-family: "조선일보명조";
+  src: url("./fonts/조선일보명조.ttf") format("truetype"), url("./fonts/조선일보명조.woff2") format("font-woff2");
 }
 
 @font-face {
-  font-family: '중나좋체 Light';
-  src: url('./fonts/중나좋체 Light.ttf') format('truetype');
+  font-display: swap;
+  font-family: "중나좋체 Light";
+  src: url("./fonts/중나좋체 Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '중나좋체 Medium';
-  src: url('./fonts/중나좋체 Medium.ttf') format('truetype');
+  font-display: swap;
+  font-family: "중나좋체 Medium";
+  src: url("./fonts/중나좋체 Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한글틀고딕';
-  src: url('./fonts/한글틀고딕.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한글틀고딕";
+  src: url("./fonts/한글틀고딕.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한수원_한돋음_B';
-  src: url('./fonts/한수원_한돋음_B.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한수원_한돋음_B";
+  src: url("./fonts/한수원_한돋음_B.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한돋음체 R';
-  src: url('./fonts/한수원_한돋음_R.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한돋음체 R";
+  src: url("./fonts/한수원_한돋음_R.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '한울림체 R';
-  src: url('./fonts/한수원_한울림_R.ttf') format('truetype');
+  font-display: swap;
+  font-family: "한울림체 R";
+  src: url("./fonts/한수원_한울림_R.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '해수체B';
-  src: url('./fonts/해수체B.ttf') format('truetype'),
-  url('./fonts/MiConv.com__해수체B.woff') format('woff');
+  font-display: swap;
+  font-family: "해수체B";
+  src: url("./fonts/해수체B.ttf") format("truetype"), url("./fonts/MiConv.com__해수체B.woff") format("woff");
 }
 
 @font-face {
-  font-family: '해수체L';
-  src: url('./fonts/해수체L.ttf') format('truetype'),
-  url('./fonts/MiConv.com__해수체L.woff') format('woff');
+  font-display: swap;
+  font-family: "해수체L";
+  src: url("./fonts/해수체L.ttf") format("truetype"), url("./fonts/MiConv.com__해수체L.woff") format("woff");
 }
 
 @font-face {
-  font-family: '해수체M';
-  src: url('./fonts/해수체M.ttf') format('truetype'),
-  url('./fonts/MiConv.com__해수체M.woff') format('woff');
+  font-display: swap;
+  font-family: "해수체M";
+  src: url("./fonts/해수체M.ttf") format("truetype"), url("./fonts/MiConv.com__해수체M.woff") format("woff");
 }
 
 @font-face {
-  font-family: '행복고흥B';
-  src: url('./fonts/행복고흥B.ttf') format('truetype'),
-  url('./fonts/MiConv.com__행복고흥B.woff') format('woff');
+  font-display: swap;
+  font-family: "행복고흥B";
+  src: url("./fonts/행복고흥B.ttf") format("truetype"), url("./fonts/MiConv.com__행복고흥B.woff") format("woff");
 }
 
 @font-face {
-  font-family: '행복고흥L';
-  src: url('./fonts/행복고흥L.ttf') format('truetype'),
-  url('./fonts/AnyConv.com__행복고흥L.woff2') format('font-woff2'),
-  url('./fonts/AnyConv.com__행복고흥L.otf') format('opentype');
+  font-display: swap;
+  font-family: "행복고흥L";
+  src: url("./fonts/행복고흥L.ttf") format("truetype"), url("./fonts/AnyConv.com__행복고흥L.woff2") format("font-woff2"),
+    url("./fonts/AnyConv.com__행복고흥L.otf") format("opentype");
 }
 
 @font-face {
-  font-family: '행복고흥M';
-  src: url('./fonts/행복고흥M.ttf') format('truetype');
+  font-display: swap;
+  font-family: "행복고흥M";
+  src: url("./fonts/행복고흥M.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: '헬스셋고딕Bold';
-  src: url('./fonts/헬스셋고딕Bold.ttf') format('truetype'),
-  url('./fonts/MiConv.com__헬스셋고딕Bold.woff') format('woff');
+  font-display: swap;
+  font-family: "헬스셋고딕Bold";
+  src: url("./fonts/헬스셋고딕Bold.ttf") format("truetype"),
+    url("./fonts/MiConv.com__헬스셋고딕Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: '헬스셋고딕Light';
-  src: url('./fonts/헬스셋고딕Light.ttf') format('truetype'),
-  url('./fonts/MiConv.com__헬스셋고딕Light.woff') format('woff');
+  font-display: swap;
+  font-family: "헬스셋고딕Light";
+  src: url("./fonts/헬스셋고딕Light.ttf") format("truetype"),
+    url("./fonts/MiConv.com__헬스셋고딕Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: '헬스셋조릿대Std';
-  src: url('./fonts/헬스셋조릿대Std.ttf') format('truetype');
+  font-display: swap;
+  font-family: "헬스셋조릿대Std";
+  src: url("./fonts/헬스셋조릿대Std.ttf") format("truetype");
 }

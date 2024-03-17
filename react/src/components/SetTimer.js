@@ -1,39 +1,34 @@
-import React,{useCallback,useEffect,useRef,useState} from "react";
+import React, { useState, useEffect } from "react";
 
-const useCounter = (initialValue,ms)=>{
-    const [count,setCount] = useState(initialValue);
-    const IntervalRef = useRef(null);
-    const start =useCallback(()=>{
-        if(IntervalRef.current != null){
-            return;
+export default function SetTimer() {
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(10);
+
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      if (parseInt(seconds) > 0) {
+        setSeconds(parseInt(seconds) - 1);
+      }
+      if (parseInt(seconds) === 0) {
+        if (parseInt(minutes) === 0) {
+          clearInterval(countdown);
+        } else {
+          setMinutes(parseInt(minutes) - 1);
+          setSeconds(59);
         }
-        IntervalRef.current = setInterval(()=>{
-            setCount(c=>c+1);
-        },ms);
-    },[]);
-    
+      }
+    }, 1000);
+    return () => clearInterval(countdown);
+  }, [minutes, seconds]);
 
-}
-
-
-export default function SetTimer(){
-    const [currentSeconds,setCurrentSconds] = useState(0);
-    const {count,start} = useCounter(0,1000);
-
-    const timer = ()=>{
-        const seconds = count %60;
-        setCurrentSconds(seconds);
-        
-    }
-    useEffect(timer,[count]);
-    return(
-        <>
-        <h1>
-            {currentSeconds}
-        </h1>
-        <button onClick={start}>start</button>
-        </>
-    )
-
-
+  return (
+    <div className="App">
+      <h1>CountDown!</h1>
+      <div>
+        <h2>
+          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+        </h2>
+      </div>
+    </div>
+  );
 }

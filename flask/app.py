@@ -5,6 +5,11 @@ from flask import Flask, jsonify,request, render_template, url_for
 from flask_restx import Resource, Api 
 from main.OCR import OCR 
 from main.Test import Test
+import sys
+sys.path.append("/home/sblim/FontProject/FontSearching/img2vec_pytorch")
+
+from img_to_vec import Img2Vec
+
 
 app = Flask(__name__)
 CORS(app)
@@ -13,6 +18,10 @@ app.config['DEBUG'] = True
 #img file path config
 app.config['IMG_FOLDER'] = os.path.join('static','images') 
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+app.config['IMG2VEC'] =Img2Vec(model="inception")
+
+s_model = app.config['IMG2VEC']
+
 
 #API
 api = Api(app, version='1.0', title='Flask API', description='Flask API', doc="/api-docs")

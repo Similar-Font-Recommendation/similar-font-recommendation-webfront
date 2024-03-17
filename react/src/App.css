@@ -1,79 +1,140 @@
 @charset "utf=8";
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap");
 
-
-*{
-  font-family: 'Gothic A1', sans-serif;
-  
+* {
+  font-family: "Gothic A1", sans-serif;
 }
 
 @media (max-width: 800px) {
-  .Grid{
-    margin-left : 2px;
-    display: block;
-    margin-left: 20vw; margin-right: 3vw;
+  .Grid {
+    margin-left: 2px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
+  }
+  .ui.grid > .row {
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
   }
 }
 
-.App{
-  margin: 3em;
+.App {
+  padding: 1em 3em 0 3em;
   text-align: center;
 }
 
-#Header{
+#Header {
   margin-top: 3vh;
   margin-bottom: 1em;
 }
 
+#myDiv {
+  max-width: 100%;
+  /* position: inherit absolute; */
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  /* top: 50%; */
+}
+#imageCanvas {
+  vertical-align: top;
+  position: relative;
+  /* left: 0;
+  top: 0; */
+  z-index: 1;
+}
+#layer2 {
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  z-index: 2;
+}
+#justblock {
+  position: relative;
+  z-index: 3;
+}
 
-
-#myDiv {position: relative; max-width: 100%;}
-#imageCanvas {vertical-align: top; position: relative ; z-index: 1;}
-#layer2 { position: absolute ; left :0; top:0;z-index: 2;} 
 #selectbox {
   border: 0.1em solid #316896;
   border-radius: 0.2em;
-  padding: 3em;
-  padding-top:3.8em;
-  min-height: 17vh;
+  padding: 1em;
+  padding-top: 1.8em;
+  min-height: 11em;
+  max-height: 10.1em;
 }
-#searchresult{
+#searchresult {
   border: 0.1em solid #316896;
   border-radius: 0.2em;
-  padding: 3em;
-  padding-top:3em;
+  padding-right: 3em;
+  padding-left: 3em;
+  height: 25.8em;
+  /* max-height: 41%; */
+  overflow: auto;
 }
-#bigbox{
-  padding: 5em;
+
+#bigbox {
+  padding: 12em 5em 5em 5em;
   /* padding-top: 10em; */
 }
 
-.DZ{
-  font-family: '12월롯데마트드림Light'!important;
+.DZ {
+  font-family: "12월롯데마트드림Light" !important;
   text-align: center;
   border-radius: 0.2em;
   padding: 3em;
-  padding-top:2.8em;
+  /* padding-top: 2.8em; */
   border: 0.1em solid #316896;
-  min-height: 17vh;
+  height: 40.5em;
+  position: relative;
+  /* display: flex; */
+  align-items: center;
 }
 
-
-
-h3{
+h3 {
   font-size: 20pt;
 }
 
-h4{
+h4 {
   font-size: 17pt;
 }
 
-.Grid2{
-  padding:em;
-  padding-bottom: 3em;
+.Grid2 {
+  padding-bottom: 1em;
 }
 
-.title{
-  background-color: cornsilk;
+#contentdiv {
+  border-top: 1em solid #316896;
+  padding-top: 1em;
+}
+
+#myBar {
+  /* width: 400px; */
+  background-color: #ddd;
+}
+
+#digit {
+  /* width: 400px; */
+  height: 30px;
+  background-color: #4caf50;
 }
